@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <link rel="preload" href="/assets/profile.webp" as="image" type="image/webp">
+
+    <title>어바웃 | 차한음 블로그</title>
+    <meta name="description" content="어바웃 | 차한음 블로그">
+    <meta name="author" content="차한음">
+    <link rel="canonical" href="https://chebread.github.io/">
+
+    <meta property="og:title" content="어바웃 | 차한음 블로그">
+    <meta property="og:description" content="어바웃 | 차한음 블로그">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chebread.github.io/about.html">
+    <meta property="og:site_name" content="차한음 블로그">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="어바웃 | 차한음 블로그">
+    <meta name="twitter:description" content="어바웃 | 차한음 블로그">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "어바웃 | 차한음 블로그",
+        "author": {
+            "@type": "Person",
+            "name": "차한음"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "차한음",
+        },
+        "description": "어바웃 | 차한음 블로그"
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/color-palette.css">
+    <link rel="stylesheet" href="/styles/chroma.css">
+
+    <link rel="stylesheet" href="/styles/about.css">
+    <link rel="stylesheet" href="/styles/github-markdown.css">
+
+    <link rel="icon" href="/favicons/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+</head>
+<body>
+    <div class="root">
+        <div class="about">
+            <nav class="about-nav">
+                <a href="/" class="{{if eq .CurrentURL "/"}}active{{end}}">
+                    <span>홈</span>
+                </a>
+                <a href="/about{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/about"}}active{{end}}">
+                    <span>어바웃</span>
+                </a>
+                <a href="/posts{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/posts"}}active{{end}}">
+                    <span>포스트</span>
+                </a>
+            </nav>
+
+            <header class="about-header">
+                <div class="about-hero">
+                    <h1>개발자 차한음</h1>
+                </div>
+            </header>
+
+            <main class="about-content">
+                <article class="markdown-body">
+                    {{ .Content }}
+                </article>
+            </main>
+            <footer class="about-footer">
+                <section>
+                    <p>&copy; 2025-2026 Cha Haneum</p>
+                </section>
+                <section>
+                    <a href="https://github.com/chebread">
+                        <span>깃허브</span>
+                    </a>
+                    <a href="mailto:chahaneum@chebread.com">
+                        <span>이메일</span>
+                    </a>
+                </section>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

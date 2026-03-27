@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="giscus:backlink" content="https://chebread.github.io/{{ .Permalink }}">
+
+    <title>{{ .Title }} | 차한음 블로그</title>
+    <meta name="description" content="{{ .Description }}">
+    <meta name="author" content="차한음">
+    <link rel="canonical" href="https://chebread.github.io/">
+
+    <meta property="og:title" content="{{ .Title }} | 차한음 블로그">
+    <meta property="og:description" content="{{ .Description }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chebread.github.io/{{ .Permalink }}">
+    <meta property="og:site_name" content="차한음 블로그">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ .Title }} | 차한음 블로그">
+    <meta name="twitter:description" content="{{ .Description }}">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{ .Title }} | 차한음 블로그",
+        "author": {
+            "@type": "Person",
+            "name": "차한음"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "차한음",
+        },
+        "datePublished": "{{ .Date }}",
+        "description": "{{ .Description }}"
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/color-palette.css">
+    <link rel="stylesheet" href="/styles/chroma.css">
+
+    <link rel="stylesheet" href="/styles/github-markdown.css">
+    <link rel="stylesheet" href="/styles/post.css">
+
+    <link rel="icon" href="/favicons/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+</head>
+<body>
+    <div class="root">
+        <div class="post">
+           <nav class="post-nav">
+                <a href="/" class="{{if eq .CurrentURL "/"}}active{{end}}">
+                    <span>홈</span>
+                </a>
+                <a href="/about{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/about"}}active{{end}}">
+                    <span>어바웃</span>
+                </a>
+                <a href="/posts{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/posts"}}active{{end}}">
+                    <span>포스트</span>
+                </a>
+            </nav>
+
+            <main class="post-content">
+                <header class="post-header">
+                    <h1 class="post-title">{{- .Title -}}</h1>
+                    <p class="post-date"><time datetime="{{- .Date -}}">{{- .FormattedDate -}}</time></p>
+                    <p class="post-category">
+                        {{- range .Categories -}}
+                            <a href="{{ .URL }}">[{{ .Name }}]</a>
+                        {{- end -}}
+                    </p>
+                </header>
+                <div class="post-body">
+                    <article class="markdown-body">
+                        {{- .Content -}}
+                    </article>
+                </div>
+                <section class="post-comments">
+                    <script src="https://giscus.app/client.js"
+                            data-repo="chebread/chebread.github.io"
+                            data-repo-id="R_kgDOP0JptQ"
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOP0Jptc4CwG8I"
+                            data-mapping="title"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="light"
+                            data-lang="ko"
+                            crossorigin="anonymous"
+                            async>
+                    </script>
+                </section>
+            </main>
+
+            <footer class="post-footer">
+                <section>
+                    <p>&copy; 2025-2026 Cha Haneum</p>
+                </section>
+                <section>
+                    <a href="https://github.com/chebread">
+                        <span>깃허브</span>
+                    </a>
+                    <a href="mailto:chahaneum@chebread.com">
+                        <span>이메일</span>
+                    </a>
+                </section>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

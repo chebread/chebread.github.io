@@ -1,0 +1,26 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "bash ./build.sh",
+    "build:prod": "bash ./build.sh production",
+    "serve": "devd -ol public/",
+    "watch": "chokidar \"layout/**/*\" \"content/**/*\" -c \"pnpm run build\" --initial --debounce=1000",
+    "dev": "concurrently \"pnpm run watch\" \"pnpm run serve\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.15.0",
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.0.0",
+    "esbuild": "^0.25.10",
+    "five-server": "^0.4.5",
+    "medium-zoom": "^1.1.0",
+    "sass": "^1.93.2",
+    "typescript": "^5.9.2"
+  }
+}
