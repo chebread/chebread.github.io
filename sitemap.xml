@@ -2,82 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.1/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://chebread.github.io/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://chebread.github.io/about.html</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-객체-클래스</loc>
+    <loc>https://chebread.github.io/post/객체-클래스</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-날짜-시간</loc>
+    <loc>https://chebread.github.io/post/날짜-시간</loc>
     <lastmod>2025-06-20</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-데이터-길들이기</loc>
+    <loc>https://chebread.github.io/post/데이터-길들이기</loc>
     <lastmod>2025-06-20</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-데이터</loc>
+    <loc>https://chebread.github.io/post/데이터</loc>
     <lastmod>2025-05-01</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-딕셔너리-셋</loc>
+    <loc>https://chebread.github.io/post/딕셔너리-셋</loc>
     <lastmod>2025-05-11</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-모듈-패키지</loc>
+    <loc>https://chebread.github.io/post/모듈-패키지</loc>
     <lastmod>2025-06-03</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-문자열</loc>
+    <loc>https://chebread.github.io/post/문자열</loc>
     <lastmod>2025-05-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-반복문</loc>
+    <loc>https://chebread.github.io/post/반복문</loc>
     <lastmod>2025-05-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-숫자</loc>
+    <loc>https://chebread.github.io/post/숫자</loc>
     <lastmod>2025-05-03</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-조건문</loc>
+    <loc>https://chebread.github.io/post/조건문</loc>
     <lastmod>2025-05-05</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-튜플-리스트</loc>
+    <loc>https://chebread.github.io/post/튜플-리스트</loc>
     <lastmod>2025-05-10</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-파이-과학</loc>
+    <loc>https://chebread.github.io/post/파이-과학</loc>
     <lastmod>2025-06-20</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-파일-디렉터리</loc>
+    <loc>https://chebread.github.io/post/파일-디렉터리</loc>
     <lastmod>2025-06-20</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.github.io/post/python-함수</loc>
+    <loc>https://chebread.github.io/post/함수</loc>
     <lastmod>2025-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://chebread.github.io/post/들어가며</loc>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -88,11 +93,6 @@
   <url>
     <loc>https://chebread.github.io/post/핸드폰을-보고-만족하는-k씨</loc>
     <lastmod>2025-12-29</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://chebread.github.io/post/내가-ai에게-거부감을-느끼는-이유</loc>
-    <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
