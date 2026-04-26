@@ -55,6 +55,7 @@ func main() {
 					chromahtml.WithClasses(true),
 				),
 			),
+			lib.MarkExtension,
 		),
 		goldmark.WithParserOptions(
 			parser.WithAttribute(), // 수동 id 지정 기능

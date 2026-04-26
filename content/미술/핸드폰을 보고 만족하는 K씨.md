@@ -1,6 +1,6 @@
 ---
 date: 2025-12-29
-category: [비평]
+category: [미술]
 published: true
 desc: 민정기, <영화를 보고 만족하는 K씨> 1981, 켄버스에 아크릴릭 물감, 130 x 162 cm (2)
 ---
