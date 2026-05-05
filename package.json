@@ -12,7 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@10.33.2",
   "devDependencies": {
     "chokidar-cli": "^3.0.0",
     "concurrently": "^9.2.1",
