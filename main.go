@@ -5,6 +5,7 @@ package main
 
 import (
 	"blog/lib"
+	"hash/fnv"
 
 	"bytes"
 	"encoding/xml"
@@ -75,6 +76,8 @@ func main() {
 	_ = postsData
 	_ = postsDataByCategory
 
+	slugTracker := make(map[string]bool)
+
 	type PostFrontMatter struct {
 		Date      string   `yaml:"date"`
 		Desc      string   `yaml:"desc"`
@@ -120,6 +123,19 @@ func main() {
 
 			// URL
 			var slug string = lib.SlugifyPath(title)
+
+			// 슬러그가 중복되는 경우, 파일 경로를 기반으로 한 6자리 해시값을 뒤에 붙임
+			if slugTracker[slug] {
+				h := fnv.New32a()
+				h.Write([]byte(path))                         // 원본 파일 경로를 해시 재료로 사용
+				hashStr := fmt.Sprintf("%08x", h.Sum32())[:4] // 4자리 추출
+
+				oldSlug := slug
+				slug = fmt.Sprintf("%s-%s", slug, hashStr)
+
+				fmt.Printf("파일명 중복으로 인한 slug 변경: %s -> %s (%s)\n", oldSlug, slug, path)
+			}
+			slugTracker[slug] = true // 현재 슬러그를 사용 처리
 
 			// description
 			var description string
@@ -371,7 +387,7 @@ func main() {
 			if isFixed {
 				fixedTemplate := `<li>
                     <article class="post-item">
-                        <h3 class="post-item-title"><a href="%s">[고정됨] %s</a></h3>
+                        <h3 class="post-item-title"><a href="%s">☞ %s</a></h3>
                         <p class="post-item-date"><time datetime="%s">%s</time></p>
                         <p class="post-item-description">%s</p>
                     </article>
@@ -496,7 +512,7 @@ func main() {
 			if isFixed {
 				templateString = `<li>
 					<article class="category-item">
-						<h3 class="category-item-title"><a href="%s">[고정됨] %s</a></h3>
+						<h3 class="category-item-title"><a href="%s">☞ %s</a></h3>
 						<p class="category-item-date"><time datetime="%s">%s</time></p>
 						<p class="category-item-description">%s</p>
 					</article>
