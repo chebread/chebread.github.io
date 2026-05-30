@@ -37,6 +37,22 @@ import (
 
 // TODO: Category fixed through site.yml
 
+type CustomSlice []string
+
+func (c *CustomSlice) UnmarshalYAML(unmarshal func(interface{}) error) error {
+	var array []string
+	if err := unmarshal(&array); err == nil {
+		*c = array
+		return nil
+	}
+	var single string
+	if err := unmarshal(&single); err != nil {
+		return err
+	}
+	*c = []string{single}
+	return nil
+}
+
 func main() {
 	// Get env
 	var appEnv string = os.Getenv("APP_ENV")
@@ -79,11 +95,11 @@ func main() {
 	slugTracker := make(map[string]bool)
 
 	type PostFrontMatter struct {
-		Date      string   `yaml:"date"`
-		Desc      string   `yaml:"desc"`
-		Category  []string `yaml:"category"`
-		Published bool     `yaml:"published"`
-		Fixed     bool     `yaml:"fixed"`
+		Date      string      `yaml:"date"`
+		Desc      string      `yaml:"desc"`
+		Category  CustomSlice `yaml:"category"`
+		Published bool        `yaml:"published"`
+		Fixed     bool        `yaml:"fixed"`
 	}
 
 	for _, path := range contentFilePaths {
@@ -121,6 +137,18 @@ func main() {
 
 		// 프론트매터 published가 true이면서, unpublished 폴더에 있지 않은 파일만 PostsData에 추가한다
 		if fm.Published && !isUnpublishedDir {
+			// Date 누락 검사 및 경고 출력
+			if fm.Date == "" {
+				fmt.Printf("warning: %s - date 필드 누락\n", path)
+				// FormatDateKorean 함수에서 에러가 나지 않도록 임시 기본값 할당
+				fm.Date = "1970-01-01"
+			}
+
+			// Category 누락 검사 및 '미분류' 지정
+			if len(fm.Category) == 0 {
+				fm.Category = CustomSlice{"미분류"}
+			}
+
 			// title
 			var title string = path[strings.LastIndex(path, "/")+1 : strings.LastIndex(path, ".")]
 
@@ -166,7 +194,7 @@ func main() {
 				"title":          title,
 				"date":           fm.Date,
 				"description":    description,
-				"category":       fm.Category,
+				"category":       []string(fm.Category),
 				"fixed":          fm.Fixed,
 				"sourceFilePath": path,
 				"slug":           slug,
@@ -231,7 +259,7 @@ func main() {
 		formattedDate, err := lib.FormatDateKorean(date) // yyyy년 mm월 dd일
 		if err != nil {
 			fmt.Printf("error: %s - 날짜 변환 실패\n", sourceFilePath)
-			return
+			continue // return 대신 continue를 사용하여 이 포스트만 건너뛰고 나머지 블로그는 정상 빌드되도록 수정
 		}
 
 		var categoriesData []CategoryInfo
