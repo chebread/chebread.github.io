@@ -116,8 +116,11 @@ func main() {
 			continue
 		}
 
-		// published된 것만 PostsData에 추가한다
-		if fm.Published {
+		// 파일 경로에 /unpublished/ 디렉토리가 포함되어 있는지 확인하고 있으면 published: false와 동일하게 취급한다
+		isUnpublishedDir := strings.Contains(filepath.ToSlash(path), "/unpublished/")
+
+		// 프론트매터 published가 true이면서, unpublished 폴더에 있지 않은 파일만 PostsData에 추가한다
+		if fm.Published && !isUnpublishedDir {
 			// title
 			var title string = path[strings.LastIndex(path, "/")+1 : strings.LastIndex(path, ".")]
 
