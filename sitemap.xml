@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.1/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://chebread.github.io/</loc>
-    <lastmod>2026-05-30</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://chebread.github.io/about.html</loc>
-    <lastmod>2026-05-30</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
@@ -103,6 +103,11 @@
   <url>
     <loc>https://chebread.github.io/post/chaos-to-cosmos</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://chebread.github.io/post/인간의-힘</loc>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
