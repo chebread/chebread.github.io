@@ -803,4 +803,108 @@ func main() {
 	}
 
 	fmt.Printf("성공: %s 파일 생성\n", sitemapPath)
+
+	// RSS Feed 생성
+	type RSSItem struct {
+		Title       string   `xml:"title"`
+		Link        string   `xml:"link"`
+		Description string   `xml:"description"`
+		PubDate     string   `xml:"pubDate"`
+		GUID        string   `xml:"guid"`
+		Categories  []string `xml:"category"`
+	}
+
+	type RSSChannel struct {
+		Title         string    `xml:"title"`
+		Link          string    `xml:"link"`
+		Description   string    `xml:"description"`
+		Language      string    `xml:"language"`
+		LastBuildDate string    `xml:"lastBuildDate"`
+		Generator     string    `xml:"generator"`
+		Items         []RSSItem `xml:"item"`
+	}
+
+	type RSSFeed struct {
+		XMLName xml.Name   `xml:"rss"`
+		Version string     `xml:"version,attr"`
+		Channel RSSChannel `xml:"channel"`
+	}
+
+	fmt.Println()
+	fmt.Println("-- RSS Feed 생성 --")
+
+	var rssItems []RSSItem
+	rssPosts := make([]map[string]any, len(postsData))
+	copy(rssPosts, postsData)
+	sort.Slice(rssPosts, func(i, j int) bool {
+		dateI, _ := rssPosts[i]["date"].(string)
+		dateJ, _ := rssPosts[j]["date"].(string)
+		return dateI > dateJ
+	})
+
+	for _, data := range rssPosts {
+		var slug, okSlug = data["slug"].(string)
+		var date, okDate = data["date"].(string)
+		var title, _ = data["title"].(string)
+		var description, _ = data["description"].(string)
+		var category, _ = data["category"].([]string)
+
+		if !okSlug || !okDate {
+			continue
+		}
+
+		var postURL string
+		if appEnv == "production" {
+			postURL = fmt.Sprintf("%s/post/%s", baseURL, slug)
+		} else {
+			postURL = fmt.Sprintf("%s/post/%s.html", baseURL, slug)
+		}
+
+		kst := time.FixedZone("KST", 9*60*60)
+		t, err := time.ParseInLocation("2006-01-02", date, kst)
+		var pubDate string
+		if err == nil {
+			pubDate = t.Format(time.RFC1123Z)
+		} else {
+			pubDate = date
+		}
+
+		rssItems = append(rssItems, RSSItem{
+			Title:       title,
+			Link:        postURL,
+			Description: description,
+			PubDate:     pubDate,
+			GUID:        postURL,
+			Categories:  category,
+		})
+	}
+
+	var rssFeed = &RSSFeed{
+		Version: "2.0",
+		Channel: RSSChannel{
+			Title:         "차한음 블로그",
+			Link:          baseURL,
+			Description:   "개발자 차한음 블로그",
+			Language:      "ko-KR",
+			LastBuildDate: time.Now().Format(time.RFC1123Z),
+			Generator:     "Go Custom SSG",
+			Items:         rssItems,
+		},
+	}
+
+	rssBytes, err := xml.MarshalIndent(rssFeed, "", "  ")
+	if err != nil {
+		fmt.Printf("error: RSS XML 변환 실패\n")
+		return
+	}
+
+	var rssContent = []byte(xml.Header + string(rssBytes))
+	var rssPath = "public/rss.xml"
+	err = os.WriteFile(rssPath, rssContent, 0644)
+	if err != nil {
+		fmt.Printf("error: %s 파일 생성 실패\n", rssPath)
+		return
+	}
+
+	fmt.Printf("성공: %s 파일 생성\n", rssPath)
 }
