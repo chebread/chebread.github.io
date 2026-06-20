@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>차한음 블로그</title>
+    <link>https://chebread.github.io</link>
+    <description>개발자 차한음 블로그</description>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 20 Jun 2026 16:21:43 +0000</lastBuildDate>
+    <generator>Go Custom SSG</generator>
+    <item>
+      <title>인간의 힘</title>
+      <link>https://chebread.github.io/post/인간의-힘</link>
+      <description>장 지오노. (1995). 『나무를 심은 사람』 (김경온 옮김, 최수연 삽화). 두레.</description>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/인간의-힘</guid>
+      <category>독서</category>
+    </item>
+    <item>
+      <title>개헌 불발…‘알고리즘’ 자체를 재설계해야</title>
+      <link>https://chebread.github.io/post/개헌-불발알고리즘-자체를-재설계해야</link>
+      <description>은재호. (2026년 5월 19일). 개헌 불발…‘알고리즘’ 자체를 재설계해야. 한겨레, 25.</description>
+      <pubDate>Tue, 19 May 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/개헌-불발알고리즘-자체를-재설계해야</guid>
+      <category>신문</category>
+    </item>
+    <item>
+      <title>Chaos To Cosmos</title>
+      <link>https://chebread.github.io/post/chaos-to-cosmos</link>
+      <description>폴 그레이엄 (2014). 『해커와 화가』 (임백준 번역, 정희 감수). 한빛미디어.</description>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/chaos-to-cosmos</guid>
+      <category>독서</category>
+    </item>
+    <item>
+      <title>나의 블로그 유목민 역사</title>
+      <link>https://chebread.github.io/post/나의-블로그-유목민-역사</link>
+      <description>나는 정말 많은 블로그를 개발하고 옮겨 다녔다. GitHub Pages 블로그를 만들게 된 기념으로, 나의 블로그 활동 역사를 한 번 소개해 보도록 하겠다. 나의 블로그 유목민 역...</description>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/나의-블로그-유목민-역사</guid>
+      <category>회고</category>
+    </item>
+    <item>
+      <title>들어가며</title>
+      <link>https://chebread.github.io/post/들어가며</link>
+      <description>옮긴이의 글 Go 언어는 단순성을 가장 큰 특징으로 하며, 이는 표현성을 중시하는 루비나 스칼라 등의 언어와는 정면으로 배치된다. 이 책은 그러한 단순성에 대한 설계 사상을 보여주...</description>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/들어가며</guid>
+      <category>TGPL</category>
+    </item>
+    <item>
+      <title>세계는 왜 다시 힘의 질서로 가는가</title>
+      <link>https://chebread.github.io/post/세계는-왜-다시-힘의-질서로-가는가</link>
+      <description>신진욱. (2026년 4월 21일). 세계는 왜 다시 힘의 질서로 가는가 [신진욱의 시선]. 한겨레, 25.</description>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/세계는-왜-다시-힘의-질서로-가는가</guid>
+      <category>신문</category>
+    </item>
+    <item>
+      <title>카테고리 소개</title>
+      <link>https://chebread.github.io/post/카테고리-소개-1375</link>
+      <description>TGPL 카테고리는 『Donovan, A. A. A., &amp; Kernighan, B. W. (2015). The Go programming language. Addison-Wesle...</description>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/카테고리-소개-1375</guid>
+      <category>TGPL</category>
+    </item>
+    <item>
+      <title>핸드폰을 보고 만족하는 K씨</title>
+      <link>https://chebread.github.io/post/핸드폰을-보고-만족하는-k씨</link>
+      <description>민정기, &lt;영화를 보고 만족하는 K씨&gt; 1981, 켄버스에 아크릴릭 물감, 130x162 cm (2)</description>
+      <pubDate>Mon, 29 Dec 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/핸드폰을-보고-만족하는-k씨</guid>
+      <category>미술</category>
+    </item>
+    <item>
+      <title>Reflections on Trusting Trust</title>
+      <link>https://chebread.github.io/post/reflections-on-trusting-trust</link>
+      <description>Thompson, K. (1984). Reflections on trusting trust. Communications of the ACM, 27(8), 761–763. https://doi.org/10.1145/358198.358210</description>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/reflections-on-trusting-trust</guid>
+      <category>논문</category>
+    </item>
+    <item>
+      <title>파이 과학</title>
+      <link>https://chebread.github.io/post/파이-과학</link>
+      <description>지난 몇 년 동안 파이썬은 과학자들에게 매우 큰 인기를 얻고 있다. 이번 장에서 다루는 소프트웨어를 보면 왜 인기가 많은지 알게 될 것이다. 과학자이거나 과학도라면 matlab, ...</description>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/파이-과학</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>파일, 디렉터리</title>
+      <link>https://chebread.github.io/post/파일-디렉터리</link>
+      <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/파일-디렉터리</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>날짜, 시간</title>
+      <link>https://chebread.github.io/post/날짜-시간</link>
+      <description>날짜, 시간 파이썬 표준 라이브러리 개발자는 날짜와 시간에 많은 노력을 기울인다. 이번 2장에서는 프로그래머들이 부딪히는 몇 가지 문제에 대해 살펴보고, 이를 좀 더 단순하게 만드...</description>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/날짜-시간</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>데이터 길들이기</title>
+      <link>https://chebread.github.io/post/데이터-길들이기</link>
+      <description>데이터를 충분히 고문하면, 자연은 언제나 바른 말을 할 것이다. - 로널드 코스 지금까지 파이썬 언어 자체(데이터 타입, 코드 구조, 구문 등)만 다뤘다. 2부부터는 실제 문제 적...</description>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/데이터-길들이기</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>모듈, 패키지</title>
+      <link>https://chebread.github.io/post/모듈-패키지</link>
+      <description>모듈과 import 문 모듈이란 파이썬 코드 파일이다. 개발자는 특별한 작업 없이 코드를 모듈로 사용할 수 있다. 모듈 임포트하기 import 문을 사용하여 다른 모듈의 코드를 참...</description>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/모듈-패키지</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>객체, 클래스</title>
+      <link>https://chebread.github.io/post/객체-클래스</link>
+      <description>파이썬의 모든 것은 객체다 파이썬의 모든 것은 객체다. 하지만 파이썬은 특수 구문을 이용해서 대부분의 객체를 숨긴다. num = 7을 입력했을 때 7이 담긴 정수 유형의 객체를 생...</description>
+      <pubDate>Fri, 30 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/객체-클래스</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>함수</title>
+      <link>https://chebread.github.io/post/함수</link>
+      <description>함수 코드 재사용을 위해 함수를 사용한다. 함수는 이름이 붙여진 코드 조각이다. 코드 스니펫(Code Snipet) 또는 코드 조각은 재사용 가능한 소스 코드, 기계어, 텍스트의 ...</description>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/함수</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>딕셔너리, 셋</title>
+      <link>https://chebread.github.io/post/딕셔너리-셋</link>
+      <description>딕셔너리 딕셔너리는 리스트와 비슷하다. 리스트와 다른 점은 항목의 순서를 따지지 않으며, 오프셋으로 항목을 선택할 수 없다. 대신 값에 상응하는 고유한 키를 지정한다. 키는 모든 ...</description>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/딕셔너리-셋</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>튜플, 리스트</title>
+      <link>https://chebread.github.io/post/튜플-리스트</link>
+      <description>자료구조 데이터 타입은 원자이고, 자료구조는 분자이다. 파이썬에서 자료구조는 튜플, 리스트, 딕셔너리, 셋이 있다. 시퀀스 시퀀스란 데이터를 순서대로 나열한 것을 의미한다. 파이썬...</description>
+      <pubDate>Sat, 10 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/튜플-리스트</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>반복문</title>
+      <link>https://chebread.github.io/post/반복문</link>
+      <description>반복문 코드를 한 번 이상 실행하려고 할 때 반복문(loop)가 필요하다. 파이썬은 두 개의 반복문 while과 for이 있다. while문 while 조건: ... 형태로 쓰며,...</description>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/반복문</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>문자열</title>
+      <link>https://chebread.github.io/post/문자열</link>
+      <description>문자열 문자열은 일련의 문자(character)다. 파이썬에서는 문자 하나도(&#34;a&#34;) 문자열이다. 문자열은 불변이다. 문자열 자체는 변경할 수 없지만, 문자열을 다른 곳으로 복사해...</description>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/문자열</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>조건문</title>
+      <link>https://chebread.github.io/post/조건문</link>
+      <description>코드 구조화 이제는 파이썬 코드를 어떻게 구조화하는지에 대해서 다룬다. 귀도 반 로섬은 파이썬을 설계할 때 코드 구분을 위해서 괄호를 입력하지 않더라도 들여쓰기로 프로그램의 구조를...</description>
+      <pubDate>Mon, 05 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/조건문</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>카테고리 소개</title>
+      <link>https://chebread.github.io/post/카테고리-소개</link>
+      <description>Introducing Python 카테고리는 『Lubanovic, B. (2019). Introducing Python (2nd ed.). O&#39;Reilly Media.』를 정리한 ...</description>
+      <pubDate>Mon, 05 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/카테고리-소개</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>숫자</title>
+      <link>https://chebread.github.io/post/숫자</link>
+      <description>불리언 불리언 데이터 타입의 값은 True, False다. 불리언 값은 숫자 연산에 참여할 수 있으며, True는 정수 1 또는 실수 1.0으로 간주되며, False는 정수 0 또...</description>
+      <pubDate>Sat, 03 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/숫자</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>데이터</title>
+      <link>https://chebread.github.io/post/데이터</link>
+      <description>객체 파이썬에서 모든 데이터는 객체다. 객체는 타입(자료형) 정의, 다른 객체와 구별하기 위한 고유 ID, 타입과 연관된 값, 객체의 사용 빈도를 추적하는 참조 횟수를 포함하는 데...</description>
+      <pubDate>Thu, 01 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/데이터</guid>
+      <category>Introducing Python</category>
+    </item>
+  </channel>
+</rss>
