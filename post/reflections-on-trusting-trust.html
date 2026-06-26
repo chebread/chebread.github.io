@@ -77,14 +77,52 @@
                 <div class="post-body">
                     <article class="markdown-body"><h2>논문 정보</h2>
 <p>Thompson, K. (1984). Reflections on trusting trust. Communications of the ACM, 27(8), 761–763. <a href="https://doi.org/10.1145/358198.358210">https://doi.org/10.1145/358198.358210</a></p>
-<h2>들어가며</h2>
+<h2>논문 요약</h2>
+<h3>Quine</h3>
+<p>Quine이란 프로그램을 실행하면 그 실행한 프로그램의 소스 코드가 출력되는 프로그램을 말합니다.</p>
+<h3>Bootstrapping</h3>
+<p>C 언어로 프로그래밍 했습니다. 그러나, C 컴파일러가 없습니다.
+아주 간단한 v1 C 컴파일러를 기계어 또는 어셈블리어로 만듭니다.
+기계어 또는 어셈블리어로 만든 v1 C 컴파일러를 이용해 C 언어를 컴파일 할 수 있습니다.
+이제 C언어로 더 기능이 많은 v2 C 컴파일러를 만듭니다.
+기계어 또는 어셈블리어로 만든 v1 C 컴파일러를 이용해 C언어로 만든 v2 C 컴파일러를 컴파일합니다.
+C언어로 만든 v2 C 컴파일러가 만들어졌습니다.
+v2 C 컴파일러는 자기 자신 v2 C 컴파일러를 컴파일하면, C언어로 C 컴파일러를 만들 수 있습니다.
+이렇게 'C언어로 C 컴파일러'를 만드는 과정을 'Bootstrapping'이라고 합니다.</p>
+<h3>바이너리를 통한 지식의 전수</h3>
+<p>\n을 만나면 11을 반환(<code>if (c == 'n') return 11;)</code>하는 컴파일러 A가 있습니다.
+n을 만나면 \n을 반환(<code>if (c == 'n') return '\n';</code>)하라고 프로그래밍된 컴파일러 B가 있습니다.
+A로 컴파일해보면 <code>\n = 11</code> 으로 평가되어 결국 컴파일러 B는 <code>\n = 11</code> 라는 지식이 소스코드에는 없지만, 바이너리를 통해 전수됩니다.
+이것이 바이너리를 통한 지식의 전수입니다.</p>
+<p>그러나, 다음 컴파일러 C에 n을 처리하는 로직이 없으면 해당 지식이 사라집니다.
+이러한 것을 방지하기 위해 컴파일러 X를 만들 때, n를 만나면 11을 반환하라는 로직(<code>if (c == 'n') return 11;</code>)은 있지만, 컴파일러 X를 가지고 다른 컴파일러를 컴파일 하는 경우에 <code>if (c == 'n') return 11;</code> 로직과 이러한 다른 컴파일러를 반환하는 경우에 <code>if (c == 'n') return 11;</code> 를 삽입하라는 로직을 넣어버립니다.
+이러한 로직을 Quine이라고 부릅니다.
+이러면 X로 어떤 코드를 컴파일할 때 n을 만나면 11을 반환하고, X로 어떤 컴파일러 Y를 컴파일할 때 <code>n = 11</code> 이라는 정보 및 다른 컴파일러를 컴파일할 때 <code>n = 11</code> 이라는 정보를 넣어라는 것을 소스코드에는 보이지 않게 바이너리를 통해 전달하게 됩니다.
+그 이후에 컴파일러 Y 바이너리에는 이러한 Quine 로직이 있으나, 그 존재를 바이너리를 까보지 않는 이상 모릅니다.
+그리고 컴파일러 Y의 소스코드에는 이러한 지식이 절대로 존재하지 않습니다.
+컴파일러 Y를 가지고 컴파일러 Z를 컴파일하는 경우, 이러한 지식이 계속해서 영속적으로 전달되게 됩니다.
+근데, <code>n = 11</code> 말고 Backdoor를 넣어버리면, 사용자는 알지 못한체 바이너리를 통해 영속적으로 백도어가 전달되게 됩니다.</p>
+<p>근데 바이너리를 통한 지식이 전수 이니까, 바이너리를 까보면 되지 않을까요?
+이론적으로는 가능하지만, 현실적으로는 불가능합니다.
+현대의 컴파일러 바이너리는 수백 메가바이트에 달하며, 어셈블리어로 변환하면 수억 줄의 코드가 쏟아져 나옵니다.
+백도어 바이너리 코드는 이 수억 줄의 바이너리 코든 사이 어딘가에 극단적으로 최적화되고 파편화되어 숨어있습니다.
+가장 치명적인 문제는, 우리는 감염되지 않은 '진짜 깨끗한 원본 컴파일러 바이너리'를 세상 그 어디에서도 구할 수 없을 수도 있다는 것입니다.
+태초부터 부모 컴파일러가 감염되어 있었을 수도 있으니까요.
+비교할 깨끗한 원본이 없으니, 수억 줄의 기계어를 오로지 맨땅에 헤딩하며 분석해야 합니다.
+무엇이 정상이고 무엇이 비정상인지 비교할 기준 자체가 존재하지 않기 때문에, 바이너리 분석을 통해 백도어를 찾아내는 것은 사실상 불가능합니다.</p>
+<h3>결론</h3>
+<p>우리가 사용하는 컴파일러에 악성코드 및 다른 컴파일러를 컴파일할 경우 악성코드를 심어라 라는 Quine이 있을지는 모릅니다.
+이런 악성 컴파일러로 컴파일한 프로그램에 악성코드가 들어갈 수 있습니다.
+그러므로 프로그램을 만든 사람을 신뢰해야 합니다. 즉, 프로그램은 신뢰 자체가 불가능합니다.</p>
+<h2>논문 전문 및 해석</h2>
+<h3>들어가며</h3>
 <blockquote>
 <p>프로그램에 트로이 목마(Trojan horses)가 없다는 진술을 어느 정도까지 신뢰해야 할까요?
 아마도 소프트웨어를 작성한 사람을 신뢰하는 것이 더 중요할 것입니다.</p>
 </blockquote>
 <p>해당 초록(抄錄)이 이 논문의 핵심 내용입니다.
 그 핵심 내용이 무엇인지 한 번 논문을 읽으며 알아보겠습니다.</p>
-<h2>서론</h2>
+<h3>서론</h3>
 <blockquote>
 <p>저는 프로그래머입니다.
 세금 신고서 직업란에도 그렇게 적습니다.
@@ -94,7 +132,7 @@
 </blockquote>
 <p>서론의 중심 내용은, 어떤 cutest 프로그램을 소개한다는 것입니다.
 cutest 프로그램을 세 단계로 나눠 발표하고, 마지막에 하나로 종합한다고 합니다.</p>
-<h2>Stage I</h2>
+<h3>Stage I</h3>
 <blockquote>
 <p>비디오 게임이 없던 대학 시절, 우리는 프로그래밍 문제를 내며 놀곤 했습니다.
 가장 인기 있었던 문제 중 하나는 가장 짧은 &quot;자기 복제 프로그램(self-reproducing program)&quot;을 작성하는 것이었습니다.
@@ -132,7 +170,7 @@ cutest 프로그램을 세 단계로 나눠 발표하고, 마지막에 하나로
 <p>....
 이렇게 무한 회귀의 딜레마가 지속됩니다.
 즉, 이런 방식으로는 결코 코드 자기 자신을 똑같이 출력하는 Quine 프로그램을 작성할 수 없습니다.</p>
-<h2>Figure 1</h2>
+<h3>Figure 1</h3>
 <blockquote>
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="cm">/* Figure 1 */</span>
 </span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">s</span><span class="p">[</span> <span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
@@ -246,9 +284,9 @@ main 함수가 끝났으니 프로그램이 종료됩니다.</p>
 generator 프로그램이 생성한 코드가 Quine 프로그램입니다.
 즉, generator는 Quine이 아니며, generator가 낳은 자식이 Quine입니다.
 generator는 Quine을 만드는 도구입니다.</p>
-<h2>Stage I의 핵심 내용</h2>
-<p>Stage I의 핵심 내용은 콰인(Quine)입니다.</p>
-<h2>Stage II</h2>
+<h3>Stage I 요약</h3>
+<p>Quine이란 프로그램을 실행하면 그 실행한 프로그램의 소스 코드가 출력되는 프로그램을 말합니다.</p>
+<h3>Stage II</h3>
 <blockquote>
 <p>C 컴파일러는 C로 작성되어 있습니다.</p>
 </blockquote>
@@ -267,7 +305,7 @@ generator는 Quine을 만드는 도구입니다.</p>
 <li>이제 v2를 이용해 v2 Source를 다시 컴파일하거나, v3를 만듭니다. 이제 C 컴파일러는 자기 자신을 컴파일할 수 있습니다.
 이렇게 &quot;C언어로 C 컴파일러&quot;를 만드는 과정을 부트스트래핑이라고 합니다.</li>
 </ol>
-<h2>Figure 2.1</h2>
+<h3>Figure 2.1</h3>
 <blockquote>
 <p>제가 설명하려는 것은 컴파일러가 자기 자신의 언어로 작성될 때 발생하는 수많은 &quot;닭과 달걀(chicken and egg)&quot; 문제 중 하나입니다.
 여기서는 C 컴파일러의 특정 예시를 사용하겠습니다.</p>
@@ -357,7 +395,7 @@ A, B 컴퓨터 모두의 기계어가 호환된다는 뜻이 아닙니다.</p>
 <li>분석: 결과물의 <code>10</code>은 어디서 왔나요? 소스 코드에는 절대 없었습니다. 부모 컴파일러의 뇌 속에서 튀어나온 겁니다.</li>
 </ul>
 <p>즉, 핵심은 소스 코드에 증거(숫자)를 남기지 않아도, 내(컴파일러)가 알고 있는 정보(지식)를 자식에게 몰래 박아 넣을 수 있다는 겁니다.</p>
-<h2>Figure 2.2</h2>
+<h3>Figure 2.2</h3>
 <blockquote>
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="cm">/* Figure 2.2: 우리가 원하는 최종 코드 (하지만 아직 컴파일 불가) */</span>
 </span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">next</span><span class="p">();</span>
@@ -467,10 +505,9 @@ Figure 2.3은 11을 반환하는 컴파일러를 만든겁니다.
 이렇게 만들어진 최초의 C 컴파일러(A)는 뱃속에 10이라는 정보를 기계어로 갖게 됩니다.
 이제 소스 코드의 <code>10</code>을 지우고 <code>return '\n';</code>으로 고칩니다. 하지만 A 컴파일러가 살아있는 한, 그 자식들은 영원히 10을 물려받습니다.
 즉, Figure 2.3은 <code>\v</code>를 가르치는 과정임과 동시에, 과거에 <code>\n</code>이 어떻게 컴파일러에게 주입되었는지를 알려주는 과정입니다.</p>
-<h2>Stage II의 핵심 내용</h2>
-<p>Stage II의 핵심 내용은 '부트스트래핑을 통해 소스 코드에 증거(숫자)를 남기지 않아도, 내(컴파일러)가 알고 있는 정보(지식)를 자식에게 몰래 삽입할 수 있음'입니다.</p>
-<h2>3단계 (Stage III)</h2>
-<h2>Figure 3.1</h2>
+<h3>Stage II 요약</h3>
+<p>부트스트래핑을 통해 소스 코드에 증거(숫자)를 남기지 않아도, 내(컴파일러)가 알고 있는 정보(지식)를 자식에게 몰래 삽입할 수 있습니다.</p>
+<h3>Figure 3.1</h3>
 <blockquote>
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="cm">/* Figure 3.1: 정상적인 컴파일러 구조 */</span>
 </span></span><span class="line"><span class="cl"><span class="n">compile</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -491,7 +528,7 @@ Figure 2.3은 11을 반환하는 컴파일러를 만든겁니다.
 </span></span></code></pre><p>참고로 해당 코드는 1980년대 스타일의 C언어 문법이었습니다.</p>
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">compile</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
 </span></span></code></pre><p>현대의 c언어 문법으로 해당 코드를 변환하면 이렇게 됩니다.</p>
-<h2>Figure 3.2</h2>
+<h3>Figure 3.2</h3>
 <blockquote>
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="cm">/* Figure 3.2: Login 백도어 삽입 */</span>
 </span></span><span class="line"><span class="cl"><span class="n">compile</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -573,7 +610,7 @@ C 컴파일러 소스를 조금만 훑어봐도 의심을 살 것입니다.</p>
 <p>그래서 이 고민에 대한 해결책이 Stage II에서 공부했던 부트스트래핑 기술입니다.
 이제 켄 톰슨은 Stage II의 기술(훈련)을 사용해서, Stage III의 범죄(백도어)를 소스 코드에서 지워버리는 완전범죄(Figure 3.3)를 저지르게 됩니다.</p>
 <p>Figure 3.3의 목표는 이 고민이며, Figure 3.3은 이 고민에 대한 해결책입니다.</p>
-<h2>Figure 3.3</h2>
+<h3>Figure 3.3</h3>
 <blockquote>
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="cm">/* Figure 3.3 */</span>
 </span></span><span class="line"><span class="cl"><span class="n">compile</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -791,9 +828,9 @@ quine을 사용하면 이것이 가능하다는 것은 위해서 시뮬레이션
 이렇게 바이너리에 악성기능이 숨겨져 있는 것을 탐색하는 것이 악성코드 탐색(Antivirus)의 역할입니다.
 안랩 같은 보안 프로그램의 역할이 이것입니다.</p>
 <p>결과론적으로, 이렇게 <code>compile(&quot;login_backdoor&quot;);</code> 라는 기능을 계속해서 전수하는 코드와 프로그램을 만들게 된 것입니다.</p>
-<h2>Stage III의 핵심 내용</h2>
-<p>&quot;당신이 직접 작성하지 않은 코드는 신뢰할 수 없다&quot;는 Stage III의 핵심 내용이자, 해당 논문의 핵심 내용입니다.</p>
-<h2>교훈 (Moral)</h2>
+<h3>Stage III 요약</h3>
+<p>당신이 직접 작성하지 않은 코드는 신뢰할 수 없다.</p>
+<h3>교훈</h3>
 <blockquote>
 <p>교훈은 명백합니다.
 당신이 직접 작성하지 않은 코드는 신뢰할 수 없습니다.
@@ -856,8 +893,8 @@ quine을 사용하면 이것이 가능하다는 것은 위해서 시뮬레이션
 켄 톰슨의 입장에선 기가 찰 노릇이었습니다.
 &quot;보세요, 제가 방금 보여드린 게 진짜 해킹(창조적이고 치명적인 기술)입니다. 저 아이들이 하는 건 해킹이 아니라, 그냥 남의 집 창문 깨고 들어가는 '좀도둑질(Vandalism)'일 뿐입니다.&quot;라고 켄 톰슨은 말하고 싶었습니다.</p>
 <p>기술적으로 완벽한 보안은 불가능하다라는 Trusting Trust에 대해서 앞에서 이야기 했습니다. 그래서 기술로 못 막는다면? 사회적 합의인 &quot;법과 윤리&quot;로 막아야 한다고 주장하는 부분이 해당 부분입니다. 즉, &quot;본질적으로 기술적 방어막은 뚫려있으니, 법적/윤리적 방어막이라도 빨리 세워라&quot;라고 말하는 강력한 경고입니다.</p>
-<h2>Moral의 핵심 내용</h2>
-<p>본질적으로 기술적 방어막은 뚫려있으니, 법적/윤리적 방어막이라도 빨리 세워라.</p>
+<h3>교훈 요약</h3>
+<p>본질적으로 기술적 방어막은 뚫려있으니, 법적/윤리적 방어막이라도 빨리 만들어야 합니다.</p>
 </article>
                 </div>
                 <section class="post-comments">
