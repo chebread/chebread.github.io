@@ -18,6 +18,7 @@ Website link: [https://chebread.github.io/](https://chebread.github.io/)
 - Custom Go SSG
 - Markdown-Based Content
 - Build-Time Syntax Highlighting
+- LaTeX Support
 - Image Zooming
 - Manual Anchor Links for Headings
 - Frontend Tooling
@@ -26,6 +27,7 @@ Website link: [https://chebread.github.io/](https://chebread.github.io/)
 ## Tech Stack
 - Static Site Generator (SSG): Go
 - Content: Markdown with YAML Front Matter parsed with Goldmark
+- LaTeX Rendering: KaTeX + Hugo Passthrough extension
 - Styling: SCSS compiled with Dart Sass
 - JavaScript: TypeScript (bundled with esbuild)
 - Image Zoom: medium-zoom

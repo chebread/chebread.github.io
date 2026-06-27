@@ -27,6 +27,8 @@ import (
 
 	chromahtml "github.com/alecthomas/chroma/v2/formatters/html"
 	highlighting "github.com/yuin/goldmark-highlighting/v2"
+
+	"github.com/gohugoio/hugo-goldmark-extensions/passthrough"
 )
 
 // TODO: post에 Thumnail 추가 -> header hero 처럼
@@ -73,6 +75,18 @@ func main() {
 				),
 			),
 			lib.MarkExtension,
+			passthrough.New(
+				passthrough.Config{
+					InlineDelimiters: []passthrough.Delimiters{
+						{Open: "$", Close: "$"},
+						{Open: "\\(", Close: "\\)"},
+					},
+					BlockDelimiters: []passthrough.Delimiters{
+						{Open: "$$", Close: "$$"},
+						{Open: "\\[", Close: "\\]"},
+					},
+				},
+			),
 		),
 		goldmark.WithParserOptions(
 			parser.WithAttribute(), // 수동 id 지정 기능
