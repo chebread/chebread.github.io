@@ -5,6 +5,9 @@ date: 2026-06-26
 category: [논문]
 ---
 
+## 논문 정보
+Leroy, X. (2009). Formal verification of a realistic compiler. Communications of the ACM, 52(7), 107–115. https://doi.org/10.1145/1538788.1538814.
+
 ## 초록 (Abstract)
 이 논문은 Clight(C 프로그래밍 언어의 큰 부분집합)에서 PowerPC 어셈블리 코드(assembly code)로의 컴파일러(compiler)인 CompCert의 개발 및 형식 검증(formal verification)(의미 보존(semantic preservation) 증명(proof))에 대해 보고합니다.
 컴파일러를 프로그래밍(programming)하고 그 정확성(correctness)을 증명(proving)하는 데 모두 Coq 증명 보조 도구(proof assistant)를 사용했습니다. 이러한 검증된 컴파일러(verified compiler)는 중요 소프트웨어(critical software)와 그 형식 검증의 맥락에서 유용합니다. 컴파일러의 검증은 소스 코드(source code)에서 증명된 안전성 속성(safety properties)이 실행 가능한 컴파일된 코드(executable compiled code)에서도 동일하게 유지됨을 보장합니다.
