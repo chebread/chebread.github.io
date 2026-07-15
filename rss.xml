@@ -5,7 +5,7 @@
     <link>https://chebread.github.io</link>
     <description>개발자 차한음 블로그</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 27 Jun 2026 14:45:08 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 14:56:58 +0000</lastBuildDate>
     <generator>Go Custom SSG</generator>
     <item>
       <title>Helix 사용법</title>
@@ -14,22 +14,6 @@
       <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
       <guid>https://chebread.github.io/post/helix-사용법</guid>
       <category>Helix</category>
-    </item>
-    <item>
-      <title>Formal Verification of a Realistic Compiler</title>
-      <link>https://chebread.github.io/post/formal-verification-of-a-realistic-compiler</link>
-      <description>Leroy, X. (2009). Formal verification of a realistic compiler. Communications of the ACM, 52(7), 107–115. https://doi.org/10.1145/1538788.1538814.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/formal-verification-of-a-realistic-compiler</guid>
-      <category>논문</category>
-    </item>
-    <item>
-      <title>인간의 힘</title>
-      <link>https://chebread.github.io/post/인간의-힘</link>
-      <description>장 지오노. (1995). 『나무를 심은 사람』 (김경온 옮김, 최수연 삽화). 두레.</description>
-      <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/인간의-힘</guid>
-      <category>독서</category>
     </item>
     <item>
       <title>Chaos To Cosmos</title>
@@ -56,6 +40,14 @@
       <category>TGPL</category>
     </item>
     <item>
+      <title>세계는 왜 다시 힘의 질서로 가는가</title>
+      <link>https://chebread.github.io/post/세계는-왜-다시-힘의-질서로-가는가</link>
+      <description>신진욱. (2026년 4월 21일). 세계는 왜 다시 힘의 질서로 가는가 [신진욱의 시선]. 한겨레, 25.</description>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/세계는-왜-다시-힘의-질서로-가는가</guid>
+      <category>신문</category>
+    </item>
+    <item>
       <title>카테고리 소개</title>
       <link>https://chebread.github.io/post/카테고리-소개-1375</link>
       <description>TGPL 카테고리는 『Donovan, A. A. A., &amp; Kernighan, B. W. (2015). The Go programming language. Addison-Wesle...</description>
@@ -80,6 +72,14 @@
       <category>논문</category>
     </item>
     <item>
+      <title>힙하게 LLM 사용하는 방법</title>
+      <link>https://chebread.github.io/post/힙하게-llm-사용하는-방법</link>
+      <description>이해하라 LLM를 사용함에 따라 기술 부채가 늘어난다고 한다. LLM이 나오기 전에도 프로그래머는 일종의 복붙이라는 것을 통해 코딩하곤 했다. 근데 왜 그때는 기술 부채가 지금보다...</description>
+      <pubDate>Thu, 02 Oct 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/힙하게-llm-사용하는-방법</guid>
+      <category>힙하게</category>
+    </item>
+    <item>
       <title>파이 과학</title>
       <link>https://chebread.github.io/post/파이-과학</link>
       <description>지난 몇 년 동안 파이썬은 과학자들에게 매우 큰 인기를 얻고 있다. 이번 장에서 다루는 소프트웨어를 보면 왜 인기가 많은지 알게 될 것이다. 과학자이거나 과학도라면 matlab, ...</description>
@@ -88,19 +88,19 @@
       <category>Introducing Python</category>
     </item>
     <item>
-      <title>파일, 디렉터리</title>
-      <link>https://chebread.github.io/post/파일-디렉터리</link>
-      <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/파일-디렉터리</guid>
-      <category>Introducing Python</category>
-    </item>
-    <item>
       <title>날짜, 시간</title>
       <link>https://chebread.github.io/post/날짜-시간</link>
       <description>날짜, 시간 파이썬 표준 라이브러리 개발자는 날짜와 시간에 많은 노력을 기울인다. 이번 2장에서는 프로그래머들이 부딪히는 몇 가지 문제에 대해 살펴보고, 이를 좀 더 단순하게 만드...</description>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.github.io/post/날짜-시간</guid>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>파일, 디렉터리</title>
+      <link>https://chebread.github.io/post/파일-디렉터리</link>
+      <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/파일-디렉터리</guid>
       <category>Introducing Python</category>
     </item>
     <item>
@@ -198,6 +198,22 @@
       <pubDate>Thu, 01 May 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.github.io/post/데이터</guid>
       <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>힙하게 해커톤 수상하는 방법</title>
+      <link>https://chebread.github.io/post/힙하게-해커톤-수상하는-방법</link>
+      <description>주어질 주제에 대해 지나치게 신경 쓰지 마라 나는 해커톤을 하기 몇 주 전부터 뭐가 주제로 정해질 지 많이 걱정했다. 그렇지만, 해커톤이 시작한 후 주제를 알려주는데 16가지나 주...</description>
+      <pubDate>Sat, 10 Dec 2022 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/힙하게-해커톤-수상하는-방법</guid>
+      <category>힙하게</category>
+    </item>
+    <item>
+      <title>힙하게 코딩하는 방법</title>
+      <link>https://chebread.github.io/post/힙하게-코딩하는-방법</link>
+      <description>라이브러리를 자제하여 사용한다 자신의 역량으로도 충분히 개발할 수 있는 기능인데 굳이 라이브러리를 가져다가 사용하는 경우가 있다. 바로 라이브러리를 가져다가 사용하면 시간적인 효율...</description>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/힙하게-코딩하는-방법</guid>
+      <category>힙하게</category>
     </item>
   </channel>
 </rss>
