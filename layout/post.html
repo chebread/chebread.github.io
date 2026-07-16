@@ -70,7 +70,8 @@
 <body>
     <div class="root">
         <div class="post">
-           <nav class="post-nav">
+            {{- if .Thumbnail}}
+            <nav class="post-nav post-nav--hero">
                 <a href="/" class="{{if eq .CurrentURL "/"}}active{{end}}">
                     <span>홈</span>
                 </a>
@@ -81,8 +82,27 @@
                     <span>포스트</span>
                 </a>
             </nav>
+            <header class="post-header post-header--hero">
+                <div class="post-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('{{- .Thumbnail -}}');">
+                    <h1 class="post-title">{{- .Title -}}</h1>
+                </div>
+            </header>
+            {{- else}}
+            <nav class="post-nav">
+                <a href="/" class="{{if eq .CurrentURL "/"}}active{{end}}">
+                    <span>홈</span>
+                </a>
+                <a href="/about{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/about"}}active{{end}}">
+                    <span>어바웃</span>
+                </a>
+                <a href="/posts{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/posts"}}active{{end}}">
+                    <span>포스트</span>
+                </a>
+            </nav>
+            {{- end}}
 
             <main class="post-content">
+                {{- if not .Thumbnail}}
                 <header class="post-header">
                     <h1 class="post-title">{{- .Title -}}</h1>
                     <p class="post-date"><time datetime="{{- .Date -}}">{{- .FormattedDate -}}</time></p>
@@ -92,6 +112,16 @@
                         {{- end -}}
                     </p>
                 </header>
+                {{- else}}
+                <div class="post-header post-meta">
+                    <p class="post-date"><time datetime="{{- .Date -}}">{{- .FormattedDate -}}</time></p>
+                    <p class="post-category">
+                        {{- range .Categories -}}
+                            <a href="{{ .URL }}">[{{ .Name }}]</a>
+                        {{- end -}}
+                    </p>
+                </div>
+                {{- end}}
                 <div class="post-body">
                     <article class="markdown-body">
                         {{- .Content -}}

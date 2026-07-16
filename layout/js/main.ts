@@ -1,7 +1,7 @@
 import mediumZoom from 'medium-zoom';
 
 function initializeStickyNav() {
-  const navs = document.querySelectorAll('.home-nav, .about-nav');
+  const navs = document.querySelectorAll('.home-nav, .about-nav, .post-nav--hero');
 
   if (navs.length === 0) return;
 

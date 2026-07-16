@@ -114,6 +114,7 @@ func main() {
 		Category  CustomSlice `yaml:"category"`
 		Published bool        `yaml:"published"`
 		Fixed     bool        `yaml:"fixed"`
+		Thumbnail string      `yaml:"thumbnail"`
 	}
 
 	for _, path := range contentFilePaths {
@@ -210,6 +211,7 @@ func main() {
 				"description":    description,
 				"category":       []string(fm.Category),
 				"fixed":          fm.Fixed,
+				"thumbnail":      fm.Thumbnail,
 				"sourceFilePath": path,
 				"slug":           slug,
 			}
@@ -288,6 +290,7 @@ func main() {
 		Content     template.HTML
 		CurrentURL  string // for nav tag
 		Categories  []CategoryInfo
+		Thumbnail   string
 	}
 
 	for _, data := range postsData {
@@ -359,6 +362,7 @@ func main() {
 		}
 		defer outputFile.Close()
 
+		thumbnail, _ := data["thumbnail"].(string)
 		postTmplData := PostTmplData{
 			IsProduction:  appEnv == "production",
 			Title:         title,
@@ -370,6 +374,7 @@ func main() {
 			Content:     template.HTML(contentBuf.String()),
 			CurrentURL:  "/posts",
 			Categories:  categoriesData,
+			Thumbnail:   thumbnail,
 		}
 
 		if err := postTemplate.Execute(outputFile, postTmplData); err != nil {
