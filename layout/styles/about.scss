@@ -5,23 +5,12 @@
     margin: 0 auto;
     z-index: 10;
 
-    transition: background-color 0.3s ease;
+    /* Nav 섀도우는 Safari 노치 버그로 인해 about-hero 쪽으로 이동했습니다. */
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
-        z-index: -1;
-        transition: opacity 0.3s ease;
-    }
+    transition: background-color 0.3s ease;
 
     &.scrolled {
         background-color: white;
-
-        &::before {
-            opacity: 0;
-        }
 
         a {
             span {
@@ -76,6 +65,7 @@
 
 .about-hero {
     background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 4rem),
         linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
         url('/assets/profile.webp'),
         url('/assets/profile.png');
