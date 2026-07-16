@@ -42,7 +42,7 @@
     }
 
     // hero 오버레이 variant: 기본 상태에서는 투명, 스크롤 시 white
-    &--hero {
+    &-hero {
         background-color: transparent;
         transition: background-color 0.3s ease;
 
