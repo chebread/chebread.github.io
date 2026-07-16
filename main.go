@@ -222,6 +222,41 @@ func main() {
 		}
 	}
 
+	// 고정 카테고리 파일 처리 (content/pinned_categories.yml)
+	fmt.Println()
+	fmt.Println("-- 고정 카테고리 처리 --")
+
+	var pinnedCategories []string
+	const pinnedCategoriesFilePath = "content/pinned_categories.yml"
+
+	pinnedFileBytes, pinnedFileErr := os.ReadFile(pinnedCategoriesFilePath)
+	if pinnedFileErr != nil {
+		if os.IsNotExist(pinnedFileErr) {
+			fmt.Printf("info: %s 파일이 없습니다. 고정 카테고리 기능을 사용하지 않습니다.\n", pinnedCategoriesFilePath)
+		} else {
+			fmt.Printf("warning: %s 파일 읽기 실패: %v\n", pinnedCategoriesFilePath, pinnedFileErr)
+		}
+	} else {
+		if err := yaml.Unmarshal(pinnedFileBytes, &pinnedCategories); err != nil {
+			fmt.Printf("warning: %s YAML 파싱 실패: %v\n", pinnedCategoriesFilePath, err)
+			pinnedCategories = nil
+		} else {
+			// 존재하지 않는 카테고리 경고 구축
+			var nonExistentCategories []string
+			for _, pc := range pinnedCategories {
+				if _, exists := postsDataByCategory[pc]; !exists {
+					nonExistentCategories = append(nonExistentCategories, pc)
+				}
+			}
+			if len(nonExistentCategories) > 0 {
+				fmt.Printf("warning: 고정된 카테고리 파일에 존재하지 않는 카테고리가 있습니다: %s\n", strings.Join(nonExistentCategories, ", "))
+			}
+			if len(pinnedCategories) > 0 {
+				fmt.Printf("info: 고정 카테고리 %d개 로드 완료: %s\n", len(pinnedCategories), strings.Join(pinnedCategories, ", "))
+			}
+		}
+	}
+
 	// Post
 	fmt.Println()
 	fmt.Println("-- Post 처리 --")
@@ -356,8 +391,27 @@ func main() {
 		categories = append(categories, category)
 	}
 
-	// 목록 Sort
+	// 목록 Sort: 고정 카테고리를 먼저, 그 다음 일반 카테고리를 이름순으로 정렬
+	// pinnedCategories 순서를 유지하여 인덱스 맵 생성
+	pinnedIndexMap := make(map[string]int)
+	for idx, pc := range pinnedCategories {
+		pinnedIndexMap[pc] = idx
+	}
 	sort.Slice(categories, func(i, j int) bool {
+		iPinnedIdx, iIsPinned := pinnedIndexMap[categories[i]]
+		jPinnedIdx, jIsPinned := pinnedIndexMap[categories[j]]
+
+		if iIsPinned && jIsPinned {
+			// 둘 다 고정: pinnedCategories 파일에 적힌 순서대로
+			return iPinnedIdx < jPinnedIdx
+		}
+		if iIsPinned {
+			return true // i가 고정, j가 일반 -> i 먼저
+		}
+		if jIsPinned {
+			return false // j가 고정, i가 일반 -> j 먼저
+		}
+		// 둘 다 일반: 이름순
 		return lib.CompareStrings(categories[i], categories[j])
 	})
 
