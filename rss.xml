@@ -5,8 +5,17 @@
     <link>https://chebread.github.io</link>
     <description>개발자 차한음 블로그</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 18 Jul 2026 03:22:14 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 07:40:15 +0000</lastBuildDate>
     <generator>Go Custom SSG</generator>
+    <item>
+      <title>이재명 정부와 대통령 단임제</title>
+      <link>https://chebread.github.io/post/이재명-정부와-대통령-단임제</link>
+      <description>최근 들어 집권 2년 차인 이재명 정부가 여러 어려움을 겪고 있다. 이재명 정부가 맞닥뜨린 어려움은 단선적이지 않으며 복잡한 연립 방정식을 푸는 것과 같다. 예를 들어, 세종 집무...</description>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/이재명-정부와-대통령-단임제</guid>
+      <category>전체</category>
+      <category>정치</category>
+    </item>
     <item>
       <title>새는 &#39;좌&#39; &#39;우&#39;의 날개로 난다</title>
       <link>https://chebread.github.io/post/새는-좌-우의-날개로-난다</link>
@@ -44,15 +53,6 @@
       <category>회고</category>
     </item>
     <item>
-      <title>들어가며</title>
-      <link>https://chebread.github.io/post/들어가며</link>
-      <description>옮긴이의 글 Go 언어는 단순성을 가장 큰 특징으로 하며, 이는 표현성을 중시하는 루비나 스칼라 등의 언어와는 정면으로 배치된다. 이 책은 그러한 단순성에 대한 설계 사상을 보여주...</description>
-      <pubDate>Sun, 26 Apr 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/들어가며</guid>
-      <category>전체</category>
-      <category>TGPL</category>
-    </item>
-    <item>
       <title>세계는 왜 다시 힘의 질서로 가는가</title>
       <link>https://chebread.github.io/post/세계는-왜-다시-힘의-질서로-가는가</link>
       <description>신진욱. (2026년 4월 21일). 세계는 왜 다시 힘의 질서로 가는가 [신진욱의 시선]. 한겨레, 25.</description>
@@ -60,6 +60,15 @@
       <guid>https://chebread.github.io/post/세계는-왜-다시-힘의-질서로-가는가</guid>
       <category>전체</category>
       <category>신문</category>
+    </item>
+    <item>
+      <title>들어가며</title>
+      <link>https://chebread.github.io/post/들어가며</link>
+      <description>옮긴이의 글 Go 언어는 단순성을 가장 큰 특징으로 하며, 이는 표현성을 중시하는 루비나 스칼라 등의 언어와는 정면으로 배치된다. 이 책은 그러한 단순성에 대한 설계 사상을 보여주...</description>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/들어가며</guid>
+      <category>전체</category>
+      <category>TGPL</category>
     </item>
     <item>
       <title>카테고리 소개</title>
@@ -98,6 +107,24 @@
       <category>힙하게</category>
     </item>
     <item>
+      <title>데이터 길들이기</title>
+      <link>https://chebread.github.io/post/데이터-길들이기</link>
+      <description>데이터를 충분히 고문하면, 자연은 언제나 바른 말을 할 것이다. - 로널드 코스 지금까지 파이썬 언어 자체(데이터 타입, 코드 구조, 구문 등)만 다뤘다. 2부부터는 실제 문제 적...</description>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/데이터-길들이기</guid>
+      <category>전체</category>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>날짜, 시간</title>
+      <link>https://chebread.github.io/post/날짜-시간</link>
+      <description>날짜, 시간 파이썬 표준 라이브러리 개발자는 날짜와 시간에 많은 노력을 기울인다. 이번 2장에서는 프로그래머들이 부딪히는 몇 가지 문제에 대해 살펴보고, 이를 좀 더 단순하게 만드...</description>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/날짜-시간</guid>
+      <category>전체</category>
+      <category>Introducing Python</category>
+    </item>
+    <item>
       <title>파이 과학</title>
       <link>https://chebread.github.io/post/파이-과학</link>
       <description>지난 몇 년 동안 파이썬은 과학자들에게 매우 큰 인기를 얻고 있다. 이번 장에서 다루는 소프트웨어를 보면 왜 인기가 많은지 알게 될 것이다. 과학자이거나 과학도라면 matlab, ...</description>
@@ -112,24 +139,6 @@
       <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.github.io/post/파일-디렉터리</guid>
-      <category>전체</category>
-      <category>Introducing Python</category>
-    </item>
-    <item>
-      <title>날짜, 시간</title>
-      <link>https://chebread.github.io/post/날짜-시간</link>
-      <description>날짜, 시간 파이썬 표준 라이브러리 개발자는 날짜와 시간에 많은 노력을 기울인다. 이번 2장에서는 프로그래머들이 부딪히는 몇 가지 문제에 대해 살펴보고, 이를 좀 더 단순하게 만드...</description>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/날짜-시간</guid>
-      <category>전체</category>
-      <category>Introducing Python</category>
-    </item>
-    <item>
-      <title>데이터 길들이기</title>
-      <link>https://chebread.github.io/post/데이터-길들이기</link>
-      <description>데이터를 충분히 고문하면, 자연은 언제나 바른 말을 할 것이다. - 로널드 코스 지금까지 파이썬 언어 자체(데이터 타입, 코드 구조, 구문 등)만 다뤘다. 2부부터는 실제 문제 적...</description>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/데이터-길들이기</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
@@ -179,15 +188,6 @@
       <category>Introducing Python</category>
     </item>
     <item>
-      <title>문자열</title>
-      <link>https://chebread.github.io/post/문자열</link>
-      <description>문자열 문자열은 일련의 문자(character)다. 파이썬에서는 문자 하나도(&#34;a&#34;) 문자열이다. 문자열은 불변이다. 문자열 자체는 변경할 수 없지만, 문자열을 다른 곳으로 복사해...</description>
-      <pubDate>Tue, 06 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/문자열</guid>
-      <category>전체</category>
-      <category>Introducing Python</category>
-    </item>
-    <item>
       <title>반복문</title>
       <link>https://chebread.github.io/post/반복문</link>
       <description>반복문 코드를 한 번 이상 실행하려고 할 때 반복문(loop)가 필요하다. 파이썬은 두 개의 반복문 while과 for이 있다. while문 while 조건: ... 형태로 쓰며,...</description>
@@ -197,11 +197,11 @@
       <category>Introducing Python</category>
     </item>
     <item>
-      <title>조건문</title>
-      <link>https://chebread.github.io/post/조건문</link>
-      <description>코드 구조화 이제는 파이썬 코드를 어떻게 구조화하는지에 대해서 다룬다. 귀도 반 로섬은 파이썬을 설계할 때 코드 구분을 위해서 괄호를 입력하지 않더라도 들여쓰기로 프로그램의 구조를...</description>
-      <pubDate>Mon, 05 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/조건문</guid>
+      <title>문자열</title>
+      <link>https://chebread.github.io/post/문자열</link>
+      <description>문자열 문자열은 일련의 문자(character)다. 파이썬에서는 문자 하나도(&#34;a&#34;) 문자열이다. 문자열은 불변이다. 문자열 자체는 변경할 수 없지만, 문자열을 다른 곳으로 복사해...</description>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/문자열</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
@@ -211,6 +211,15 @@
       <description>Introducing Python 카테고리는 『Lubanovic, B. (2019). Introducing Python (2nd ed.). O&#39;Reilly Media.』를 정리한 ...</description>
       <pubDate>Mon, 05 May 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.github.io/post/카테고리-소개</guid>
+      <category>전체</category>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>조건문</title>
+      <link>https://chebread.github.io/post/조건문</link>
+      <description>코드 구조화 이제는 파이썬 코드를 어떻게 구조화하는지에 대해서 다룬다. 귀도 반 로섬은 파이썬을 설계할 때 코드 구분을 위해서 괄호를 입력하지 않더라도 들여쓰기로 프로그램의 구조를...</description>
+      <pubDate>Mon, 05 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/조건문</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
