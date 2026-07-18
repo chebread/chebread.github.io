@@ -434,13 +434,20 @@ func main() {
 		postList = append(postList, fmt.Sprintf("<h2 class=\"category-group-title\"><a href=\"%s\">[%s]</a></h2>", categoryLink, category))
 		postList = append(postList, "<ul class=\"category-group-list\">")
 
-		// fixed 정렬
+		// fixed 정렬 ("전체" 카테고리에서는 fixed 무시)
 		sort.Slice(posts, func(i, j int) bool {
 			postI := posts[i]
 			postJ := posts[j]
 
 			fixedI, _ := postI["fixed"].(bool)
 			fixedJ, _ := postJ["fixed"].(bool)
+
+			// "전체" 카테고리에서는 fixed를 무시하고 날짜순으로만 정렬
+			if category == "전체" {
+				dateI, _ := postI["date"].(string)
+				dateJ, _ := postJ["date"].(string)
+				return dateI > dateJ
+			}
 
 			if fixedI != fixedJ {
 				return fixedI
@@ -468,6 +475,10 @@ func main() {
 
 		for _, data := range postsToDisplay {
 			isFixed, _ := data["fixed"].(bool)
+			// "전체" 카테고리에서는 fixed 아이콘(☞)을 표시하지 않음
+			if category == "전체" {
+				isFixed = false
+			}
 			title, _ := data["title"].(string)
 			date, _ := data["date"].(string) // yyyy-mm-dd
 			description, _ := data["description"].(string)
@@ -575,6 +586,14 @@ func main() {
 			postJ := posts[j]
 			fixedI, _ := postI["fixed"].(bool)
 			fixedJ, _ := postJ["fixed"].(bool)
+
+			// "전체" 카테고리에서는 fixed를 무시하고 날짜순으로만 정렬
+			if category == "전체" {
+				dateI, _ := postI["date"].(string)
+				dateJ, _ := postJ["date"].(string)
+				return dateI > dateJ
+			}
+
 			if fixedI != fixedJ {
 				return fixedI
 			}
@@ -597,6 +616,10 @@ func main() {
 
 		for _, data := range posts {
 			isFixed, _ := data["fixed"].(bool)
+			// "전체" 카테고리 페이지에서는 fixed 아이콘(☞)을 표시하지 않음
+			if category == "전체" {
+				isFixed = false
+			}
 			title, _ := data["title"].(string)
 			date, _ := data["date"].(string)
 			description, _ := data["description"].(string)
