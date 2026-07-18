@@ -1,6 +1,6 @@
 ---
 date: 2025-10-02
-category: [힙하게]
+category: [전체, 힙하게]
 published: true
 ---
 

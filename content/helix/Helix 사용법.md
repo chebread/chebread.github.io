@@ -1,7 +1,7 @@
 ---
 date: 2026-06-27
 published: true
-category: [Helix]
+category: [전체, Helix]
 ---
 
 ## 들어가며

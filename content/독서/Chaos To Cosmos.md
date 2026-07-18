@@ -1,6 +1,6 @@
 ---
 date: 2026-05-07
-category: [에세이]
+category: [전체, 독서]
 published: true
 desc: 폴 그레이엄 (2014). 『해커와 화가』 (임백준 번역, 정희 감수). 한빛미디어.
 thumbnail: /assets/cosmos.webp
