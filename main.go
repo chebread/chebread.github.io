@@ -674,6 +674,7 @@ func main() {
 			CategoryName string
 			PostList     template.HTML
 			CurrentURL   string
+			CategoryPermalink string
 		}
 
 		templateData := CategoryPageTemplateData{
@@ -681,6 +682,7 @@ func main() {
 			CategoryName: category,
 			PostList:     template.HTML(postListHtml.String()),
 			CurrentURL:   "/posts",
+			CategoryPermalink: filepath.ToSlash(filepath.Join("posts", lib.SlugifyPath(category))),
 		}
 
 		var outputFilePath = filepath.Join(categoryPostDir, fmt.Sprintf("%s.html", lib.SlugifyPath(category)))
