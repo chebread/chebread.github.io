@@ -464,7 +464,7 @@ func main() {
 			return dateI > dateJ
 		})
 
-		const maxPostsToShow = 3
+		const maxPostsToShow = 2
 		postsToDisplay := posts
 		needsMoreLink := false
 
@@ -670,18 +670,18 @@ func main() {
 		postListHtml.WriteString("</section>")
 
 		type CategoryPageTemplateData struct {
-			IsProduction bool
-			CategoryName string
-			PostList     template.HTML
-			CurrentURL   string
+			IsProduction      bool
+			CategoryName      string
+			PostList          template.HTML
+			CurrentURL        string
 			CategoryPermalink string
 		}
 
 		templateData := CategoryPageTemplateData{
-			IsProduction: appEnv == "production",
-			CategoryName: category,
-			PostList:     template.HTML(postListHtml.String()),
-			CurrentURL:   "/posts",
+			IsProduction:      appEnv == "production",
+			CategoryName:      category,
+			PostList:          template.HTML(postListHtml.String()),
+			CurrentURL:        "/posts",
 			CategoryPermalink: filepath.ToSlash(filepath.Join("posts", lib.SlugifyPath(category))),
 		}
 
