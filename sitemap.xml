@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.1/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://chebread.github.io/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://chebread.github.io/about.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
@@ -111,6 +111,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://chebread.github.io/post/인간의-힘</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://chebread.github.io/post/핸드폰을-보고-만족하는-k씨</loc>
     <lastmod>2025-12-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -138,6 +143,11 @@
   <url>
     <loc>https://chebread.github.io/post/내가-ai에게-거부감을-느끼는-이유</loc>
     <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://chebread.github.io/post/이재명-정부와-대통령-단임제</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
