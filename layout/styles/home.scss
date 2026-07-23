@@ -87,13 +87,21 @@
     background-size: cover;
     background-position: center;
 
-    height: 21.5rem;
+    padding-top: 5rem;
+    min-height: 21.5rem;
     @media (max-width: 35rem) {
-        height: 19.5rem;
+        min-height: 19.5rem;
     }
+    
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    
+    &::before {
+        content: '';
+        display: block;
+        flex: 1;
+        min-height: 8rem;
+    }
     h1 {
         font-size: 2rem;
         line-height: 1.5;
