@@ -5,35 +5,8 @@
     <link>https://chebread.github.io</link>
     <description>개발자 차한음 블로그</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 26 Jul 2026 08:47:45 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 11:34:09 +0000</lastBuildDate>
     <generator>Go Custom SSG</generator>
-    <item>
-      <title>“순위 밀리면 운임 깎여” 배달라이더 혹사 내모는 등급제</title>
-      <link>https://chebread.github.io/post/순위-밀리면-운임-깎여-배달라이더-혹사-내모는-등급제</link>
-      <description>박고은. (2026년 7월 17일). “순위 밀리면 운임 깎여” 배달라이더 혹사 내모는 등급제. 한겨레.</description>
-      <pubDate>Fri, 17 Jul 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/순위-밀리면-운임-깎여-배달라이더-혹사-내모는-등급제</guid>
-      <category>전체</category>
-      <category>신문</category>
-    </item>
-    <item>
-      <title>초연결 사회의 외로움, 국가의 역할을 묻다</title>
-      <link>https://chebread.github.io/post/초연결-사회의-외로움-국가의-역할을-묻다</link>
-      <description>최문정. (2026년 7월 16일). 초연결 사회의 외로움, 국가의 역할을 묻다 [시론]. 중앙일보.</description>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/초연결-사회의-외로움-국가의-역할을-묻다</guid>
-      <category>전체</category>
-      <category>신문</category>
-    </item>
-    <item>
-      <title>새는 &#39;좌&#39; &#39;우&#39;의 날개로 난다</title>
-      <link>https://chebread.github.io/post/새는-좌-우의-날개로-난다</link>
-      <description>리영희. (1988년 9월 15일). 새는 &#39;좌&#39; &#39;우&#39;의 날개로 난다 [한겨레논단 이영희 칼럼]. 한겨레.</description>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/새는-좌-우의-날개로-난다</guid>
-      <category>전체</category>
-      <category>신문</category>
-    </item>
     <item>
       <title>나의 블로그 유목민 역사</title>
       <link>https://chebread.github.io/post/나의-블로그-유목민-역사</link>
@@ -42,15 +15,6 @@
       <guid>https://chebread.github.io/post/나의-블로그-유목민-역사</guid>
       <category>전체</category>
       <category>회고</category>
-    </item>
-    <item>
-      <title>세계는 왜 다시 힘의 질서로 가는가</title>
-      <link>https://chebread.github.io/post/세계는-왜-다시-힘의-질서로-가는가</link>
-      <description>신진욱. (2026년 4월 21일). 세계는 왜 다시 힘의 질서로 가는가 [신진욱의 시선]. 한겨레.</description>
-      <pubDate>Sun, 26 Apr 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/세계는-왜-다시-힘의-질서로-가는가</guid>
-      <category>전체</category>
-      <category>신문</category>
     </item>
     <item>
       <title>카테고리 소개</title>
@@ -77,7 +41,7 @@
       <pubDate>Fri, 26 Dec 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.github.io/post/reflections-on-trusting-trust</guid>
       <category>전체</category>
-      <category>논문</category>
+      <category>논문 리뷰</category>
     </item>
     <item>
       <title>파이 과학</title>
@@ -134,20 +98,20 @@
       <category>Introducing Python</category>
     </item>
     <item>
-      <title>함수</title>
-      <link>https://chebread.github.io/post/함수</link>
-      <description>함수 코드 재사용을 위해 함수를 사용한다. 함수는 이름이 붙여진 코드 조각이다. 코드 스니펫(Code Snipet) 또는 코드 조각은 재사용 가능한 소스 코드, 기계어, 텍스트의 ...</description>
-      <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/함수</guid>
-      <category>전체</category>
-      <category>Introducing Python</category>
-    </item>
-    <item>
       <title>딕셔너리, 셋</title>
       <link>https://chebread.github.io/post/딕셔너리-셋</link>
       <description>딕셔너리 딕셔너리는 리스트와 비슷하다. 리스트와 다른 점은 항목의 순서를 따지지 않으며, 오프셋으로 항목을 선택할 수 없다. 대신 값에 상응하는 고유한 키를 지정한다. 키는 모든 ...</description>
       <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.github.io/post/딕셔너리-셋</guid>
+      <category>전체</category>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>함수</title>
+      <link>https://chebread.github.io/post/함수</link>
+      <description>함수 코드 재사용을 위해 함수를 사용한다. 함수는 이름이 붙여진 코드 조각이다. 코드 스니펫(Code Snipet) 또는 코드 조각은 재사용 가능한 소스 코드, 기계어, 텍스트의 ...</description>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/함수</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
