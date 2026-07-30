@@ -5,8 +5,35 @@
     <link>https://chebread.github.io</link>
     <description>개발자 차한음 블로그</description>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 27 Jul 2026 11:34:09 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 14:39:59 +0000</lastBuildDate>
     <generator>Go Custom SSG</generator>
+    <item>
+      <title>우리가 세상을 바꿀 수 있는 이유</title>
+      <link>https://chebread.github.io/post/우리가-세상을-바꿀-수-있는-이유</link>
+      <description>요약 장 지오노의 『나무를 심은 사람』의 배경이 되는 고산지대에는 원래 나무가 많았으나, 마을들의 나무를 숯으로 만들어 파는 사람들로 하여금 나무가 다 죽어버렸다. 나무가 없어지면...</description>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/우리가-세상을-바꿀-수-있는-이유</guid>
+      <category>전체</category>
+      <category>에세이</category>
+    </item>
+    <item>
+      <title>우리는 AI 정신병에 가장 취약하다</title>
+      <link>https://chebread.github.io/post/우리는-ai-정신병에-가장-취약하다</link>
+      <description>들어가며 국민일보의 AI 만난 뒤 돌변한 아내… “끔찍한 8개월의 기억” 기사를 읽고 AI 정신병에 대해 심각성을 뒤늦게 깨달아, 이것에 대한 심각성을 공유하고자 한다. 작금의 시...</description>
+      <pubDate>Sun, 10 May 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/우리는-ai-정신병에-가장-취약하다</guid>
+      <category>전체</category>
+      <category>에세이</category>
+    </item>
+    <item>
+      <title>Chaos To Cosmos</title>
+      <link>https://chebread.github.io/post/chaos-to-cosmos</link>
+      <description>또 전체적인 프로그램을 미리 신중하게 적어서 생각하는 방향이 옳은지 여부를 확인하기 전에 조각난 코드부터 대책 없이 늘어놓은 다음 그것의 모양을 조금씩 잡아 나가는 방법으로 프로그...</description>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/chaos-to-cosmos</guid>
+      <category>전체</category>
+      <category>에세이</category>
+    </item>
     <item>
       <title>나의 블로그 유목민 역사</title>
       <link>https://chebread.github.io/post/나의-블로그-유목민-역사</link>
@@ -14,16 +41,7 @@
       <pubDate>Tue, 05 May 2026 00:00:00 +0900</pubDate>
       <guid>https://chebread.github.io/post/나의-블로그-유목민-역사</guid>
       <category>전체</category>
-      <category>회고</category>
-    </item>
-    <item>
-      <title>카테고리 소개</title>
-      <link>https://chebread.github.io/post/카테고리-소개-1375</link>
-      <description>TGPL 카테고리는 『Donovan, A. A. A., &amp; Kernighan, B. W. (2015). The Go programming language. Addison-Wesle...</description>
-      <pubDate>Sun, 26 Apr 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/카테고리-소개-1375</guid>
-      <category>전체</category>
-      <category>TGPL</category>
+      <category>에세이</category>
     </item>
     <item>
       <title>들어가며</title>
@@ -35,6 +53,23 @@
       <category>TGPL</category>
     </item>
     <item>
+      <title>카테고리 소개</title>
+      <link>https://chebread.github.io/post/카테고리-소개-1375</link>
+      <description>TGPL 카테고리는 『Donovan, A. A. A., &amp; Kernighan, B. W. (2015). The Go programming language. Addison-Wesle...</description>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/카테고리-소개-1375</guid>
+      <category>전체</category>
+      <category>TGPL</category>
+    </item>
+    <item>
+      <title>내가 AI에게 거부감을 느끼는 이유</title>
+      <link>https://chebread.github.io/post/내가-ai에게-거부감을-느끼는-이유</link>
+      <description>I know there&#39;s a lot of fear out there about the end of this profession that we love, the loss of th...</description>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/내가-ai에게-거부감을-느끼는-이유</guid>
+      <category>에세이</category>
+    </item>
+    <item>
       <title>Reflections on Trusting Trust</title>
       <link>https://chebread.github.io/post/reflections-on-trusting-trust</link>
       <description>Thompson, K. (1984). Reflections on trusting trust. Communications of the ACM, 27(8), 761–763. https://doi.org/10.1145/358198.358210</description>
@@ -44,11 +79,29 @@
       <category>논문 리뷰</category>
     </item>
     <item>
+      <title>단일 책임 원칙이 무너지고 있다</title>
+      <link>https://chebread.github.io/post/단일-책임-원칙이-무너지고-있다</link>
+      <description>단일 책임 원칙: 하나의 것은 하나의 일만 해야 한다. 데이비드 토머스, 앤드류 헌트의 『실용주의 프로그래머』를 읽으며, 단일 책임 원칙을 알게 되었다. 근래 단일 책임 원칙이 부...</description>
+      <pubDate>Sat, 13 Sep 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/단일-책임-원칙이-무너지고-있다</guid>
+      <category>전체</category>
+      <category>에세이</category>
+    </item>
+    <item>
       <title>파이 과학</title>
       <link>https://chebread.github.io/post/파이-과학</link>
       <description>지난 몇 년 동안 파이썬은 과학자들에게 매우 큰 인기를 얻고 있다. 이번 장에서 다루는 소프트웨어를 보면 왜 인기가 많은지 알게 될 것이다. 과학자이거나 과학도라면 matlab, ...</description>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.github.io/post/파이-과학</guid>
+      <category>전체</category>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>파일, 디렉터리</title>
+      <link>https://chebread.github.io/post/파일-디렉터리</link>
+      <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/파일-디렉터리</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
@@ -71,15 +124,6 @@
       <category>Introducing Python</category>
     </item>
     <item>
-      <title>파일, 디렉터리</title>
-      <link>https://chebread.github.io/post/파일-디렉터리</link>
-      <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/파일-디렉터리</guid>
-      <category>전체</category>
-      <category>Introducing Python</category>
-    </item>
-    <item>
       <title>모듈, 패키지</title>
       <link>https://chebread.github.io/post/모듈-패키지</link>
       <description>모듈과 import 문 모듈이란 파이썬 코드 파일이다. 개발자는 특별한 작업 없이 코드를 모듈로 사용할 수 있다. 모듈 임포트하기 import 문을 사용하여 다른 모듈의 코드를 참...</description>
@@ -98,20 +142,20 @@
       <category>Introducing Python</category>
     </item>
     <item>
-      <title>딕셔너리, 셋</title>
-      <link>https://chebread.github.io/post/딕셔너리-셋</link>
-      <description>딕셔너리 딕셔너리는 리스트와 비슷하다. 리스트와 다른 점은 항목의 순서를 따지지 않으며, 오프셋으로 항목을 선택할 수 없다. 대신 값에 상응하는 고유한 키를 지정한다. 키는 모든 ...</description>
-      <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/딕셔너리-셋</guid>
-      <category>전체</category>
-      <category>Introducing Python</category>
-    </item>
-    <item>
       <title>함수</title>
       <link>https://chebread.github.io/post/함수</link>
       <description>함수 코드 재사용을 위해 함수를 사용한다. 함수는 이름이 붙여진 코드 조각이다. 코드 스니펫(Code Snipet) 또는 코드 조각은 재사용 가능한 소스 코드, 기계어, 텍스트의 ...</description>
       <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.github.io/post/함수</guid>
+      <category>전체</category>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>딕셔너리, 셋</title>
+      <link>https://chebread.github.io/post/딕셔너리-셋</link>
+      <description>딕셔너리 딕셔너리는 리스트와 비슷하다. 리스트와 다른 점은 항목의 순서를 따지지 않으며, 오프셋으로 항목을 선택할 수 없다. 대신 값에 상응하는 고유한 키를 지정한다. 키는 모든 ...</description>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/딕셔너리-셋</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
@@ -143,20 +187,20 @@
       <category>Introducing Python</category>
     </item>
     <item>
-      <title>카테고리 소개</title>
-      <link>https://chebread.github.io/post/카테고리-소개</link>
-      <description>Introducing Python 카테고리는 『Lubanovic, B. (2019). Introducing Python (2nd ed.). O&#39;Reilly Media.』를 정리한 ...</description>
-      <pubDate>Mon, 05 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/카테고리-소개</guid>
-      <category>전체</category>
-      <category>Introducing Python</category>
-    </item>
-    <item>
       <title>조건문</title>
       <link>https://chebread.github.io/post/조건문</link>
       <description>코드 구조화 이제는 파이썬 코드를 어떻게 구조화하는지에 대해서 다룬다. 귀도 반 로섬은 파이썬을 설계할 때 코드 구분을 위해서 괄호를 입력하지 않더라도 들여쓰기로 프로그램의 구조를...</description>
       <pubDate>Mon, 05 May 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.github.io/post/조건문</guid>
+      <category>전체</category>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>카테고리 소개</title>
+      <link>https://chebread.github.io/post/카테고리-소개</link>
+      <description>Introducing Python 카테고리는 『Lubanovic, B. (2019). Introducing Python (2nd ed.). O&#39;Reilly Media.』를 정리한 ...</description>
+      <pubDate>Mon, 05 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/카테고리-소개</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
