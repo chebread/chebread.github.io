@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.1/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://chebread.github.io/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://chebread.github.io/about.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
@@ -128,6 +128,11 @@
   <url>
     <loc>https://chebread.github.io/post/우리는-ai-정신병에-가장-취약하다</loc>
     <lastmod>2026-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://chebread.github.io/post/쥐의-눈물</loc>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
