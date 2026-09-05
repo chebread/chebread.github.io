@@ -1,5 +1,5 @@
 ---
-date: 2025-12-26
+date: 2026-08-22T14:44:36+09:00
 category: [전체, 논문 리뷰]
 published: true
 desc: Thompson, K. (1984). Reflections on trusting trust. Communications of the ACM, 27(8), 761–763. https://doi.org/10.1145/358198.358210
