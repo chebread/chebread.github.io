@@ -5,8 +5,17 @@
     <link>https://chebread.github.io</link>
     <description>개발자 차한음 블로그</description>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 17 Aug 2026 07:52:52 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 06:26:08 +0000</lastBuildDate>
     <generator>Go Custom SSG</generator>
+    <item>
+      <title>자본력에 따른 우리의 편향적 태도</title>
+      <link>https://chebread.github.io/post/자본력에-따른-우리의-편향적-태도</link>
+      <description>고등학교 2학년 1학기 무렵 봉사팀장 김 군과 함께 &#39;봉사모임&#39;을 조직하고 학급 외의 봉사를 계획했습니다. 김 군의 봉사 계기는 저로서는 알 수 없습니다만, 제가 봉사를 하고자 한...</description>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/자본력에-따른-우리의-편향적-태도</guid>
+      <category>전체</category>
+      <category>에세이</category>
+    </item>
     <item>
       <title>내가 프로그래머가  되기로 한 이유</title>
       <link>https://chebread.github.io/post/내가-프로그래머가-되기로-한-이유</link>
@@ -142,6 +151,15 @@
       <category>에세이</category>
     </item>
     <item>
+      <title>파일, 디렉터리</title>
+      <link>https://chebread.github.io/post/파일-디렉터리</link>
+      <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.github.io/post/파일-디렉터리</guid>
+      <category>전체</category>
+      <category>Introducing Python</category>
+    </item>
+    <item>
       <title>파이 과학</title>
       <link>https://chebread.github.io/post/파이-과학</link>
       <description>지난 몇 년 동안 파이썬은 과학자들에게 매우 큰 인기를 얻고 있다. 이번 장에서 다루는 소프트웨어를 보면 왜 인기가 많은지 알게 될 것이다. 과학자이거나 과학도라면 matlab, ...</description>
@@ -165,15 +183,6 @@
       <description>데이터를 충분히 고문하면, 자연은 언제나 바른 말을 할 것이다. - 로널드 코스 지금까지 파이썬 언어 자체(데이터 타입, 코드 구조, 구문 등)만 다뤘다. 2부부터는 실제 문제 적...</description>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.github.io/post/데이터-길들이기</guid>
-      <category>전체</category>
-      <category>Introducing Python</category>
-    </item>
-    <item>
-      <title>파일, 디렉터리</title>
-      <link>https://chebread.github.io/post/파일-디렉터리</link>
-      <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/파일-디렉터리</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
