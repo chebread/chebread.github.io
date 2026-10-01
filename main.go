@@ -842,7 +842,7 @@ func main() {
 	fmt.Println()
 	fmt.Println("-- Sitemap 생성 --")
 
-	const baseURL = "https://chebread.github.io"
+	const baseURL = "https://chebread.org"
 
 	var urlset = &URLSet{
 		Xmlns:       "http://www.sitemaps.org/schemas/sitemap/0.9",

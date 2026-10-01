@@ -1,7 +1,7 @@
 {
   "origins": [
     "https://chebread.github.io",
-    "https://chebread.com"
+    "https://chebread.org"
   ],
   "originsRegex": [
     "http://devd.io:[0-9]+",
