@@ -4,8 +4,7 @@
     "https://chebread.org"
   ],
   "originsRegex": [
-    "http://devd.io:[0-9]+",
-    "https://devd.test"
+    "^http://localhost(:[0-9]+)?$"
   ],
   "defaultCommentOrder": "newest"
 }

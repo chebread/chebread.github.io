@@ -1,3 +1,22 @@
+:root {
+    color-scheme: light dark; /* 브라우저 엔진에 다크모드 지원을 알림 */
+    /* 라이트 모드 (기본값) */
+    --bg-page: #ffffff;
+    --fg-text: #000000;
+    --nav-bg-scrolled: #ffffff;
+    --nav-fg-scrolled: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* 다크 모드 (시스템 설정 감지) */
+        --bg-page: #0d1117; /* GitHub Dark 배경 */
+        --fg-text: #ffffff; /* 운영자님이 원하시는 White */
+        --nav-bg-scrolled: #0d1117;
+        --nav-fg-scrolled: #ffffff;
+    }
+}
+
 html,
 body {
     padding: 0;
@@ -18,18 +37,16 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 
-    background-color: white;
+    background-color: var(--bg-page);
+    color: var(--fg-text);
 }
 
 body {
     height: 100%; /* full screen */
 }
+
 
 .root {
     max-width: 35rem;
@@ -42,7 +59,6 @@ body {
 // Code highlight
 .markdown-body {
     pre.chroma {
-        background-color: #f6f8fa;
         border-radius: 6px;
         padding: 1rem;
         overflow: auto;

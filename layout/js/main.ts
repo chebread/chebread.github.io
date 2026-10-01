@@ -30,5 +30,7 @@ function initializeBackLink() {
 document.addEventListener('DOMContentLoaded', () => {
     initializeStickyNav();
     initializeBackLink();
-    mediumZoom('.markdown-body img');
+    mediumZoom('.markdown-body img', {
+         background: 'var(--bg-page)',
+       });
 });

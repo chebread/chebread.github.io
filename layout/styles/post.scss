@@ -5,7 +5,7 @@
     display: flex;
     height: 4rem;
     flex-direction: row;
-    background-color: white;
+    background-color: var(--nav-bg-scrolled);
 
     a {
         -webkit-tap-highlight-color: transparent;
@@ -23,14 +23,14 @@
             font-size: 1rem;
             line-height: 1.5;
             font-weight: 900;
-            color: black;
+            color: var(--nav-fg-scrolled);
         }
         &::after {
             content: '';
             position: absolute;
             bottom: 0.5rem;
             height: 1.5px;
-            background-color: black;
+            background-color: var(--nav-fg-scrolled);
             width: 50%;
             left: 50%;
             transform: translateX(-50%) scaleX(0);
@@ -41,7 +41,7 @@
         }
     }
 
-    // hero 오버레이 variant: 기본 상태에서는 투명, 스크롤 시 white
+    // hero 오버레이 variant: 기본 상태에서는 투명, 스크롤 시 scrolled
     &-hero {
         background-color: transparent;
         transition: background-color 0.3s ease;
@@ -58,14 +58,14 @@
         }
 
         &.scrolled {
-            background-color: white;
+            background-color: var(--nav-bg-scrolled);
 
             a {
                 span {
-                    color: black;
+                    color: var(--nav-fg-scrolled);
                 }
                 &::after {
-                    background-color: black;
+                    background-color: var(--nav-fg-scrolled);
                 }
             }
         }

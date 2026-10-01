@@ -26,14 +26,14 @@
             스크롤 내릴 때: .scrolled 클래스가 추가됩니다. 이 클래스에는 transition 속성이 있으므로, background-color가 white로 변하는 과정이 0.3초 동안 부드럽게 진행됩니다.
             스크롤 올릴 때: .scrolled 클래스가 제거됩니다. 이제 .home-nav에는 transition 속성이 없으므로, background-color가 transparent(기본값)로 즉시 돌아옵니다. 잔상이 남을 틈이 없습니다.
         */
-        background-color: white;
+        background-color: var(--nav-bg-scrolled);
 
         a {
             span {
-                color: black;
+                color: var(--nav-fg-scrolled);
             }
             &::after {
-                background-color: black;
+                background-color: var(--nav-fg-scrolled);
             }
         }
     }

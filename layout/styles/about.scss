@@ -10,14 +10,14 @@
     transition: background-color 0.3s ease;
 
     &.scrolled {
-        background-color: white;
+        background-color: var(--nav-bg-scrolled);
 
         a {
             span {
-                color: black;
+                color: var(--nav-fg-scrolled);
             }
             &::after {
-                background-color: black;
+                background-color: var(--nav-fg-scrolled);
             }
         }
     }
