@@ -10,9 +10,9 @@
 @media (prefers-color-scheme: dark) {
     :root {
         /* 다크 모드 (시스템 설정 감지) */
-        --bg-page: #0d1117; /* GitHub Dark 배경 */
+        --bg-page: #0a0a0a; /* GitHub Dark 배경 */
         --fg-text: #ffffff; /* 운영자님이 원하시는 White */
-        --nav-bg-scrolled: #0d1117;
+        --nav-bg-scrolled: #0a0a0a;
         --nav-fg-scrolled: #ffffff;
     }
 }
