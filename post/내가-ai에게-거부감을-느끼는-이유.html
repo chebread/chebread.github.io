@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d1117">
 
     <meta name="giscus:backlink" content="https://chebread.org/post/내가-ai에게-거부감을-느끼는-이유">
 
@@ -52,10 +53,13 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/color-palette.css">
-    <link rel="stylesheet" href="/styles/chroma.css">
-
-    <link rel="stylesheet" href="/styles/github-markdown.css">
     <link rel="stylesheet" href="/styles/post.css">
+
+    <link rel="stylesheet" href="/styles/chroma-light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="/styles/chroma-dark.css" media="(prefers-color-scheme: dark)">
+
+    <link rel="stylesheet" href="/styles/github-markdown-light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="/styles/github-markdown-dark.css" media="(prefers-color-scheme: dark)">
 
     <link rel="icon" href="/favicons/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
@@ -151,7 +155,7 @@
                             data-reactions-enabled="1"
                             data-emit-metadata="0"
                             data-input-position="top"
-                            data-theme="light"
+                            data-theme="preferred_color_scheme"
                             data-lang="ko"
                             crossorigin="anonymous"
                             async>
