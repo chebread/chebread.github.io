@@ -2,322 +2,322 @@
 <rss version="2.0">
   <channel>
     <title>차한음 블로그</title>
-    <link>https://chebread.github.io</link>
+    <link>https://chebread.org</link>
     <description>개발자 차한음 블로그</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 27 Sep 2026 16:00:50 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 12:07:18 +0000</lastBuildDate>
     <generator>Go Custom SSG</generator>
     <item>
       <title>카테고리 소개</title>
-      <link>https://chebread.github.io/post/카테고리-소개-9406</link>
+      <link>https://chebread.org/post/카테고리-소개-9406</link>
       <description>TCPL 카테고리는 『Kernighan, B. W., &amp; Ritchie, D. M. (1988). The C programming language (2nd ed.). Prentic...</description>
       <pubDate>Sat, 26 Sep 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/카테고리-소개-9406</guid>
+      <guid>https://chebread.org/post/카테고리-소개-9406</guid>
       <category>전체</category>
       <category>TCPL</category>
     </item>
     <item>
       <title>자본력에 따른 우리의 편향적 태도</title>
-      <link>https://chebread.github.io/post/자본력에-따른-우리의-편향적-태도</link>
+      <link>https://chebread.org/post/자본력에-따른-우리의-편향적-태도</link>
       <description>고등학교 2학년 1학기 무렵 봉사팀장 김 군과 함께 &#39;봉사모임&#39;을 조직하고 학급 외의 봉사를 계획했습니다. 김 군의 봉사 계기는 저로서는 알 수 없습니다만, 제가 봉사를 하고자 한...</description>
       <pubDate>Sat, 26 Sep 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/자본력에-따른-우리의-편향적-태도</guid>
+      <guid>https://chebread.org/post/자본력에-따른-우리의-편향적-태도</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
     <item>
       <title>내가 프로그래머가  되기로 한 이유</title>
-      <link>https://chebread.github.io/post/내가-프로그래머가-되기로-한-이유</link>
+      <link>https://chebread.org/post/내가-프로그래머가-되기로-한-이유</link>
       <description>내가 프로그래머가 되기로 한 이유는 오직 &#39;세상을 선하게 만들기 위해서&#39;이다. 그 이상, 그 이하도 아니다. 그러나, 혹자는 이렇게 말할 수도 있다. &#34;세상을 선하게 만드는 방법이...</description>
       <pubDate>Sun, 16 Aug 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/내가-프로그래머가-되기로-한-이유</guid>
+      <guid>https://chebread.org/post/내가-프로그래머가-되기로-한-이유</guid>
       <category>에세이</category>
       <category>전체</category>
     </item>
     <item>
       <title>쥐의 눈물</title>
-      <link>https://chebread.github.io/post/쥐의-눈물</link>
+      <link>https://chebread.org/post/쥐의-눈물</link>
       <description>2026년 4월 18일. 할머니께서 아침부터 나를 깨워, 쥐가 잡혔다고 말씀하신다. 조금 뒤 목도한 쥐. 쥐에 몇 배는 될 찐득이의 가장자리에 붙어 있는 쥐가 있다. 찐득이 위에는...</description>
       <pubDate>Sat, 15 Aug 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/쥐의-눈물</guid>
+      <guid>https://chebread.org/post/쥐의-눈물</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
     <item>
       <title>정치에 대하여</title>
-      <link>https://chebread.github.io/post/정치에-대하여</link>
+      <link>https://chebread.org/post/정치에-대하여</link>
       <description>돈을 빌려줄 때는 일어서서 주는데, 받을 때는 앉아서 받는다고 한다. 정치도 이와 같은 것이다. 당선 전에는 내게 고개를 숙이는데, 당선 후에는 내가 고개를 숙여야 한다. 왜냐하면...</description>
       <pubDate>Tue, 28 Jul 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/정치에-대하여</guid>
+      <guid>https://chebread.org/post/정치에-대하여</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
     <item>
       <title>이재명 정부와 대통령 단임제</title>
-      <link>https://chebread.github.io/post/이재명-정부와-대통령-단임제</link>
+      <link>https://chebread.org/post/이재명-정부와-대통령-단임제</link>
       <description>최근 들어 집권 2년 차인 이재명 정부가 여러 어려움을 겪고 있다. 이재명 정부가 맞닥뜨린 어려움은 단선적이지 않으며 복잡한 연립 방정식을 푸는 것과 같다. 예를 들어, 세종 집무...</description>
       <pubDate>Sat, 18 Jul 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/이재명-정부와-대통령-단임제</guid>
+      <guid>https://chebread.org/post/이재명-정부와-대통령-단임제</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
     <item>
       <title>Formal Verification of a Realistic Compiler</title>
-      <link>https://chebread.github.io/post/formal-verification-of-a-realistic-compiler</link>
+      <link>https://chebread.org/post/formal-verification-of-a-realistic-compiler</link>
       <description>Leroy, X. (2009). Formal verification of a realistic compiler. Communications of the ACM, 52(7), 107–115. https://doi.org/10.1145/1538788.1538814.</description>
       <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/formal-verification-of-a-realistic-compiler</guid>
+      <guid>https://chebread.org/post/formal-verification-of-a-realistic-compiler</guid>
       <category>전체</category>
       <category>논문 리뷰</category>
     </item>
     <item>
       <title>우리가 세상을 바꿀 수 있는 이유</title>
-      <link>https://chebread.github.io/post/우리가-세상을-바꿀-수-있는-이유</link>
+      <link>https://chebread.org/post/우리가-세상을-바꿀-수-있는-이유</link>
       <description>요약 장 지오노의 『나무를 심은 사람』의 배경이 되는 고산지대에는 원래 나무가 많았으나, 마을들의 나무를 숯으로 만들어 파는 사람들로 하여금 나무가 다 죽어버렸다. 나무가 없어지면...</description>
       <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/우리가-세상을-바꿀-수-있는-이유</guid>
+      <guid>https://chebread.org/post/우리가-세상을-바꿀-수-있는-이유</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
     <item>
       <title>프로그래머는 AI 정신병에 가장 취약하다</title>
-      <link>https://chebread.github.io/post/프로그래머는-ai-정신병에-가장-취약하다</link>
+      <link>https://chebread.org/post/프로그래머는-ai-정신병에-가장-취약하다</link>
       <description>들어가며 국민일보의 AI 만난 뒤 돌변한 아내… “끔찍한 8개월의 기억” 기사를 읽고 AI 정신병에 대해 심각성을 뒤늦게 깨달아, 이것에 대한 심각성을 공유하고자 한다. 작금의 시...</description>
       <pubDate>Sun, 10 May 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/프로그래머는-ai-정신병에-가장-취약하다</guid>
+      <guid>https://chebread.org/post/프로그래머는-ai-정신병에-가장-취약하다</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
     <item>
       <title>Chaos To Cosmos</title>
-      <link>https://chebread.github.io/post/chaos-to-cosmos</link>
+      <link>https://chebread.org/post/chaos-to-cosmos</link>
       <description>또 전체적인 프로그램을 미리 신중하게 적어서 생각하는 방향이 옳은지 여부를 확인하기 전에 조각난 코드부터 대책 없이 늘어놓은 다음 그것의 모양을 조금씩 잡아 나가는 방법으로 프로그...</description>
       <pubDate>Thu, 07 May 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/chaos-to-cosmos</guid>
+      <guid>https://chebread.org/post/chaos-to-cosmos</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
     <item>
       <title>나의 블로그 유목민 역사</title>
-      <link>https://chebread.github.io/post/나의-블로그-유목민-역사</link>
+      <link>https://chebread.org/post/나의-블로그-유목민-역사</link>
       <description>나는 정말 많은 블로그를 개발하고 옮겨 다녔다. GitHub Pages 블로그를 만들게 된 기념으로, 나의 블로그 활동 역사를 한 번 소개해 보도록 하겠다. 나의 블로그 유목민 역...</description>
       <pubDate>Tue, 05 May 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/나의-블로그-유목민-역사</guid>
+      <guid>https://chebread.org/post/나의-블로그-유목민-역사</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
     <item>
       <title>들어가며</title>
-      <link>https://chebread.github.io/post/들어가며</link>
+      <link>https://chebread.org/post/들어가며</link>
       <description>옮긴이의 글 Go 언어는 단순성을 가장 큰 특징으로 하며, 이는 표현성을 중시하는 루비나 스칼라 등의 언어와는 정면으로 배치된다. 이 책은 그러한 단순성에 대한 설계 사상을 보여주...</description>
       <pubDate>Sun, 26 Apr 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/들어가며</guid>
+      <guid>https://chebread.org/post/들어가며</guid>
       <category>전체</category>
       <category>TGPL</category>
     </item>
     <item>
       <title>카테고리 소개</title>
-      <link>https://chebread.github.io/post/카테고리-소개-1375</link>
+      <link>https://chebread.org/post/카테고리-소개-1375</link>
       <description>TGPL 카테고리는 『Donovan, A. A. A., &amp; Kernighan, B. W. (2015). The Go programming language. Addison-Wesle...</description>
       <pubDate>Sun, 26 Apr 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/카테고리-소개-1375</guid>
+      <guid>https://chebread.org/post/카테고리-소개-1375</guid>
       <category>전체</category>
       <category>TGPL</category>
     </item>
     <item>
       <title>내가 AI에게 거부감을 느끼는 이유</title>
-      <link>https://chebread.github.io/post/내가-ai에게-거부감을-느끼는-이유</link>
+      <link>https://chebread.org/post/내가-ai에게-거부감을-느끼는-이유</link>
       <description>I know there&#39;s a lot of fear out there about the end of this profession that we love, the loss of th...</description>
       <pubDate>Sun, 01 Feb 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/내가-ai에게-거부감을-느끼는-이유</guid>
+      <guid>https://chebread.org/post/내가-ai에게-거부감을-느끼는-이유</guid>
       <category>에세이</category>
     </item>
     <item>
       <title>Reflections on Trusting Trust</title>
-      <link>https://chebread.github.io/post/reflections-on-trusting-trust</link>
+      <link>https://chebread.org/post/reflections-on-trusting-trust</link>
       <description>논문 정보 Thompson, K. (1984). Reflections on trusting trust. Communications of the ACM, 27(8), 761–763....</description>
       <pubDate>Fri, 26 Dec 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/reflections-on-trusting-trust</guid>
+      <guid>https://chebread.org/post/reflections-on-trusting-trust</guid>
       <category>전체</category>
       <category>논문 리뷰</category>
     </item>
     <item>
       <title>보호 구문을 활용하라</title>
-      <link>https://chebread.github.io/post/보호-구문을-활용하라</link>
+      <link>https://chebread.org/post/보호-구문을-활용하라</link>
       <description>추석 때 켄트 벡의 『Tidy First?』를 읽게 되었다. 이 책에서 첫 번째로 나오는 개념인 &#39;보호 구문&#39;을 설명해 보도록 하겠다. 보호 구문이란, 전제조건이라고 생각하면 된다...</description>
       <pubDate>Sun, 12 Oct 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/보호-구문을-활용하라</guid>
+      <guid>https://chebread.org/post/보호-구문을-활용하라</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
     <item>
       <title> LLM을 사용하는 방법</title>
-      <link>https://chebread.github.io/post/-llm을-사용하는-방법</link>
+      <link>https://chebread.org/post/-llm을-사용하는-방법</link>
       <description>이해하라 LLM를 사용함에 따라 기술 부채가 늘어난다고 한다. LLM이 나오기 전에도 프로그래머는 일종의 복붙이라는 것을 통해 코딩하곤 했다. 근데 왜 그때는 기술 부채가 지금보다...</description>
       <pubDate>Thu, 02 Oct 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/-llm을-사용하는-방법</guid>
+      <guid>https://chebread.org/post/-llm을-사용하는-방법</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
     <item>
       <title>단일 책임 원칙이 무너지고 있다</title>
-      <link>https://chebread.github.io/post/단일-책임-원칙이-무너지고-있다</link>
+      <link>https://chebread.org/post/단일-책임-원칙이-무너지고-있다</link>
       <description>단일 책임 원칙: 하나의 것은 하나의 일만 해야 한다. 데이비드 토머스, 앤드류 헌트의 『실용주의 프로그래머』를 읽으며, 단일 책임 원칙을 알게 되었다. 근래 단일 책임 원칙이 부...</description>
       <pubDate>Sat, 13 Sep 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/단일-책임-원칙이-무너지고-있다</guid>
+      <guid>https://chebread.org/post/단일-책임-원칙이-무너지고-있다</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
     <item>
       <title>데이터 길들이기</title>
-      <link>https://chebread.github.io/post/데이터-길들이기</link>
+      <link>https://chebread.org/post/데이터-길들이기</link>
       <description>데이터를 충분히 고문하면, 자연은 언제나 바른 말을 할 것이다. - 로널드 코스 지금까지 파이썬 언어 자체(데이터 타입, 코드 구조, 구문 등)만 다뤘다. 2부부터는 실제 문제 적...</description>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/데이터-길들이기</guid>
+      <guid>https://chebread.org/post/데이터-길들이기</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>날짜, 시간</title>
-      <link>https://chebread.github.io/post/날짜-시간</link>
+      <link>https://chebread.org/post/날짜-시간</link>
       <description>날짜, 시간 파이썬 표준 라이브러리 개발자는 날짜와 시간에 많은 노력을 기울인다. 이번 2장에서는 프로그래머들이 부딪히는 몇 가지 문제에 대해 살펴보고, 이를 좀 더 단순하게 만드...</description>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/날짜-시간</guid>
+      <guid>https://chebread.org/post/날짜-시간</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>파이 과학</title>
-      <link>https://chebread.github.io/post/파이-과학</link>
+      <link>https://chebread.org/post/파이-과학</link>
       <description>지난 몇 년 동안 파이썬은 과학자들에게 매우 큰 인기를 얻고 있다. 이번 장에서 다루는 소프트웨어를 보면 왜 인기가 많은지 알게 될 것이다. 과학자이거나 과학도라면 matlab, ...</description>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/파이-과학</guid>
+      <guid>https://chebread.org/post/파이-과학</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>파일, 디렉터리</title>
-      <link>https://chebread.github.io/post/파일-디렉터리</link>
+      <link>https://chebread.org/post/파일-디렉터리</link>
       <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/파일-디렉터리</guid>
+      <guid>https://chebread.org/post/파일-디렉터리</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>모듈, 패키지</title>
-      <link>https://chebread.github.io/post/모듈-패키지</link>
+      <link>https://chebread.org/post/모듈-패키지</link>
       <description>모듈과 import 문 모듈이란 파이썬 코드 파일이다. 개발자는 특별한 작업 없이 코드를 모듈로 사용할 수 있다. 모듈 임포트하기 import 문을 사용하여 다른 모듈의 코드를 참...</description>
       <pubDate>Tue, 03 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/모듈-패키지</guid>
+      <guid>https://chebread.org/post/모듈-패키지</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>객체, 클래스</title>
-      <link>https://chebread.github.io/post/객체-클래스</link>
+      <link>https://chebread.org/post/객체-클래스</link>
       <description>파이썬의 모든 것은 객체다 파이썬의 모든 것은 객체다. 하지만 파이썬은 특수 구문을 이용해서 대부분의 객체를 숨긴다. num = 7을 입력했을 때 7이 담긴 정수 유형의 객체를 생...</description>
       <pubDate>Fri, 30 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/객체-클래스</guid>
+      <guid>https://chebread.org/post/객체-클래스</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>딕셔너리, 셋</title>
-      <link>https://chebread.github.io/post/딕셔너리-셋</link>
+      <link>https://chebread.org/post/딕셔너리-셋</link>
       <description>딕셔너리 딕셔너리는 리스트와 비슷하다. 리스트와 다른 점은 항목의 순서를 따지지 않으며, 오프셋으로 항목을 선택할 수 없다. 대신 값에 상응하는 고유한 키를 지정한다. 키는 모든 ...</description>
       <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/딕셔너리-셋</guid>
+      <guid>https://chebread.org/post/딕셔너리-셋</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>함수</title>
-      <link>https://chebread.github.io/post/함수</link>
+      <link>https://chebread.org/post/함수</link>
       <description>함수 코드 재사용을 위해 함수를 사용한다. 함수는 이름이 붙여진 코드 조각이다. 코드 스니펫(Code Snipet) 또는 코드 조각은 재사용 가능한 소스 코드, 기계어, 텍스트의 ...</description>
       <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/함수</guid>
+      <guid>https://chebread.org/post/함수</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>튜플, 리스트</title>
-      <link>https://chebread.github.io/post/튜플-리스트</link>
+      <link>https://chebread.org/post/튜플-리스트</link>
       <description>자료구조 데이터 타입은 원자이고, 자료구조는 분자이다. 파이썬에서 자료구조는 튜플, 리스트, 딕셔너리, 셋이 있다. 시퀀스 시퀀스란 데이터를 순서대로 나열한 것을 의미한다. 파이썬...</description>
       <pubDate>Sat, 10 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/튜플-리스트</guid>
+      <guid>https://chebread.org/post/튜플-리스트</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>문자열</title>
-      <link>https://chebread.github.io/post/문자열</link>
+      <link>https://chebread.org/post/문자열</link>
       <description>문자열 문자열은 일련의 문자(character)다. 파이썬에서는 문자 하나도(&#34;a&#34;) 문자열이다. 문자열은 불변이다. 문자열 자체는 변경할 수 없지만, 문자열을 다른 곳으로 복사해...</description>
       <pubDate>Tue, 06 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/문자열</guid>
+      <guid>https://chebread.org/post/문자열</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>반복문</title>
-      <link>https://chebread.github.io/post/반복문</link>
+      <link>https://chebread.org/post/반복문</link>
       <description>반복문 코드를 한 번 이상 실행하려고 할 때 반복문(loop)가 필요하다. 파이썬은 두 개의 반복문 while과 for이 있다. while문 while 조건: ... 형태로 쓰며,...</description>
       <pubDate>Tue, 06 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/반복문</guid>
+      <guid>https://chebread.org/post/반복문</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>조건문</title>
-      <link>https://chebread.github.io/post/조건문</link>
+      <link>https://chebread.org/post/조건문</link>
       <description>코드 구조화 이제는 파이썬 코드를 어떻게 구조화하는지에 대해서 다룬다. 귀도 반 로섬은 파이썬을 설계할 때 코드 구분을 위해서 괄호를 입력하지 않더라도 들여쓰기로 프로그램의 구조를...</description>
       <pubDate>Mon, 05 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/조건문</guid>
+      <guid>https://chebread.org/post/조건문</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>카테고리 소개</title>
-      <link>https://chebread.github.io/post/카테고리-소개</link>
+      <link>https://chebread.org/post/카테고리-소개</link>
       <description>Introducing Python 카테고리는 『Lubanovic, B. (2019). Introducing Python (2nd ed.). O&#39;Reilly Media.』를 정리한 ...</description>
       <pubDate>Mon, 05 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/카테고리-소개</guid>
+      <guid>https://chebread.org/post/카테고리-소개</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>숫자</title>
-      <link>https://chebread.github.io/post/숫자</link>
+      <link>https://chebread.org/post/숫자</link>
       <description>불리언 불리언 데이터 타입의 값은 True, False다. 불리언 값은 숫자 연산에 참여할 수 있으며, True는 정수 1 또는 실수 1.0으로 간주되며, False는 정수 0 또...</description>
       <pubDate>Sat, 03 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/숫자</guid>
+      <guid>https://chebread.org/post/숫자</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>데이터</title>
-      <link>https://chebread.github.io/post/데이터</link>
+      <link>https://chebread.org/post/데이터</link>
       <description>객체 파이썬에서 모든 데이터는 객체다. 객체는 타입(자료형) 정의, 다른 객체와 구별하기 위한 고유 ID, 타입과 연관된 값, 객체의 사용 빈도를 추적하는 참조 횟수를 포함하는 데...</description>
       <pubDate>Thu, 01 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/데이터</guid>
+      <guid>https://chebread.org/post/데이터</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
     <item>
       <title>해커톤에서 수상하는 방법</title>
-      <link>https://chebread.github.io/post/해커톤에서-수상하는-방법</link>
+      <link>https://chebread.org/post/해커톤에서-수상하는-방법</link>
       <description>주어질 주제에 대해 지나치게 신경 쓰지 마라 나는 해커톤을 하기 몇 주 전부터 뭐가 주제로 정해질 지 많이 걱정했다. 그렇지만, 해커톤이 시작한 후 주제를 알려주는데 16가지나 주...</description>
       <pubDate>Sat, 10 Dec 2022 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/해커톤에서-수상하는-방법</guid>
+      <guid>https://chebread.org/post/해커톤에서-수상하는-방법</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
     <item>
       <title>힙하게 코딩하는 방법</title>
-      <link>https://chebread.github.io/post/힙하게-코딩하는-방법</link>
+      <link>https://chebread.org/post/힙하게-코딩하는-방법</link>
       <description>라이브러리를 자제하여 사용한다 자신의 역량으로도 충분히 개발할 수 있는 기능인데 굳이 라이브러리를 가져다가 사용하는 경우가 있다. 바로 라이브러리를 가져다가 사용하면 시간적인 효율...</description>
       <pubDate>Sun, 05 Jun 2022 00:00:00 +0900</pubDate>
-      <guid>https://chebread.github.io/post/힙하게-코딩하는-방법</guid>
+      <guid>https://chebread.org/post/힙하게-코딩하는-방법</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
