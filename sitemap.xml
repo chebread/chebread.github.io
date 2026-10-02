@@ -2,13 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.1/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://chebread.org/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://chebread.org/about.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://chebread.org/post/카테고리-소개</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://chebread.org/post/객체-클래스</loc>
@@ -61,7 +66,7 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/카테고리-소개</loc>
+    <loc>https://chebread.org/post/카테고리-소개-247c</loc>
     <lastmod>2025-05-05</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -98,11 +103,6 @@
   <url>
     <loc>https://chebread.org/post/카테고리-소개-1375</loc>
     <lastmod>2026-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://chebread.org/post/formal-verification-of-a-realistic-compiler</loc>
-    <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -158,6 +158,11 @@
   <url>
     <loc>https://chebread.org/post/자본력에-따른-우리의-편향적-태도</loc>
     <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://chebread.org/post/저수준에-흠뻑-빠지다</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
