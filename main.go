@@ -446,7 +446,12 @@ func main() {
 			if category == "전체" {
 				dateI, _ := postI["date"].(string)
 				dateJ, _ := postJ["date"].(string)
-				return dateI > dateJ
+				if dateI != dateJ {
+					return dateI > dateJ
+				}
+				titleI, _ := postI["title"].(string)
+				titleJ, _ := postJ["title"].(string)
+				return lib.CompareStrings(titleI, titleJ)
 			}
 
 			if fixedI != fixedJ {
@@ -461,7 +466,13 @@ func main() {
 
 			dateI, _ := postI["date"].(string)
 			dateJ, _ := postJ["date"].(string)
-			return dateI > dateJ
+			if dateI != dateJ {
+				return dateI > dateJ
+			}
+
+			titleI, _ := postI["title"].(string)
+			titleJ, _ := postJ["title"].(string)
+			return lib.CompareStrings(titleI, titleJ)
 		})
 
 		const maxPostsToShow = 2
@@ -591,7 +602,12 @@ func main() {
 			if category == "전체" {
 				dateI, _ := postI["date"].(string)
 				dateJ, _ := postJ["date"].(string)
-				return dateI > dateJ
+				if dateI != dateJ {
+					return dateI > dateJ
+				}
+				titleI, _ := postI["title"].(string)
+				titleJ, _ := postJ["title"].(string)
+				return lib.CompareStrings(titleI, titleJ)
 			}
 
 			if fixedI != fixedJ {
@@ -606,7 +622,13 @@ func main() {
 
 			dateI, _ := postI["date"].(string)
 			dateJ, _ := postJ["date"].(string)
-			return dateI > dateJ
+			if dateI != dateJ {
+				return dateI > dateJ
+			}
+
+			titleI, _ := postI["title"].(string)
+			titleJ, _ := postJ["title"].(string)
+			return lib.CompareStrings(titleI, titleJ)
 		})
 
 		var postListHtml strings.Builder
