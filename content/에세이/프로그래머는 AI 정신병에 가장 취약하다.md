@@ -2,7 +2,6 @@
 date: 2026-05-10
 published: true
 category: [전체, 에세이]
-thumbnail: https://plus.unsplash.com/premium_photo-1669234310241-0fd45d1c7a24?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ## 들어가며
@@ -54,5 +53,3 @@ AI를 사용할 때는 '낯선 사람'을 대하듯 사용하라고 나는 말�
 당신이 이 글을 통해 AI 정신병에 대해서 심각성을 알게 되었으면 좋겠다. 또한, 내가 제언한 것 말고도 스스로 AI 정신병에 취약해 지지 않기 위한 노력을 찾아서 하면 좋겠다.
 
 AI를 통해 어제보다 더 행복한 당신이 되길 기원한다.
-
-> 섬네일 출처: https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%ED%9D%B0%EC%83%89%EA%B3%BC-%ED%8C%8C%EB%9E%80%EC%83%89-%EA%BD%83%EC%9D%98-%EC%B6%94%EC%83%81-%EC%82%AC%EC%A7%84-15g3pnGCdt4

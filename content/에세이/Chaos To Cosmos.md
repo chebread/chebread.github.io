@@ -2,7 +2,6 @@
 date: 2026-05-07
 category: [전체, 에세이]
 published: true
-thumbnail: https://images.unsplash.com/photo-1594683734152-0eccf2501041?q=80&w=993&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 > 또 전체적인 프로그램을 미리 신중하게 적어서 생각하는 방향이 옳은지 여부를 확인하기 전에 조각난 코드부터 대책 없이 늘어놓은 다음 그것의 모양을 조금씩 잡아 나가는 방법으로 프로그래밍을 했다.  
@@ -17,5 +16,3 @@ thumbnail: https://images.unsplash.com/photo-1594683734152-0eccf2501041?q=80&w=9
 프로그래밍의 거장들도 더럽게 코드를 짜고 더러운 코드를 공개하는데, 당신은 왜 깨끗하려 하는가?
 
 Chaos to Cosmos.
-
-> 섬네일 출처: https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EB%B0%A4-%EC%8B%9C%EA%B0%84-%ED%95%98%EB%8A%98%EC%9D%98-%EB%B3%84-jgt81f_UDuU
