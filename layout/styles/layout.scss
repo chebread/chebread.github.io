@@ -41,6 +41,9 @@ body {
 
     background-color: var(--bg-page);
     color: var(--fg-text);
+
+    scroll-padding-top: max(5rem, 20%);
+    scroll-padding-bottom: 5rem;
 }
 
 body {
