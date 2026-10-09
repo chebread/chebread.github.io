@@ -92,10 +92,10 @@
     @media (max-width: 35rem) {
         min-height: 19.5rem;
     }
-    
+
     display: flex;
     flex-direction: column;
-    
+
     &::before {
         content: '';
         display: block;
