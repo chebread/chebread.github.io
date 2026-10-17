@@ -12,7 +12,7 @@ import (
 // MarkdownToPlainText는 Markdown 바이트 슬라이스를 받아 순수 텍스트 문자열로 변환합니다.
 func MarkdownToPlainText(markdownContent []byte) (string, error) {
 	md := goldmark.New(
-		goldmark.WithExtensions(MarkExtension),
+		goldmark.WithExtensions(MarkExtension, CalloutExtension),
 	)
 
 	reader := text.NewReader(markdownContent)

@@ -11,12 +11,14 @@ Blog link: [https://chebread.org/](https://chebread.org/)
 - [How to Use devd](#how-to-use-devd)
 - [How to Use localias](#how-to-use-localias)
 - [How to Create Manual Anchor Links](#how-to-create-manual-anchor-links)
+- [How to Use Callouts](#how-to-use-callouts)
 - [How to Deploy](#how-to-deploy)
 - [License](#license)
 
 ## Features
 - Custom Go SSG
 - Markdown-Based Content
+- GitHub-Style & Custom Callouts (Alerts)
 - Build-Time Syntax Highlighting
 - LaTeX Support
 - Image Zooming
@@ -127,6 +129,50 @@ Here is the content for the second section.
 
 ### Note
 It is recommended to use only letters, numbers, and hyphens (-) for IDs to ensure URL compatibility. Special characters (like ?, &) should be avoided. Korean characters are also supported.
+
+## How to Use Callouts
+You can use GitHub-style callout (alert) blocks and custom-titled callouts in your posts.
+
+### Standard GitHub Alerts
+The blog natively supports the 5 standard GitHub alert types: `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, and `CAUTION`.
+
+```md
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+```
+
+### Custom Titles & Styles
+You can customize the title and choose a specific alert style using the `[!style|title]` syntax. The available styles are `note`, `tip`, `important`, `warning`, and `caution`.
+
+```md
+> [!caution|foo]
+> boo
+
+> [!warning|foo]
+> boo
+
+> [!tip|foo]
+> boo
+```
+
+If you do not specify a style, it defaults to the `note` (blue) style:
+
+```md
+> [!foo]
+> boo
+```
 
 ## How to Use Markdown
 If you add `two spaces` to the end of a sentence, it becomes `<br/>` function.

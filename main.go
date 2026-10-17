@@ -67,6 +67,7 @@ func main() {
 		),
 		goldmark.WithExtensions(
 			extension.GFM,
+			lib.CalloutExtension,
 			highlighting.NewHighlighting(
 				highlighting.WithStyle("github"),
 				highlighting.WithFormatOptions(
