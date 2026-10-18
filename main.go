@@ -55,6 +55,92 @@ func (c *CustomSlice) UnmarshalYAML(unmarshal func(interface{}) error) error {
 	return nil
 }
 
+func compareCategoryPosts(postI, postJ map[string]any, category string, isTitleSorted bool) bool {
+	fixedI, _ := postI["fixed"].(bool)
+	fixedJ, _ := postJ["fixed"].(bool)
+
+	// "전체" 카테고리에서는 fixed를 무시하고 날짜순으로만 정렬 (제목 정렬 카테고리인 경우 제목순)
+	if category == "전체" {
+		if !isTitleSorted {
+			dateI, _ := postI["date"].(string)
+			dateJ, _ := postJ["date"].(string)
+			if dateI != dateJ {
+				return dateI > dateJ
+			}
+		}
+		titleI, _ := postI["title"].(string)
+		titleJ, _ := postJ["title"].(string)
+		return lib.CompareStrings(titleI, titleJ)
+	}
+
+	if fixedI != fixedJ {
+		return fixedI
+	}
+
+	if fixedI {
+		titleI, _ := postI["title"].(string)
+		titleJ, _ := postJ["title"].(string)
+		return lib.CompareStrings(titleI, titleJ)
+	}
+
+	if !isTitleSorted {
+		dateI, _ := postI["date"].(string)
+		dateJ, _ := postJ["date"].(string)
+		if dateI != dateJ {
+			return dateI > dateJ
+		}
+	}
+
+	titleI, _ := postI["title"].(string)
+	titleJ, _ := postJ["title"].(string)
+	return lib.CompareStrings(titleI, titleJ)
+}
+
+func loadTitleSortedCategories(filePath string, postsDataByCategory map[string][]map[string]any) map[string]bool {
+	var titleSortedCategories []string
+	titleSortedCategoryMap := make(map[string]bool)
+
+	titleSortedFileBytes, titleSortedFileErr := os.ReadFile(filePath)
+	if titleSortedFileErr != nil {
+		if os.IsNotExist(titleSortedFileErr) {
+			fmt.Printf("info: %s 파일이 없습니다. 제목 정렬 카테고리 기능을 사용하지 않습니다.\n", filePath)
+		} else {
+			fmt.Printf("warning: %s 파일 읽기 실패: %v\n", filePath, titleSortedFileErr)
+		}
+		return titleSortedCategoryMap
+	}
+
+	if err := yaml.Unmarshal(titleSortedFileBytes, &titleSortedCategories); err != nil {
+		fmt.Printf("warning: %s YAML 파싱 실패: %v\n", filePath, err)
+		return titleSortedCategoryMap
+	}
+
+	// 존재하지 않는 카테고리 경고 구축 및 맵 생성
+	var nonExistentCategories []string
+	var validCategories []string
+	for _, tc := range titleSortedCategories {
+		tc = strings.TrimSpace(tc)
+		if tc == "" {
+			continue
+		}
+		if postsDataByCategory != nil {
+			if _, exists := postsDataByCategory[tc]; !exists {
+				nonExistentCategories = append(nonExistentCategories, tc)
+			}
+		}
+		validCategories = append(validCategories, tc)
+		titleSortedCategoryMap[tc] = true
+	}
+	if len(nonExistentCategories) > 0 {
+		fmt.Printf("warning: 제목 정렬 카테고리 파일에 존재하지 않는 카테고리가 있습니다: %s\n", strings.Join(nonExistentCategories, ", "))
+	}
+	if len(validCategories) > 0 {
+		fmt.Printf("info: 제목 정렬 카테고리 %d개 로드 완료: %s\n", len(validCategories), strings.Join(validCategories, ", "))
+	}
+
+	return titleSortedCategoryMap
+}
+
 func main() {
 	// Get env
 	var appEnv string = os.Getenv("APP_ENV")
@@ -260,6 +346,13 @@ func main() {
 		}
 	}
 
+	// 제목 정렬 카테고리 파일 처리 (content/title_sorted_categories.yml)
+	fmt.Println()
+	fmt.Println("-- 제목 정렬 카테고리 처리 --")
+
+	const titleSortedCategoriesFilePath = "content/title_sorted_categories.yml"
+	titleSortedCategoryMap := loadTitleSortedCategories(titleSortedCategoriesFilePath, postsDataByCategory)
+
 	// Post
 	fmt.Println()
 	fmt.Println("-- Post 처리 --")
@@ -435,45 +528,9 @@ func main() {
 		postList = append(postList, fmt.Sprintf("<h2 class=\"category-group-title\"><a href=\"%s\">[%s]</a></h2>", categoryLink, category))
 		postList = append(postList, "<ul class=\"category-group-list\">")
 
-		// fixed 정렬 ("전체" 카테고리에서는 fixed 무시)
+		// fixed 정렬 ("전체" 카테고리에서는 fixed 무시, 제목 정렬 카테고리는 날짜 제외)
 		sort.Slice(posts, func(i, j int) bool {
-			postI := posts[i]
-			postJ := posts[j]
-
-			fixedI, _ := postI["fixed"].(bool)
-			fixedJ, _ := postJ["fixed"].(bool)
-
-			// "전체" 카테고리에서는 fixed를 무시하고 날짜순으로만 정렬
-			if category == "전체" {
-				dateI, _ := postI["date"].(string)
-				dateJ, _ := postJ["date"].(string)
-				if dateI != dateJ {
-					return dateI > dateJ
-				}
-				titleI, _ := postI["title"].(string)
-				titleJ, _ := postJ["title"].(string)
-				return lib.CompareStrings(titleI, titleJ)
-			}
-
-			if fixedI != fixedJ {
-				return fixedI
-			}
-
-			if fixedI {
-				titleI, _ := postI["title"].(string)
-				titleJ, _ := postJ["title"].(string)
-				return lib.CompareStrings(titleI, titleJ)
-			}
-
-			dateI, _ := postI["date"].(string)
-			dateJ, _ := postJ["date"].(string)
-			if dateI != dateJ {
-				return dateI > dateJ
-			}
-
-			titleI, _ := postI["title"].(string)
-			titleJ, _ := postJ["title"].(string)
-			return lib.CompareStrings(titleI, titleJ)
+			return compareCategoryPosts(posts[i], posts[j], category, titleSortedCategoryMap[category])
 		})
 
 		const maxPostsToShow = 2
@@ -507,8 +564,8 @@ func main() {
 
 			formattedDate, err := lib.FormatDateKorean(date) // yyyy년 mm월 dd일
 			if err != nil {
-				fmt.Printf("날짜 변환 실패: %v\n", err)
-				return
+				fmt.Printf("warning: %s - 날짜 변환 실패: %v\n", title, err)
+				continue
 			}
 
 			if isFixed {
@@ -594,42 +651,7 @@ func main() {
 	// 정렬
 	for category, posts := range postsDataByCategory {
 		sort.Slice(posts, func(i, j int) bool {
-			postI := posts[i]
-			postJ := posts[j]
-			fixedI, _ := postI["fixed"].(bool)
-			fixedJ, _ := postJ["fixed"].(bool)
-
-			// "전체" 카테고리에서는 fixed를 무시하고 날짜순으로만 정렬
-			if category == "전체" {
-				dateI, _ := postI["date"].(string)
-				dateJ, _ := postJ["date"].(string)
-				if dateI != dateJ {
-					return dateI > dateJ
-				}
-				titleI, _ := postI["title"].(string)
-				titleJ, _ := postJ["title"].(string)
-				return lib.CompareStrings(titleI, titleJ)
-			}
-
-			if fixedI != fixedJ {
-				return fixedI
-			}
-
-			if fixedI {
-				titleI, _ := postI["title"].(string)
-				titleJ, _ := postJ["title"].(string)
-				return lib.CompareStrings(titleI, titleJ)
-			}
-
-			dateI, _ := postI["date"].(string)
-			dateJ, _ := postJ["date"].(string)
-			if dateI != dateJ {
-				return dateI > dateJ
-			}
-
-			titleI, _ := postI["title"].(string)
-			titleJ, _ := postJ["title"].(string)
-			return lib.CompareStrings(titleI, titleJ)
+			return compareCategoryPosts(posts[i], posts[j], category, titleSortedCategoryMap[category])
 		})
 
 		var postListHtml strings.Builder

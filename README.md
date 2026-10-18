@@ -12,6 +12,7 @@ Blog link: [https://chebread.org/](https://chebread.org/)
 - [How to Use localias](#how-to-use-localias)
 - [How to Create Manual Anchor Links](#how-to-create-manual-anchor-links)
 - [How to Use Callouts](#how-to-use-callouts)
+- [How to Configure Title-Sorted Categories](#how-to-configure-title-sorted-categories)
 - [How to Deploy](#how-to-deploy)
 - [License](#license)
 
@@ -172,6 +173,17 @@ If you do not specify a style, it defaults to the `note` (blue) style:
 ```md
 > [!foo]
 > boo
+```
+
+## How to Configure Title-Sorted Categories
+By default, posts in each category are sorted chronologically by date (newest first).
+For tutorial or series categories (such as book chapters or lectures), you can configure them to be sorted purely by title (`1-9, ㄱ-ㅎ, a-z`) regardless of post dates.
+
+Simply add the category name to `content/title_sorted_categories.yml`:
+
+```yaml
+- Introducing Python
+- CSAPP
 ```
 
 ## How to Use Markdown
