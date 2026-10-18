@@ -2,7 +2,7 @@
 date: 2025-12-26
 category:
   - 전체
-  - 논문 리뷰
+  - Paper Review
 published: true
 desc:
 thumbnail: /assets/ken-thompson.webp
