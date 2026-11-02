@@ -5,8 +5,16 @@
     <link>https://chebread.org</link>
     <description>개발자 차한음 블로그</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 18 Oct 2026 04:00:10 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 21:42:31 +0000</lastBuildDate>
     <generator>Go Custom SSG</generator>
+    <item>
+      <title>카테고리 소개</title>
+      <link>https://chebread.org/post/카테고리-소개-92c8</link>
+      <description>Trusting Trust 카테고리는 켄 톰슨의 Reflections on Trusting Trust 논문에 관한 포스팅으로 구성되어 있습니다. 컴퓨터공학을 공부하시는 많은 분들께...</description>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.org/post/카테고리-소개-92c8</guid>
+      <category>Trusting Trust</category>
+    </item>
     <item>
       <title>나의 프로그래머 인생에 대한 고찰</title>
       <link>https://chebread.org/post/나의-프로그래머-인생에-대한-고찰</link>
@@ -26,14 +34,6 @@
       <category>에세이</category>
     </item>
     <item>
-      <title>카테고리 소개</title>
-      <link>https://chebread.org/post/카테고리-소개</link>
-      <description>CS:APP 카테고리는 『Bryant, R. E., &amp; O&#39;Hallaron, D. R. (2015). Computer systems: A programmer&#39;s perspectiv...</description>
-      <pubDate>Sat, 26 Sep 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.org/post/카테고리-소개</guid>
-      <category>CS:APP</category>
-    </item>
-    <item>
       <title>신문의 매력</title>
       <link>https://chebread.org/post/신문의-매력</link>
       <description>신문은 정보가 빠르다 어느날 아침 6시에 신문을 받으며 새삼 설렜다. 왜냐하면 오늘 자 신문이 말해줄 정보를 예상했기 때문이다. 그것은 &#39;삼성전자 노사 협상 잠정 합의&#39;이었다. 그...</description>
@@ -41,6 +41,14 @@
       <guid>https://chebread.org/post/신문의-매력</guid>
       <category>전체</category>
       <category>에세이</category>
+    </item>
+    <item>
+      <title>카테고리 소개</title>
+      <link>https://chebread.org/post/카테고리-소개</link>
+      <description>CS:APP 카테고리는 『Bryant, R. E., &amp; O&#39;Hallaron, D. R. (2015). Computer systems: A programmer&#39;s perspectiv...</description>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.org/post/카테고리-소개</guid>
+      <category>CS:APP</category>
     </item>
     <item>
       <title>내가 프로그래밍을 하는 이유</title>
@@ -57,33 +65,6 @@
       <description>2026년 4월 18일. 할머니께서 아침부터 나를 깨워, 쥐가 잡혔다고 말씀하신다. 조금 뒤 목도한 쥐. 쥐에 몇 배는 될 찐득이의 가장자리에 붙어 있는 쥐가 있다. 찐득이 위에는...</description>
       <pubDate>Sat, 15 Aug 2026 00:00:00 +0900</pubDate>
       <guid>https://chebread.org/post/쥐의-눈물</guid>
-      <category>전체</category>
-      <category>에세이</category>
-    </item>
-    <item>
-      <title>정치에 대하여</title>
-      <link>https://chebread.org/post/정치에-대하여</link>
-      <description>돈을 빌려줄 때는 일어서서 주는데, 받을 때는 앉아서 받는다고 한다. 정치도 이와 같은 것이다. 당선 전에는 내게 고개를 숙이는데, 당선 후에는 내가 고개를 숙여야 한다. 왜냐하면...</description>
-      <pubDate>Tue, 28 Jul 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.org/post/정치에-대하여</guid>
-      <category>전체</category>
-      <category>에세이</category>
-    </item>
-    <item>
-      <title>이재명 정부와 대통령 단임제</title>
-      <link>https://chebread.org/post/이재명-정부와-대통령-단임제</link>
-      <description>최근 들어 집권 2년 차인 이재명 정부가 여러 어려움을 겪고 있다. 이재명 정부가 맞닥뜨린 어려움은 단선적이지 않으며 복잡한 연립 방정식을 푸는 것과 같다. 예를 들어, 세종 집무...</description>
-      <pubDate>Sat, 18 Jul 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.org/post/이재명-정부와-대통령-단임제</guid>
-      <category>전체</category>
-      <category>에세이</category>
-    </item>
-    <item>
-      <title>우리가 세상을 바꿀 수 있는 이유</title>
-      <link>https://chebread.org/post/우리가-세상을-바꿀-수-있는-이유</link>
-      <description>요약 장 지오노의 『나무를 심은 사람』의 배경이 되는 고산지대에는 원래 나무가 많았으나, 마을들의 나무를 숯으로 만들어 파는 사람들로 하여금 나무가 다 죽어버렸다. 나무가 없어지면...</description>
-      <pubDate>Sat, 30 May 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.org/post/우리가-세상을-바꿀-수-있는-이유</guid>
       <category>전체</category>
       <category>에세이</category>
     </item>
@@ -124,21 +105,13 @@
       <category>에세이</category>
     </item>
     <item>
-      <title>카테고리 소개</title>
-      <link>https://chebread.org/post/카테고리-소개-5977</link>
-      <description>Paper Review 카테고리는 『Kernighan, B. W., &amp; Ritchie, D. M. (1988). The C programming language (2nd ed.)....</description>
-      <pubDate>Fri, 26 Dec 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.org/post/카테고리-소개-5977</guid>
-      <category>Paper Review</category>
-    </item>
-    <item>
       <title>Reflections on Trusting Trust</title>
       <link>https://chebread.org/post/reflections-on-trusting-trust</link>
       <description>논문 정보 Thompson, K. (1984). Reflections on trusting trust. Communications of the ACM, 27(8), 761–763....</description>
       <pubDate>Fri, 26 Dec 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.org/post/reflections-on-trusting-trust</guid>
       <category>전체</category>
-      <category>Paper Review</category>
+      <category>Trusting Trust</category>
     </item>
     <item>
       <title>보호 구문을 활용하라</title>
