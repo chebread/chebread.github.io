@@ -1,8 +1,5 @@
 package main
 
-// TODO: 코드 이해하기
-// TODO: 포스트 썸네일 기능 추가하기
-
 import (
 	"blog/lib"
 	"hash/fnv"
@@ -30,14 +27,6 @@ import (
 
 	"github.com/gohugoio/hugo-goldmark-extensions/passthrough"
 )
-
-// TODO: post에 Thumnail 추가 -> header hero 처럼
-
-// TODO: date를 지정하지 않으면 post list에 어떻게 뜨는가? -> Compile Error
-
-// TODO: date가 같다면 post list에서 이름순(숫자->한글->영어)로 정렬되는가? -> Ok
-
-// TODO: Category fixed through site.yml
 
 type CustomSlice []string
 
@@ -103,15 +92,15 @@ func loadTitleSortedCategories(filePath string, postsDataByCategory map[string][
 	titleSortedFileBytes, titleSortedFileErr := os.ReadFile(filePath)
 	if titleSortedFileErr != nil {
 		if os.IsNotExist(titleSortedFileErr) {
-			fmt.Printf("info: %s 파일이 없습니다. 제목 정렬 카테고리 기능을 사용하지 않습니다.\n", filePath)
+			fmt.Printf("info: %s - 파일이 없습니다. 제목 정렬 카테고리 기능을 사용하지 않습니다.\n", filePath)
 		} else {
-			fmt.Printf("warning: %s 파일 읽기 실패: %v\n", filePath, titleSortedFileErr)
+			fmt.Printf("warning: %s - 파일 읽기 실패: %v\n", filePath, titleSortedFileErr)
 		}
 		return titleSortedCategoryMap
 	}
 
 	if err := yaml.Unmarshal(titleSortedFileBytes, &titleSortedCategories); err != nil {
-		fmt.Printf("warning: %s YAML 파싱 실패: %v\n", filePath, err)
+		fmt.Printf("warning: %s - YAML 파싱 실패: %v\n", filePath, err)
 		return titleSortedCategoryMap
 	}
 
@@ -207,30 +196,30 @@ func main() {
 	for _, path := range contentFilePaths {
 		file, err := os.Open(path)
 		if err != nil {
-			fmt.Printf("error: %s - 파일 열기 실패\n", path)
+			fmt.Printf("warning: %s - 파일 열기 실패\n", path)
 			continue
 		}
 		defer file.Close()
 		buffer := make([]byte, 4096)
 		n, err := file.Read(buffer)
 		if err != nil && err != io.EOF {
-			fmt.Printf("error: %s - 파일 읽기 실패\n", path)
+			fmt.Printf("warning: %s - 파일 읽기 실패: %v\n", path, err)
 			continue
 		}
 		content := buffer[:n]
 		if !bytes.HasPrefix(content, []byte("---")) {
-			fmt.Printf("error: %s - 프론트 매터를 찾을 수 없습니다\n", path)
+			fmt.Printf("warning: %s - 프론트 매터를 찾을 수 없습니다\n", path)
 			continue
 		}
 		parts := bytes.SplitN(content, []byte("---"), 3)
 		if len(parts) < 3 {
-			fmt.Printf("error: %s - 프론트 매터의 끝을 찾을 수 없습니다\n", path)
+			fmt.Printf("warning: %s - 프론트 매터의 끝을 찾을 수 없습니다\n", path)
 			continue
 		}
 		frontMatterBytes := parts[1]
 		var fm PostFrontMatter
 		if err := yaml.Unmarshal(frontMatterBytes, &fm); err != nil {
-			fmt.Printf("error: %s - YAML 파싱 실패\n", path)
+			fmt.Printf("warning: %s - YAML 파싱 실패\n", path)
 			continue
 		}
 
@@ -241,7 +230,7 @@ func main() {
 		if fm.Published && !isUnpublishedDir {
 			// Date 누락 검사 및 경고 출력
 			if fm.Date == "" {
-				fmt.Printf("warning: %s - date 필드 누락\n", path)
+				fmt.Printf("warning: %s - 프론트 매터의 Date 필드 누락\n", path)
 				// FormatDateKorean 함수에서 에러가 나지 않도록 임시 기본값 할당
 				fm.Date = "1970-01-01"
 			}
@@ -266,7 +255,7 @@ func main() {
 				oldSlug := slug
 				slug = fmt.Sprintf("%s-%s", slug, hashStr)
 
-				fmt.Printf("파일명 중복으로 인한 slug 변경: %s -> %s (%s)\n", oldSlug, slug, path)
+				fmt.Printf("info: 파일명 중복으로 인한 slug 변경: %s (old) -> %s (new) {new path: %s}\n", oldSlug, slug, path)
 			}
 			slugTracker[slug] = true // 현재 슬러그를 사용 처리
 
@@ -278,7 +267,7 @@ func main() {
 				bodyContent := bytes.TrimSpace(parts[2])
 				plainText, err := lib.MarkdownToPlainText(bodyContent)
 				if err != nil {
-					fmt.Printf("error: %s - Markdown 변환 실패\n", path)
+					fmt.Printf("warning: %s - Markdown 변환 실패\n", path)
 					description = ""
 				} else {
 					normalizedText := strings.Join(strings.Fields(plainText), " ")
@@ -321,13 +310,13 @@ func main() {
 	pinnedFileBytes, pinnedFileErr := os.ReadFile(pinnedCategoriesFilePath)
 	if pinnedFileErr != nil {
 		if os.IsNotExist(pinnedFileErr) {
-			fmt.Printf("info: %s 파일이 없습니다. 고정 카테고리 기능을 사용하지 않습니다.\n", pinnedCategoriesFilePath)
+			fmt.Printf("info: %s - 파일이 없습니다. 고정 카테고리 기능을 사용하지 않습니다.\n", pinnedCategoriesFilePath)
 		} else {
-			fmt.Printf("warning: %s 파일 읽기 실패: %v\n", pinnedCategoriesFilePath, pinnedFileErr)
+			fmt.Printf("warning: %s - 파일 읽기 실패: %v\n", pinnedCategoriesFilePath, pinnedFileErr)
 		}
 	} else {
 		if err := yaml.Unmarshal(pinnedFileBytes, &pinnedCategories); err != nil {
-			fmt.Printf("warning: %s YAML 파싱 실패: %v\n", pinnedCategoriesFilePath, err)
+			fmt.Printf("warning: %s - YAML 파싱 실패: %v\n", pinnedCategoriesFilePath, err)
 			pinnedCategories = nil
 		} else {
 			// 존재하지 않는 카테고리 경고 구축
@@ -359,13 +348,13 @@ func main() {
 
 	var postDirPath string = "public/post"
 	if err := os.MkdirAll(postDirPath, 0755); err != nil {
-		fmt.Printf("error: public/post - 디렉토리 생성 실패\n")
+		fmt.Printf("warning: public/post - 디렉토리 생성 실패\n")
 	}
 
 	layoutFile := "layout/post.html"
 	postTemplate, err := template.ParseFiles(layoutFile)
 	if err != nil {
-		fmt.Printf("error: layout/post.html - 템플릿 파싱 실패\n")
+		fmt.Printf("warning: layout/post.html - 템플릿 파싱 실패\n")
 	}
 
 	type CategoryInfo struct {
@@ -404,7 +393,7 @@ func main() {
 		}
 		formattedDate, err := lib.FormatDateKorean(date) // yyyy년 mm월 dd일
 		if err != nil {
-			fmt.Printf("error: %s - 날짜 변환 실패\n", sourceFilePath)
+			fmt.Printf("warning: %s - 날짜 변환 실패\n", sourceFilePath)
 			continue // return 대신 continue를 사용하여 이 포스트만 건너뛰고 나머지 블로그는 정상 빌드되도록 수정
 		}
 
@@ -428,7 +417,7 @@ func main() {
 		// Post 생성
 		sourceBytes, err := os.ReadFile(sourceFilePath)
 		if err != nil {
-			fmt.Printf("error: %s - 파일 읽기 실패\n", sourceFilePath)
+			fmt.Printf("warning: %s - 파일 읽기 실패\n", sourceFilePath)
 			continue
 		}
 		var bodyBytes []byte
@@ -445,13 +434,13 @@ func main() {
 		var contentBuf bytes.Buffer
 		context := parser.NewContext()
 		if err := md.Convert(bodyBytes, &contentBuf, parser.WithContext(context)); err != nil {
-			fmt.Printf("error: %s - Markdown 변환 실패\n", sourceFilePath)
+			fmt.Printf("warning: %s - Markdown 변환 실패\n", sourceFilePath)
 			continue
 		}
 
 		outputFile, err := os.Create(publicPath)
 		if err != nil {
-			fmt.Printf("error: %s - 출력 파일 생성 실패\n", sourceFilePath)
+			fmt.Printf("warning: %s - 출력 파일 생성 실패\n", sourceFilePath)
 			continue
 		}
 		defer outputFile.Close()
@@ -472,11 +461,11 @@ func main() {
 		}
 
 		if err := postTemplate.Execute(outputFile, postTmplData); err != nil {
-			fmt.Printf("error: layoutpost.html - 템플릿 실행 실패\n")
+			fmt.Printf("warning: layout/post.html - 템플릿 실행 실패\n")
 			continue
 		}
 
-		fmt.Printf("sucess: %s 파일 생성\n", publicPath)
+		fmt.Printf("sucess: %s - 파일 생성\n", publicPath)
 	}
 
 	// Post list 처리
@@ -618,19 +607,19 @@ func main() {
 
 	tmpl, err := template.ParseFiles("./layout/posts.html")
 	if err != nil {
-		fmt.Printf("layout/posts.html 템플릿 파일 파싱 실패\n")
+		fmt.Printf("warning: layout/posts.html - 템플릿 파일 파싱 실패\n")
 	}
 
 	outputFile, err := os.Create("public/posts.html") // 파일이 없으면 새로 생성. 파일이 이미 있으면 초기화.
 	if err != nil {
-		fmt.Printf("출력 파일 생성 실패\n")
+		fmt.Printf("warning: public/posts.html - 출력 파일 생성 실패: %v\n", err)
 	}
 	defer outputFile.Close()
 
 	if err := tmpl.Execute(outputFile, postsPageTemplateData); err != nil {
-		fmt.Printf("템플릿 실행 실패\n")
+		fmt.Printf("warning: postsPageTemplateData - 템플릿 실행 실패: %v\n", err)
 	}
-	fmt.Printf("성공: public/posts.html 파일 생성\n")
+	fmt.Printf("success: public/posts.html - 파일 생성\n")
 
 	// Category 처리
 	fmt.Println()
@@ -638,13 +627,13 @@ func main() {
 
 	categoryPageTmpl, err := template.ParseFiles("./layout/category.html")
 	if err != nil {
-		fmt.Printf("layout/category_page.html 템플릿 파일 파싱 실패: %v\n", err)
+		fmt.Printf("warning: layout/category.html - 템플릿 파일 파싱 실패: %v\n", err)
 		return
 	}
 
 	categoryPostDir := "public/posts"
 	if err := os.MkdirAll(categoryPostDir, 0755); err != nil {
-		fmt.Printf("디렉토리 생성 실패: %v\n", err)
+		fmt.Printf("warning: ppublic/posts - 디렉토리 생성 실패: %v\n", err)
 		return
 	}
 
@@ -734,16 +723,16 @@ func main() {
 
 		outputFile, err := os.Create(outputFilePath)
 		if err != nil {
-			fmt.Printf("출력 파일 생성 실패 (%s): %v\n", outputFilePath, err)
+			fmt.Printf("warning: %s - 출력 파일 생성 실패: %v\n", outputFilePath, err)
 			continue
 		}
 		defer outputFile.Close()
 
 		if err := categoryPageTmpl.Execute(outputFile, templateData); err != nil {
-			fmt.Printf("템플릿 실행 실패 (%s): %v\n", outputFilePath, err)
+			fmt.Printf("warning: %s - 템플릿 실행 실패: %v\n", outputFilePath, err)
 		}
 
-		fmt.Printf("성공: %s 파일 생성\n", outputFilePath)
+		fmt.Printf("success: %s - 파일 생성\n", outputFilePath)
 	}
 
 	// index.html 처리
@@ -752,7 +741,7 @@ func main() {
 
 	homeMdBytes, err := os.ReadFile("content/home/home.md")
 	if err != nil {
-		fmt.Printf("home.md 파일 읽기 실패: %v\n", err)
+		fmt.Printf("warning: home.md - 파일 읽기 실패: %v\n", err)
 		return
 	}
 
@@ -770,21 +759,21 @@ func main() {
 
 	var homeContentBuf bytes.Buffer
 	if err := md.Convert(homeBodyBytes, &homeContentBuf); err != nil {
-		fmt.Printf("home.md 변환 실패: %v\n", err)
+		fmt.Printf("warning: home.md - 변환 실패: %v\n", err)
 		return
 	}
 
 	sourceHomeFile := "layout/index.html"
 	tmplHome, err := template.ParseFiles(sourceHomeFile)
 	if err != nil {
-		fmt.Printf("템플릿 파일 파싱 실패: %v\n", err)
+		fmt.Printf("warning: layout/index.html - 템플릿 파일 파싱 실패: %v\n", err)
 		return
 	}
 
 	destHomeFile := "public/index.html"
 	outputHomeFile, err := os.Create(destHomeFile)
 	if err != nil {
-		fmt.Printf("출력 파일 생성 실패: %v\n", err)
+		fmt.Printf("warning: public/index.html - 출력 파일 생성 실패: %v\n", err)
 		return
 	}
 	defer outputHomeFile.Close()
@@ -801,11 +790,11 @@ func main() {
 	}
 
 	if err := tmplHome.Execute(outputHomeFile, homePageData); err != nil {
-		fmt.Printf("템플릿 실행 실패: %v\n", err)
+		fmt.Printf("warning: homePageData - 템플릿 실행 실패: %v\n", err)
 		return
 	}
 
-	fmt.Printf("성공: %s 파일 생성\n", destHomeFile)
+	fmt.Printf("success: %s - 파일 생성\n", destHomeFile)
 
 	// about.html 처리
 	fmt.Println()
@@ -813,7 +802,7 @@ func main() {
 
 	aboutMdBytes, err := os.ReadFile("content/about/about.md")
 	if err != nil {
-		fmt.Printf("about.md 파일 읽기 실패: %v\n", err)
+		fmt.Printf("warning: about.md - 파일 읽기 실패: %v\n", err)
 		return
 	}
 
@@ -831,21 +820,21 @@ func main() {
 
 	var aboutContentBuf bytes.Buffer
 	if err := md.Convert(aboutBodyBytes, &aboutContentBuf); err != nil {
-		fmt.Printf("about.md 변환 실패: %v\n", err)
+		fmt.Printf("warning: about.md - 변환 실패: %v\n", err)
 		return
 	}
 
 	sourceAboutFile := "layout/about.html"
 	tmplabout, err := template.ParseFiles(sourceAboutFile)
 	if err != nil {
-		fmt.Printf("템플릿 파일 파싱 실패: %v\n", err)
+		fmt.Printf("warning: layout/about.html - 템플릿 파일 파싱 실패: %v\n", err)
 		return
 	}
 
 	destAboutFile := "public/about.html"
 	outputAboutFile, err := os.Create(destAboutFile)
 	if err != nil {
-		fmt.Printf("출력 파일 생성 실패: %v\n", err)
+		fmt.Printf("warning: public/about.html - 출력 파일 생성 실패: %v\n", err)
 		return
 	}
 	defer outputAboutFile.Close()
@@ -862,11 +851,11 @@ func main() {
 	}
 
 	if err := tmplabout.Execute(outputAboutFile, aboutPageData); err != nil {
-		fmt.Printf("템플릿 실행 실패: %v\n", err)
+		fmt.Printf("warning: aboutPageData - 템플릿 실행 실패: %v\n", err)
 		return
 	}
 
-	fmt.Printf("성공: %s 파일 생성\n", destAboutFile)
+	fmt.Printf("success: %s - 파일 생성\n", destAboutFile)
 
 	// sitemap.xml 처리
 	type SitemapURL struct {
@@ -932,7 +921,7 @@ func main() {
 
 	xmlBytes, err := xml.MarshalIndent(urlset, "", "  ")
 	if err != nil {
-		fmt.Printf("error: Sitemap XML 변환 실패\n")
+		fmt.Printf("warning: Sitemap XML 변환 실패: %v\n", err)
 		return
 	}
 
@@ -941,11 +930,11 @@ func main() {
 	var sitemapPath = "public/sitemap.xml"
 	err = os.WriteFile(sitemapPath, sitemapContent, 0644)
 	if err != nil {
-		fmt.Printf("error: %s 파일 생성 실패\n", sitemapPath)
+		fmt.Printf("warning: %s - 파일 생성 실패: %v\n", sitemapPath, err)
 		return
 	}
 
-	fmt.Printf("성공: %s 파일 생성\n", sitemapPath)
+	fmt.Printf("success: %s - 파일 생성\n", sitemapPath)
 
 	// RSS Feed 생성
 	type RSSItem struct {
@@ -1037,7 +1026,7 @@ func main() {
 
 	rssBytes, err := xml.MarshalIndent(rssFeed, "", "  ")
 	if err != nil {
-		fmt.Printf("error: RSS XML 변환 실패\n")
+		fmt.Printf("warning: RSS XML 변환 실패: %v\n", err)
 		return
 	}
 
@@ -1045,9 +1034,9 @@ func main() {
 	var rssPath = "public/rss.xml"
 	err = os.WriteFile(rssPath, rssContent, 0644)
 	if err != nil {
-		fmt.Printf("error: %s 파일 생성 실패\n", rssPath)
+		fmt.Printf("warning: %s - 파일 생성 실패: %v\n", rssPath, err)
 		return
 	}
 
-	fmt.Printf("성공: %s 파일 생성\n", rssPath)
+	fmt.Printf("success: %s - 파일 생성\n", rssPath)
 }
