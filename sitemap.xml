@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.1/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://chebread.org/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://chebread.org/about.html</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
@@ -86,13 +86,13 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/카테고리-소개-247c</loc>
+    <loc>https://chebread.org/post/카테고리-소개-c897</loc>
     <lastmod>2025-05-05</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://chebread.org/post/reflections-on-trusting-trust</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2025-12-26</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -101,13 +101,13 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/-llm을-사용하는-방법</loc>
-    <lastmod>2025-10-02</lastmod>
+    <loc>https://chebread.org/post/chaos-to-cosmos</loc>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/chaos-to-cosmos</loc>
-    <lastmod>2026-05-07</lastmod>
+    <loc>https://chebread.org/post/llm을-사용하는-방법</loc>
+    <lastmod>2025-10-02</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -126,11 +126,6 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/내가-프로그래밍을-하는-이유</loc>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
     <loc>https://chebread.org/post/단일-책임-원칙이-무너지고-있다</loc>
     <lastmod>2025-09-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -138,16 +133,6 @@
   <url>
     <loc>https://chebread.org/post/보호-구문을-활용하라</loc>
     <lastmod>2025-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://chebread.org/post/신문의-매력</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://chebread.org/post/자본력에-따른-우리의-편향적-태도</loc>
-    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -168,6 +153,11 @@
   <url>
     <loc>https://chebread.org/post/힙하게-코딩하는-방법</loc>
     <lastmod>2022-06-05</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://chebread.org/post/카테고리-소개-3efc</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

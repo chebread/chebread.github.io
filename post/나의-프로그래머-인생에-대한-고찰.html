@@ -43,7 +43,7 @@
         },
         "publisher": {
             "@type": "Organization",
-            "name": "차한음",
+            "name": "차한음"
         },
         "datePublished": "2026-10-02",
         "description": "내가 왜 프론트엔드 프로그래밍을 그만두고, 시스템 프로그래밍으로 전향했는지를 나의 블로그에서 한 번도 얘기를 해본 적은 없는 듯하다. 이번 글에서는 그 예기를 나의 인생 이야기와 ..."
@@ -83,18 +83,20 @@
     <div class="root">
         <div class="post">
             <nav class="post-nav post-nav-hero">
-                <a href="/" class="">
-                    <span>홈</span>
-                </a>
-                <a href="/about" class="">
-                    <span>어바웃</span>
-                </a>
-                <a href="/posts" class="active">
-                    <span>포스트</span>
-                </a>
+                <div class="nav-inner">
+                    <a href="/" class="">
+                        <span>홈</span>
+                    </a>
+                    <a href="/about" class="">
+                        <span>어바웃</span>
+                    </a>
+                    <a href="/posts" class="active">
+                        <span>포스트</span>
+                    </a>
+                </div>
             </nav>
-            <header class="post-header post-header--hero">
-                <div class="post-hero" style="background-image: url('https://asset.japan.travel/image/upload/v1750654101/tokyo/Rodin_The_Thinker_Photo__c__Norihiro_Ueno_0623');">
+            <header class="post-header post-header--hero" style="--hero-edge-left-gradient: linear-gradient(to bottom, rgb(178, 185, 227) 0%, rgb(132, 153, 221) 35%, rgb(124, 145, 136) 70%, rgb(76, 97, 59) 100%); --hero-edge-right-gradient: linear-gradient(to bottom, rgb(245, 247, 252) 0%, rgb(151, 172, 228) 35%, rgb(157, 184, 232) 70%, rgb(136, 125, 115) 100%);">
+                <div class="post-hero" style="--post-hero-image: url('https://asset.japan.travel/image/upload/v1750654101/tokyo/Rodin_The_Thinker_Photo__c__Norihiro_Ueno_0623');">
                     <h1 class="post-title">나의 프로그래머 인생에 대한 고찰</h1>
                 </div>
             </header>
