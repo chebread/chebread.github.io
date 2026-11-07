@@ -131,45 +131,68 @@
     background-size: cover;
     background-position: center;
 
-    // 데스크탑: 540px(35rem) 원본 영역은 100% 선명도(black) 유지 + 541px 외부(2rem 구간)에서만 외부 마스크 페더링 동작
+    // 데스크탑: 본체(35rem/560px)는 기존 크기와 선명도를 100% 그대로 유지하고,
+    // 좌우 바깥 영역(-2rem ~ 0, 35rem ~ 37rem)에만 가상 요소(::after)로 외부 마스크 생성
     @media (min-width: 35rem) {
-        max-width: 39rem; // 35rem(560px 원본) + 좌우 2rem(32px) 외부 마스크 영역
-        margin: 0 auto;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -2rem;
+            right: -2rem;
+            border-left: 2rem solid transparent;
+            border-right: 2rem solid transparent;
+            box-sizing: border-box;
+            z-index: 1;
+            pointer-events: none;
 
-        mask-image: linear-gradient(
-            to right,
-            transparent 0%,
-            rgba(0, 0, 0, 0.05) 0.3rem,
-            rgba(0, 0, 0, 0.25) 0.7rem,
-            rgba(0, 0, 0, 0.6) 1.2rem,
-            rgba(0, 0, 0, 0.9) 1.7rem,
-            black 2rem,
-            black calc(100% - 2rem),
-            rgba(0, 0, 0, 0.9) calc(100% - 1.7rem),
-            rgba(0, 0, 0, 0.6) calc(100% - 1.2rem),
-            rgba(0, 0, 0, 0.25) calc(100% - 0.7rem),
-            rgba(0, 0, 0, 0.05) calc(100% - 0.3rem),
-            transparent 100%
-        );
-        -webkit-mask-image: linear-gradient(
-            to right,
-            transparent 0%,
-            rgba(0, 0, 0, 0.05) 0.3rem,
-            rgba(0, 0, 0, 0.25) 0.7rem,
-            rgba(0, 0, 0, 0.6) 1.2rem,
-            rgba(0, 0, 0, 0.9) 1.7rem,
-            black 2rem,
-            black calc(100% - 2rem),
-            rgba(0, 0, 0, 0.9) calc(100% - 1.7rem),
-            rgba(0, 0, 0, 0.6) calc(100% - 1.2rem),
-            rgba(0, 0, 0, 0.25) calc(100% - 0.7rem),
-            rgba(0, 0, 0, 0.05) calc(100% - 0.3rem),
-            transparent 100%
-        );
+            transform: scaleX(-1);
+            background-image: inherit;
+            background-size: 100% 100%, 100% 100%, 35rem auto, 35rem auto;
+            background-position: center;
+            background-origin: padding-box;
+            background-clip: border-box;
+            background-repeat: repeat;
 
-        h1 {
-            max-width: 35rem;
-            margin: 0 auto;
+            mask-origin: border-box;
+            mask-clip: border-box;
+            -webkit-mask-origin: border-box;
+            -webkit-mask-clip: border-box;
+            mask-image: linear-gradient(
+                to right,
+                transparent 0%,
+                rgba(0, 0, 0, 0.05) 0.3rem,
+                rgba(0, 0, 0, 0.25) 0.7rem,
+                rgba(0, 0, 0, 0.6) 1.2rem,
+                rgba(0, 0, 0, 0.9) 1.7rem,
+                black 2rem,
+                transparent 2rem,
+                transparent calc(100% - 2rem),
+                black calc(100% - 2rem),
+                rgba(0, 0, 0, 0.9) calc(100% - 1.7rem),
+                rgba(0, 0, 0, 0.6) calc(100% - 1.2rem),
+                rgba(0, 0, 0, 0.25) calc(100% - 0.7rem),
+                rgba(0, 0, 0, 0.05) calc(100% - 0.3rem),
+                transparent 100%
+            );
+            -webkit-mask-image: linear-gradient(
+                to right,
+                transparent 0%,
+                rgba(0, 0, 0, 0.05) 0.3rem,
+                rgba(0, 0, 0, 0.25) 0.7rem,
+                rgba(0, 0, 0, 0.6) 1.2rem,
+                rgba(0, 0, 0, 0.9) 1.7rem,
+                black 2rem,
+                transparent 2rem,
+                transparent calc(100% - 2rem),
+                black calc(100% - 2rem),
+                rgba(0, 0, 0, 0.9) calc(100% - 1.7rem),
+                rgba(0, 0, 0, 0.6) calc(100% - 1.2rem),
+                rgba(0, 0, 0, 0.25) calc(100% - 0.7rem),
+                rgba(0, 0, 0, 0.05) calc(100% - 0.3rem),
+                transparent 100%
+            );
         }
     }
 
