@@ -4,6 +4,8 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
+
+	"golang.org/x/text/unicode/norm"
 )
 
 var (
@@ -12,6 +14,8 @@ var (
 )
 
 func SlugifyPath(filePath string) string {
+	filePath = norm.NFC.String(filePath)
+
 	// 파일 경로에서 확장자를 제외한 순수 파일명을 가져옵니다
 	base := filepath.Base(filePath)
 	title := strings.TrimSuffix(base, filepath.Ext(base))
@@ -23,5 +27,5 @@ func SlugifyPath(filePath string) string {
 	pathWithDashes := whitespaceRegex.ReplaceAllString(safeTitle, "-")
 
 	// URL 일관성을 위해 모두 소문자로 변경합니다
-	return strings.ToLower(pathWithDashes)
+	return norm.NFC.String(strings.ToLower(pathWithDashes))
 }

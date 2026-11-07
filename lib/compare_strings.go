@@ -1,6 +1,10 @@
 package lib
 
-import "unicode"
+import (
+	"unicode"
+
+	"golang.org/x/text/unicode/norm"
+)
 
 const (
 	typeNumber = iota
@@ -25,8 +29,8 @@ func getCharType(r rune) int {
 // CompareStrings는 두 문자열을 '숫자 -> 한글 -> 영어' 순서 규칙에 따라 비교합니다.
 // a가 b보다 앞에 와야 하면 true를 반환합니다.
 func CompareStrings(a, b string) bool {
-	runesA := []rune(a)
-	runesB := []rune(b)
+	runesA := []rune(norm.NFC.String(a))
+	runesB := []rune(norm.NFC.String(b))
 
 	lenA := len(runesA)
 	lenB := len(runesB)

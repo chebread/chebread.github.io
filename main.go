@@ -16,6 +16,8 @@ import (
 	"strings"
 	"time"
 
+	"golang.org/x/text/unicode/norm"
+
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/extension"
 	"github.com/yuin/goldmark/parser"
@@ -108,7 +110,7 @@ func loadTitleSortedCategories(filePath string, postsDataByCategory map[string][
 	var nonExistentCategories []string
 	var validCategories []string
 	for _, tc := range titleSortedCategories {
-		tc = strings.TrimSpace(tc)
+		tc = norm.NFC.String(strings.TrimSpace(tc))
 		if tc == "" {
 			continue
 		}
@@ -238,13 +240,17 @@ func main() {
 			// Category 누락 검사 및 '미분류' 지정
 			if len(fm.Category) == 0 {
 				fm.Category = CustomSlice{"미분류"}
+			} else {
+				for i := range fm.Category {
+					fm.Category[i] = norm.NFC.String(fm.Category[i])
+				}
 			}
 
 			// title
-			var title string = path[strings.LastIndex(path, "/")+1 : strings.LastIndex(path, ".")]
+			var title string = norm.NFC.String(path[strings.LastIndex(path, "/")+1 : strings.LastIndex(path, ".")])
 
 			// URL
-			var slug string = lib.SlugifyPath(title)
+			var slug string = norm.NFC.String(lib.SlugifyPath(title))
 
 			// 슬러그가 중복되는 경우, 파일 경로를 기반으로 한 6자리 해시값을 뒤에 붙임
 			if slugTracker[slug] {
@@ -254,6 +260,11 @@ func main() {
 
 				oldSlug := slug
 				slug = fmt.Sprintf("%s-%s", slug, hashStr)
+				counter := 1
+				for slugTracker[slug] {
+					slug = fmt.Sprintf("%s-%s-%d", oldSlug, hashStr, counter)
+					counter++
+				}
 
 				fmt.Printf("info: 파일명 중복으로 인한 slug 변경: %s (old) -> %s (new) {new path: %s}\n", oldSlug, slug, path)
 			}
@@ -319,6 +330,9 @@ func main() {
 			fmt.Printf("warning: %s - YAML 파싱 실패: %v\n", pinnedCategoriesFilePath, err)
 			pinnedCategories = nil
 		} else {
+			for i := range pinnedCategories {
+				pinnedCategories[i] = norm.NFC.String(pinnedCategories[i])
+			}
 			// 존재하지 않는 카테고리 경고 구축
 			var nonExistentCategories []string
 			for _, pc := range pinnedCategories {
