@@ -7,7 +7,8 @@
     "build:prod": "bash ./build.sh production",
     "serve": "devd -ol public/",
     "watch": "chokidar \"layout/**/*\" \"content/**/*\" -c \"pnpm run build\" --initial --debounce=1000",
-    "dev": "concurrently \"pnpm run watch\" \"pnpm run serve\""
+    "dev": "concurrently \"pnpm run watch\" \"pnpm run serve\"",
+    "deploy:local": "pnpm run build:prod && gh-pages -d public -b gh-pages -t --cname chebread.org -m \"Deploy from local\""
   },
   "license": "HL-3.0",
   "packageManager": "pnpm@10.33.2",
@@ -19,6 +20,7 @@
     "five-server": "^0.4.5",
     "medium-zoom": "^1.1.0",
     "sass": "^1.93.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "gh-pages": "^6.3.0"
   }
 }
