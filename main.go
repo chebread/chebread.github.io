@@ -7,6 +7,7 @@ import (
 	"bytes"
 	"encoding/xml"
 	"fmt"
+	stdhtml "html"
 	"html/template"
 	"io"
 	"net/url"
@@ -546,7 +547,7 @@ func main() {
 
 		posts := postsDataByCategory[category]
 		postList = append(postList, "<section class=\"category-group\">")
-		postList = append(postList, fmt.Sprintf("<h2 class=\"category-group-title\"><a href=\"%s\">[%s]</a></h2>", categoryLink, category))
+		postList = append(postList, fmt.Sprintf("<h2 class=\"category-group-title\"><a href=\"%s\">[%s]</a></h2>", categoryLink, stdhtml.EscapeString(category)))
 		postList = append(postList, "<ul class=\"category-group-list\">")
 
 		// fixed 정렬 ("전체" 카테고리에서는 fixed 무시, 제목 정렬 카테고리는 날짜 제외)
@@ -589,6 +590,9 @@ func main() {
 				continue
 			}
 
+			safeTitle := stdhtml.EscapeString(title)
+			safeDesc := stdhtml.EscapeString(description)
+
 			if isFixed {
 				fixedTemplate := `<li>
                     <article class="post-item">
@@ -597,7 +601,7 @@ func main() {
                         <p class="post-item-description">%s</p>
                     </article>
                 </li>`
-				postList = append(postList, fmt.Sprintf(fixedTemplate, permalink, title, date, formattedDate, description))
+				postList = append(postList, fmt.Sprintf(fixedTemplate, permalink, safeTitle, date, formattedDate, safeDesc))
 			} else {
 				template := `<li>
                     <article class="post-item">
@@ -606,7 +610,7 @@ func main() {
                         <p class="post-item-description">%s</p>
                     </article>
                 </li>`
-				postList = append(postList, fmt.Sprintf(template, permalink, title, date, formattedDate, description))
+				postList = append(postList, fmt.Sprintf(template, permalink, safeTitle, date, formattedDate, safeDesc))
 			}
 		}
 
@@ -677,7 +681,7 @@ func main() {
 
 		var postListHtml strings.Builder
 		postListHtml.WriteString("<section class=\"category-group\">")
-		postListHtml.WriteString(fmt.Sprintf("<h2 class=\"category-group-title\">[%s]</h2>", category))
+		postListHtml.WriteString(fmt.Sprintf("<h2 class=\"category-group-title\">[%s]</h2>", stdhtml.EscapeString(category)))
 		postListHtml.WriteString("<ul class=\"category-group-list\">")
 
 		for _, data := range posts {
@@ -701,6 +705,9 @@ func main() {
 
 			formattedDate, _ := lib.FormatDateKorean(date)
 
+			safeTitle := stdhtml.EscapeString(title)
+			safeDesc := stdhtml.EscapeString(description)
+
 			var templateString string
 			if isFixed {
 				templateString = `<li>
@@ -710,7 +717,7 @@ func main() {
 						<p class="category-item-description">%s</p>
 					</article>
 				</li>`
-				postListHtml.WriteString(fmt.Sprintf(templateString, permalink, title, date, formattedDate, description))
+				postListHtml.WriteString(fmt.Sprintf(templateString, permalink, safeTitle, date, formattedDate, safeDesc))
 			} else {
 				templateString = `<li>
 					<article class="category-item">
@@ -719,7 +726,7 @@ func main() {
 						<p class="category-item-description">%s</p>
 					</article>
 				</li>`
-				postListHtml.WriteString(fmt.Sprintf(templateString, permalink, title, date, formattedDate, description))
+				postListHtml.WriteString(fmt.Sprintf(templateString, permalink, safeTitle, date, formattedDate, safeDesc))
 			}
 		}
 
