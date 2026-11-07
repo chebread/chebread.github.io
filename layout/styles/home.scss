@@ -103,6 +103,16 @@
             left: 0;
             right: calc(50% + 17.5rem - 2rem);
             background-image:
+                linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.6) 0%,
+                    rgba(0, 0, 0, 0.5) 1rem,
+                    rgba(0, 0, 0, 0.35) 2.2rem,
+                    rgba(0, 0, 0, 0.2) 3.4rem,
+                    rgba(0, 0, 0, 0.08) 4.6rem,
+                    rgba(0, 0, 0, 0.02) 5.8rem,
+                    rgba(0, 0, 0, 0) 7rem
+                ),
                 linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
                 linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 100%),
                 var(--hero-edge-left-gradient);
@@ -119,6 +129,16 @@
             left: calc(50% + 17.5rem - 2rem);
             right: 0;
             background-image:
+                linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.6) 0%,
+                    rgba(0, 0, 0, 0.5) 1rem,
+                    rgba(0, 0, 0, 0.35) 2.2rem,
+                    rgba(0, 0, 0, 0.2) 3.4rem,
+                    rgba(0, 0, 0, 0.08) 4.6rem,
+                    rgba(0, 0, 0, 0.02) 5.8rem,
+                    rgba(0, 0, 0, 0) 7rem
+                ),
                 linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
                 linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 100%),
                 var(--hero-edge-right-gradient);
@@ -143,7 +163,16 @@
     // 이미지 로드 실패 시 color-palette.css 기반 폴백(--neutral-300 / --neutral-700) 적용
     background-color: var(--hero-fallback-bg);
     background-image:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 4rem),
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.5) 1rem,
+            rgba(0, 0, 0, 0.35) 2.2rem,
+            rgba(0, 0, 0, 0.2) 3.4rem,
+            rgba(0, 0, 0, 0.08) 4.6rem,
+            rgba(0, 0, 0, 0.02) 5.8rem,
+            rgba(0, 0, 0, 0) 7rem
+        ),
         linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
         url("/assets/profile.webp"),
         url("/assets/profile.png");
