@@ -388,6 +388,7 @@ func main() {
 		CurrentURL        string // for nav tag
 		Categories        []CategoryInfo
 		Thumbnail         string
+		ThumbnailValid    bool
 		HeroEdgeLeftGrad  template.CSS
 		HeroEdgeRightGrad template.CSS
 	}
@@ -467,8 +468,9 @@ func main() {
 			thumbnail = "/" + thumbnail
 		}
 		var heroEdgeLeftGrad, heroEdgeRightGrad string
+		var thumbnailValid bool
 		if thumbnail != "" {
-			heroEdgeLeftGrad, heroEdgeRightGrad = lib.ExtractHeroGradients(thumbnail)
+			heroEdgeLeftGrad, heroEdgeRightGrad, thumbnailValid = lib.ExtractHeroGradientsWithStatus(thumbnail)
 		} else {
 			heroEdgeLeftGrad, heroEdgeRightGrad = lib.DefaultHeroEdgeLeftGrad, lib.DefaultHeroEdgeRightGrad
 		}
@@ -485,6 +487,7 @@ func main() {
 			CurrentURL:        "/posts",
 			Categories:        categoriesData,
 			Thumbnail:         thumbnail,
+			ThumbnailValid:    thumbnailValid,
 			HeroEdgeLeftGrad:  template.CSS(heroEdgeLeftGrad),
 			HeroEdgeRightGrad: template.CSS(heroEdgeRightGrad),
 		}

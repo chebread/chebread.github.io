@@ -1,6 +1,7 @@
 package lib
 
 import (
+	"crypto/tls"
 	"fmt"
 	"image"
 	"image/color"
@@ -24,6 +25,7 @@ import (
 type HeroGradients struct {
 	Left  string
 	Right string
+	Valid bool
 }
 
 var (
@@ -34,7 +36,10 @@ var (
 	heroGradientCache    = make(map[string]HeroGradients)
 	heroGradientCacheMu  sync.RWMutex
 	httpClient           = &http.Client{
-		Timeout: 3 * time.Second,
+		Timeout: 5 * time.Second,
+		Transport: &http.Transport{
+			TLSNextProto: make(map[string]func(authority string, c *tls.Conn) http.RoundTripper),
+		},
 	}
 )
 
@@ -139,34 +144,41 @@ func linearToSRGB(c float64) float64 {
 // It accepts local file paths or external HTTP/HTTPS URLs.
 // If an image cannot be fetched or decoded, it safely returns default gradients without crashing.
 func ExtractHeroGradients(imageSrc string) (string, string) {
+	left, right, _ := ExtractHeroGradientsWithStatus(imageSrc)
+	return left, right
+}
+
+// ExtractHeroGradientsWithStatus calculates left and right vertical 4-tier edge gradients from an image
+// and returns whether the image was successfully loaded and extracted.
+func ExtractHeroGradientsWithStatus(imageSrc string) (string, string, bool) {
 	trimmed := strings.TrimSpace(imageSrc)
 	if trimmed == "" {
-		return DefaultHeroEdgeLeftGrad, DefaultHeroEdgeRightGrad
+		return DefaultHeroEdgeLeftGrad, DefaultHeroEdgeRightGrad, false
 	}
 
 	heroGradientCacheMu.RLock()
 	cached, ok := heroGradientCache[trimmed]
 	heroGradientCacheMu.RUnlock()
 	if ok {
-		return cached.Left, cached.Right
+		return cached.Left, cached.Right, cached.Valid
 	}
 
 	img, err := loadImage(trimmed)
 	if err != nil {
 		fmt.Printf("warning: hero 이미지 로드 실패 (%s): %v. 기본 그라디언트를 사용합니다.\n", trimmed, err)
 		heroGradientCacheMu.Lock()
-		heroGradientCache[trimmed] = HeroGradients{Left: DefaultHeroEdgeLeftGrad, Right: DefaultHeroEdgeRightGrad}
+		heroGradientCache[trimmed] = HeroGradients{Left: DefaultHeroEdgeLeftGrad, Right: DefaultHeroEdgeRightGrad, Valid: false}
 		heroGradientCacheMu.Unlock()
-		return DefaultHeroEdgeLeftGrad, DefaultHeroEdgeRightGrad
+		return DefaultHeroEdgeLeftGrad, DefaultHeroEdgeRightGrad, false
 	}
 
 	leftGrad, rightGrad := CalculateHeroGradients(img)
 
 	heroGradientCacheMu.Lock()
-	heroGradientCache[trimmed] = HeroGradients{Left: leftGrad, Right: rightGrad}
+	heroGradientCache[trimmed] = HeroGradients{Left: leftGrad, Right: rightGrad, Valid: true}
 	heroGradientCacheMu.Unlock()
 
-	return leftGrad, rightGrad
+	return leftGrad, rightGrad, true
 }
 
 func loadImage(imageSrc string) (image.Image, error) {
