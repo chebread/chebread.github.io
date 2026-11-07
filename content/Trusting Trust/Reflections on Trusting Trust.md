@@ -1,5 +1,5 @@
 ---
-date: 2026-11-03
+date: 2025-12-26
 category:
   - 전체
   - Trusting Trust
