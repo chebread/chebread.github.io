@@ -11,8 +11,7 @@
 .home-nav {
     position: sticky;
     top: 0;
-    max-width: 35rem;
-    margin: 0 auto;
+    width: 100%;
     z-index: 10;
 
     transition: background-color 0.3s ease;
@@ -43,9 +42,16 @@
             }
         }
     }
-    display: flex;
-    height: 4rem;
-    flex-direction: row;
+
+    .nav-inner {
+        max-width: 35rem;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        height: 4rem;
+        flex-direction: row;
+    }
+
     a {
         -webkit-tap-highlight-color: transparent;
         -moz-user-select: none;
@@ -85,11 +91,9 @@
     margin-top: -4rem;
     position: relative;
     overflow: hidden;
+    width: 100%;
 
     @media (min-width: 35rem) {
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-
         // 좌측 윙: 사진 좌측 가장자리의 상하 수직 색상 변화를 1:1로 이어받아 화면 좌측 끝까지 연장
         // 사진의 0.8rem 페더링 마스크 하부로 2rem 깊숙이 파고들어, 바닥의 흰색 페이지 배경이 비치는 것을 원천 차단
         &::before {
@@ -98,9 +102,8 @@
             top: 0;
             bottom: 0;
             left: 0;
-            width: calc(50% - 17.5rem + 2rem);
+            right: calc(50% + 17.5rem - 2rem);
             background-image:
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 4rem),
                 linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
                 linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 100%),
                 var(--hero-edge-left-gradient);
@@ -115,10 +118,9 @@
             position: absolute;
             top: 0;
             bottom: 0;
+            left: calc(50% + 17.5rem - 2rem);
             right: 0;
-            width: calc(50% - 17.5rem + 2rem);
             background-image:
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 4rem),
                 linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
                 linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 100%),
                 var(--hero-edge-right-gradient);
@@ -213,6 +215,8 @@
 }
 
 .home-content {
+    max-width: 35rem;
+    margin: 0 auto;
     padding: 1rem 0 1rem 0;
     @media (max-width: 35rem) {
         padding: 1rem 1.3rem 1rem 1.3rem;
@@ -220,6 +224,8 @@
 }
 
 .home-footer {
+    max-width: 35rem;
+    margin: 0 auto;
     padding: 3rem 0 3rem 0;
     section {
         display: flex;

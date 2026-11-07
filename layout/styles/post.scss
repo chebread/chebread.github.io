@@ -1,11 +1,23 @@
+:root {
+    --hero-edge-left-gradient: linear-gradient(to bottom, #8b9d9c 0%, #958a84 35%, #7e695d 70%, #644739 100%);
+    --hero-edge-right-gradient: linear-gradient(to bottom, #262423 0%, #2d2b29 35%, #2a2826 70%, #1c1b1a 100%);
+}
+
 .post-nav {
     position: sticky;
     top: 0;
+    width: 100%;
     z-index: 10;
-    display: flex;
-    height: 4rem;
-    flex-direction: row;
     background-color: var(--nav-bg-scrolled);
+
+    .nav-inner {
+        max-width: 35rem;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        height: 4rem;
+        flex-direction: row;
+    }
 
     a {
         -webkit-tap-highlight-color: transparent;
@@ -75,10 +87,52 @@
 
 .post-header--hero {
     margin-top: -4rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    @media (min-width: 35rem) {
+        // 좌측 윙: 사진 좌측 가장자리의 상하 수직 색상 변화를 1:1로 이어받아 화면 좌측 끝까지 연장
+        // 사진의 0.8rem 페더링 마스크 하부로 2rem 깊숙이 파고들어, 바닥의 흰색 페이지 배경이 비치는 것을 원천 차단
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: calc(50% + 17.5rem - 2rem);
+            background-image:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+                linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 100%),
+                var(--hero-edge-left-gradient);
+            background-size: cover;
+            z-index: 0;
+        }
+
+        // 우측 윙: 사진 우측 가장자리의 상하 수직 색상 변화를 1:1로 이어받아 화면 우측 끝까지 연장
+        // 사진의 0.8rem 페더링 마스크 하부로 2rem 깊숙이 파고들어, 바닥의 흰색 페이지 배경이 비치는 것을 원천 차단
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: calc(50% + 17.5rem - 2rem);
+            right: 0;
+            background-image:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+                linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 100%),
+                var(--hero-edge-right-gradient);
+            background-size: cover;
+            z-index: 0;
+        }
+    }
 }
 
 .post-hero {
     position: relative;
+    z-index: 1;
+    max-width: 35rem;
+    margin: 0 auto;
     background-size: cover;
     background-position: center;
 
@@ -89,6 +143,39 @@
     }
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 35rem) {
+        mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(0, 0, 0, 0.05) 0.15rem,
+            rgba(0, 0, 0, 0.3) 0.35rem,
+            rgba(0, 0, 0, 0.7) 0.55rem,
+            rgba(0, 0, 0, 0.95) 0.7rem,
+            black 0.8rem,
+            black calc(100% - 0.8rem),
+            rgba(0, 0, 0, 0.95) calc(100% - 0.7rem),
+            rgba(0, 0, 0, 0.7) calc(100% - 0.55rem),
+            rgba(0, 0, 0, 0.3) calc(100% - 0.35rem),
+            rgba(0, 0, 0, 0.05) calc(100% - 0.15rem),
+            transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(0, 0, 0, 0.05) 0.15rem,
+            rgba(0, 0, 0, 0.3) 0.35rem,
+            rgba(0, 0, 0, 0.7) 0.55rem,
+            rgba(0, 0, 0, 0.95) 0.7rem,
+            black 0.8rem,
+            black calc(100% - 0.8rem),
+            rgba(0, 0, 0, 0.95) calc(100% - 0.7rem),
+            rgba(0, 0, 0, 0.7) calc(100% - 0.55rem),
+            rgba(0, 0, 0, 0.3) calc(100% - 0.35rem),
+            rgba(0, 0, 0, 0.05) calc(100% - 0.15rem),
+            transparent 100%
+        );
+    }
 
     /* 이미지 노출 공간 확보: flex:1로 남은 공간을 채우며, 제목이 2줄(≈8rem) 이하일 때는
        hero가 21.5rem에서 변하지 않고, 2줄 초과 시 hero가 자연스럽게 확장됨 */
@@ -120,6 +207,8 @@
         line-height: 1.5;
         font-weight: 800;
         padding: 1rem;
+        width: 100%;
+        box-sizing: border-box;
         @media (max-width: 35rem) {
             padding: 1rem 1.3rem 1rem 1.3rem;
         }
@@ -128,6 +217,8 @@
 }
 
 .post-content {
+    max-width: 35rem;
+    margin: 0 auto;
     padding: 1rem 0 1rem 0;
     @media (max-width: 35rem) {
         padding: 1rem 1.3rem 1rem 1.3rem;
@@ -183,6 +274,8 @@
 }
 
 .post-footer {
+    max-width: 35rem;
+    margin: 0 auto;
     padding: 3rem 0 3rem 0;
     section {
         display: flex;

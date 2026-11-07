@@ -94,32 +94,36 @@
         <div class="post">
             {{- if .Thumbnail}}
             <nav class="post-nav post-nav-hero">
-                <a href="/" class="{{if eq .CurrentURL "/"}}active{{end}}">
-                    <span>홈</span>
-                </a>
-                <a href="/about{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/about"}}active{{end}}">
-                    <span>어바웃</span>
-                </a>
-                <a href="/posts{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/posts"}}active{{end}}">
-                    <span>포스트</span>
-                </a>
+                <div class="nav-inner">
+                    <a href="/" class="{{if eq .CurrentURL "/"}}active{{end}}">
+                        <span>홈</span>
+                    </a>
+                    <a href="/about{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/about"}}active{{end}}">
+                        <span>어바웃</span>
+                    </a>
+                    <a href="/posts{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/posts"}}active{{end}}">
+                        <span>포스트</span>
+                    </a>
+                </div>
             </nav>
-            <header class="post-header post-header--hero">
+            <header class="post-header post-header--hero" style="--hero-edge-left-gradient: {{ .HeroEdgeLeftGrad }}; --hero-edge-right-gradient: {{ .HeroEdgeRightGrad }};">
                 <div class="post-hero" style="background-image: url('{{- .Thumbnail -}}');">
                     <h1 class="post-title">{{- .Title -}}</h1>
                 </div>
             </header>
             {{- else}}
             <nav class="post-nav">
-                <a href="/" class="{{if eq .CurrentURL "/"}}active{{end}}">
-                    <span>홈</span>
-                </a>
-                <a href="/about{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/about"}}active{{end}}">
-                    <span>어바웃</span>
-                </a>
-                <a href="/posts{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/posts"}}active{{end}}">
-                    <span>포스트</span>
-                </a>
+                <div class="nav-inner">
+                    <a href="/" class="{{if eq .CurrentURL "/"}}active{{end}}">
+                        <span>홈</span>
+                    </a>
+                    <a href="/about{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/about"}}active{{end}}">
+                        <span>어바웃</span>
+                    </a>
+                    <a href="/posts{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/posts"}}active{{end}}">
+                        <span>포스트</span>
+                    </a>
+                </div>
             </nav>
             {{- end}}
 

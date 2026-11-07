@@ -67,18 +67,20 @@
     <div class="root">
         <div class="about">
             <nav class="about-nav">
-                <a href="/" class="{{if eq .CurrentURL "/"}}active{{end}}">
-                    <span>홈</span>
-                </a>
-                <a href="/about{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/about"}}active{{end}}">
-                    <span>어바웃</span>
-                </a>
-                <a href="/posts{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/posts"}}active{{end}}">
-                    <span>포스트</span>
-                </a>
+                <div class="nav-inner">
+                    <a href="/" class="{{if eq .CurrentURL "/"}}active{{end}}">
+                        <span>홈</span>
+                    </a>
+                    <a href="/about{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/about"}}active{{end}}">
+                        <span>어바웃</span>
+                    </a>
+                    <a href="/posts{{if not .IsProduction}}.html{{end}}" class="{{if eq .CurrentURL "/posts"}}active{{end}}">
+                        <span>포스트</span>
+                    </a>
+                </div>
             </nav>
 
-            <header class="about-header">
+            <header class="about-header" style="--hero-edge-left-gradient: {{ .HeroEdgeLeftGrad }}; --hero-edge-right-gradient: {{ .HeroEdgeRightGrad }};">
                 <div class="about-hero">
                     <h1>시스템 프로그래머 차한음</h1>
                 </div>

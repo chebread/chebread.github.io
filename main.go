@@ -377,17 +377,19 @@ func main() {
 	}
 
 	type PostTmplData struct {
-		IsProduction  bool
-		Title         string
-		Date          string
-		FormattedDate string
+		IsProduction      bool
+		Title             string
+		Date              string
+		FormattedDate     string
 		// Category      []string
-		Description string
-		Permalink   string
-		Content     template.HTML
-		CurrentURL  string // for nav tag
-		Categories  []CategoryInfo
-		Thumbnail   string
+		Description       string
+		Permalink         string
+		Content           template.HTML
+		CurrentURL        string // for nav tag
+		Categories        []CategoryInfo
+		Thumbnail         string
+		HeroEdgeLeftGrad  template.CSS
+		HeroEdgeRightGrad template.CSS
 	}
 
 	for _, data := range postsData {
@@ -460,18 +462,31 @@ func main() {
 		defer outputFile.Close()
 
 		thumbnail, _ := data["thumbnail"].(string)
+		thumbnail = strings.TrimSpace(thumbnail)
+		if thumbnail != "" && !strings.HasPrefix(thumbnail, "http://") && !strings.HasPrefix(thumbnail, "https://") && !strings.HasPrefix(thumbnail, "//") && !strings.HasPrefix(thumbnail, "/") {
+			thumbnail = "/" + thumbnail
+		}
+		var heroEdgeLeftGrad, heroEdgeRightGrad string
+		if thumbnail != "" {
+			heroEdgeLeftGrad, heroEdgeRightGrad = lib.ExtractHeroGradients(thumbnail)
+		} else {
+			heroEdgeLeftGrad, heroEdgeRightGrad = lib.DefaultHeroEdgeLeftGrad, lib.DefaultHeroEdgeRightGrad
+		}
+
 		postTmplData := PostTmplData{
-			IsProduction:  appEnv == "production",
-			Title:         title,
-			Date:          date,
-			FormattedDate: formattedDate,
+			IsProduction:      appEnv == "production",
+			Title:             title,
+			Date:              date,
+			FormattedDate:     formattedDate,
 			// Category:      category,
-			Description: description,
-			Permalink:   permalink,
-			Content:     template.HTML(contentBuf.String()),
-			CurrentURL:  "/posts",
-			Categories:  categoriesData,
-			Thumbnail:   thumbnail,
+			Description:       description,
+			Permalink:         permalink,
+			Content:           template.HTML(contentBuf.String()),
+			CurrentURL:        "/posts",
+			Categories:        categoriesData,
+			Thumbnail:         thumbnail,
+			HeroEdgeLeftGrad:  template.CSS(heroEdgeLeftGrad),
+			HeroEdgeRightGrad: template.CSS(heroEdgeRightGrad),
 		}
 
 		if err := postTemplate.Execute(outputFile, postTmplData); err != nil {
@@ -793,14 +808,19 @@ func main() {
 	defer outputHomeFile.Close()
 
 	type HomePageData struct {
-		IsProduction bool
-		CurrentURL   string
-		Content      template.HTML
+		IsProduction      bool
+		CurrentURL        string
+		Content           template.HTML
+		HeroEdgeLeftGrad  template.CSS
+		HeroEdgeRightGrad template.CSS
 	}
+	homeLeftGrad, homeRightGrad := lib.ExtractHeroGradients("/assets/profile.webp")
 	homePageData := HomePageData{
-		IsProduction: appEnv == "production",
-		CurrentURL:   "/",
-		Content:      template.HTML(homeContentBuf.String()),
+		IsProduction:      appEnv == "production",
+		CurrentURL:        "/",
+		Content:           template.HTML(homeContentBuf.String()),
+		HeroEdgeLeftGrad:  template.CSS(homeLeftGrad),
+		HeroEdgeRightGrad: template.CSS(homeRightGrad),
 	}
 
 	if err := tmplHome.Execute(outputHomeFile, homePageData); err != nil {
@@ -854,14 +874,19 @@ func main() {
 	defer outputAboutFile.Close()
 
 	type AboutPageData struct {
-		IsProduction bool
-		CurrentURL   string
-		Content      template.HTML
+		IsProduction      bool
+		CurrentURL        string
+		Content           template.HTML
+		HeroEdgeLeftGrad  template.CSS
+		HeroEdgeRightGrad template.CSS
 	}
+	aboutLeftGrad, aboutRightGrad := lib.ExtractHeroGradients("/assets/profile.webp")
 	aboutPageData := AboutPageData{
-		IsProduction: appEnv == "production",
-		CurrentURL:   "/about",
-		Content:      template.HTML(aboutContentBuf.String()),
+		IsProduction:      appEnv == "production",
+		CurrentURL:        "/about",
+		Content:           template.HTML(aboutContentBuf.String()),
+		HeroEdgeLeftGrad:  template.CSS(aboutLeftGrad),
+		HeroEdgeRightGrad: template.CSS(aboutRightGrad),
 	}
 
 	if err := tmplabout.Execute(outputAboutFile, aboutPageData); err != nil {
