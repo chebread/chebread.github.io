@@ -3,9 +3,9 @@
 // 그니까 Nav를 분리시키면, header height는 17.5로 작아짐.
 
 :root {
-    // 사진 좌우 상하 4단계 수직 그라데이션 기본값 (main.ts에서 어떤 사진이든 실시간 자동 추출)
-    --hero-edge-left-gradient: linear-gradient(to bottom, #8b9d9c 0%, #958a84 35%, #7e695d 70%, #644739 100%);
-    --hero-edge-right-gradient: linear-gradient(to bottom, #262423 0%, #2d2b29 35%, #2a2826 70%, #1c1b1a 100%);
+    // 사진 좌우 상하 4단계 수직 그라데이션 기본값 (이미지 로드 실패 시 --neutral-300 / --neutral-700 폴백)
+    --hero-edge-left-gradient: linear-gradient(to bottom, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 0%, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 35%, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 70%, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 100%);
+    --hero-edge-right-gradient: linear-gradient(to bottom, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 0%, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 35%, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 70%, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 100%);
 }
 
 .home-nav {
@@ -140,6 +140,8 @@
     flex-direction: column;
 
     // 중앙 사진: 35rem(560px) 전체 너비에서 100% 선명하게 표시 (내부 마스크 제거로 원본 크기 및 선명도 100% 보존)
+    // 이미지 로드 실패 시 color-palette.css 기반 폴백(--neutral-300 / --neutral-700) 적용
+    background-color: var(--hero-fallback-bg);
     background-image:
         linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 4rem),
         linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
@@ -165,6 +167,7 @@
             pointer-events: none;
 
             transform: scaleX(-1);
+            background-color: inherit;
             background-image: inherit;
             background-size: 100% 100%, 100% 100%, 35rem auto, 35rem auto;
             background-position: center;

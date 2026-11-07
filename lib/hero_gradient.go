@@ -12,17 +12,13 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"regexp"
+	"strconv"
 	"strings"
 	"sync"
 	"time"
 
 	_ "golang.org/x/image/webp"
-)
-
-// Default hero edge gradients matching the design system
-const (
-	DefaultHeroEdgeLeftGrad  = "linear-gradient(to bottom, #8b9d9c 0%, #958a84 35%, #7e695d 70%, #644739 100%)"
-	DefaultHeroEdgeRightGrad = "linear-gradient(to bottom, #262423 0%, #2d2b29 35%, #2a2826 70%, #1c1b1a 100%)"
 )
 
 type HeroGradients struct {
@@ -31,12 +27,113 @@ type HeroGradients struct {
 }
 
 var (
-	heroGradientCache   = make(map[string]HeroGradients)
-	heroGradientCacheMu sync.RWMutex
-	httpClient          = &http.Client{
+	DefaultHeroEdgeLeftGrad  string
+	DefaultHeroEdgeRightGrad string
+
+	defaultGradientsOnce sync.Once
+	heroGradientCache    = make(map[string]HeroGradients)
+	heroGradientCacheMu  sync.RWMutex
+	httpClient           = &http.Client{
 		Timeout: 3 * time.Second,
 	}
 )
+
+func init() {
+	initDefaultHeroGradients()
+}
+
+// initDefaultHeroGradients reads --neutral-300 (Light mode) and --neutral-700 (Dark mode)
+// from layout/styles/color-palette.css, constructs synthetic 1x1 images for each,
+// and runs them through CalculateHeroGradients so that the fallback hero-color
+// is extracted by the exact same Go pipeline.
+func initDefaultHeroGradients() {
+	defaultGradientsOnce.Do(func() {
+		lightColor := parsePaletteNeutralColor("--neutral-300", color.NRGBA{R: 212, G: 212, B: 212, A: 255})
+		darkColor := parsePaletteNeutralColor("--neutral-700", color.NRGBA{R: 64, G: 64, B: 64, A: 255})
+
+		lightImg := image.NewNRGBA(image.Rect(0, 0, 100, 100))
+		darkImg := image.NewNRGBA(image.Rect(0, 0, 100, 100))
+		for y := 0; y < 100; y++ {
+			for x := 0; x < 100; x++ {
+				lightImg.SetNRGBA(x, y, lightColor)
+				darkImg.SetNRGBA(x, y, darkColor)
+			}
+		}
+
+		lightLeft, lightRight := CalculateHeroGradients(lightImg)
+		darkLeft, darkRight := CalculateHeroGradients(darkImg)
+
+		// Extract the rgb(...) color extracted by CalculateHeroGradients
+		lightLeftRGB := extractFirstRGB(lightLeft, "rgb(212, 212, 212)")
+		lightRightRGB := extractFirstRGB(lightRight, "rgb(212, 212, 212)")
+		darkLeftRGB := extractFirstRGB(darkLeft, "rgb(64, 64, 64)")
+		darkRightRGB := extractFirstRGB(darkRight, "rgb(64, 64, 64)")
+
+		// Use light-dark() so the browser selects the Go-extracted Light (--neutral-300) or Dark (--neutral-700)
+		// gradient color automatically based on color-scheme: light dark.
+		leftStop := fmt.Sprintf("light-dark(%s, %s)", lightLeftRGB, darkLeftRGB)
+		rightStop := fmt.Sprintf("light-dark(%s, %s)", lightRightRGB, darkRightRGB)
+
+		DefaultHeroEdgeLeftGrad = fmt.Sprintf("linear-gradient(to bottom, %s 0%%, %s 35%%, %s 70%%, %s 100%%)", leftStop, leftStop, leftStop, leftStop)
+		DefaultHeroEdgeRightGrad = fmt.Sprintf("linear-gradient(to bottom, %s 0%%, %s 35%%, %s 70%%, %s 100%%)", rightStop, rightStop, rightStop, rightStop)
+	})
+}
+
+func extractFirstRGB(gradStr, fallback string) string {
+	idx := strings.Index(gradStr, "rgb(")
+	if idx == -1 {
+		return fallback
+	}
+	end := strings.Index(gradStr[idx:], ")")
+	if end == -1 {
+		return fallback
+	}
+	return gradStr[idx : idx+end+1]
+}
+
+// parsePaletteNeutralColor parses an achromatic oklch(L 0 0) variable from layout/styles/color-palette.css
+// and converts it to sRGB color.NRGBA.
+func parsePaletteNeutralColor(varName string, fallback color.NRGBA) color.NRGBA {
+	candidates := []string{
+		"layout/styles/color-palette.css",
+		"../layout/styles/color-palette.css",
+	}
+	var content []byte
+	for _, p := range candidates {
+		if b, err := os.ReadFile(p); err == nil {
+			content = b
+			break
+		}
+	}
+	if len(content) == 0 {
+		return fallback
+	}
+
+	pattern := regexp.QuoteMeta(varName) + `\s*:\s*oklch\(\s*([0-9.]+)`
+	re := regexp.MustCompile(pattern)
+	m := re.FindSubmatch(content)
+	if len(m) < 2 {
+		return fallback
+	}
+
+	L, err := strconv.ParseFloat(string(m[1]), 64)
+	if err != nil {
+		return fallback
+	}
+
+	// Convert achromatic OKLCH (L, C=0, H=0) -> OKLab (L, a=0, b=0) -> Linear sRGB -> sRGB
+	lLinear := L * L * L
+	srgb := linearToSRGB(lLinear)
+	v := uint8(math.Round(math.Max(0, math.Min(1, srgb)) * 255.0))
+	return color.NRGBA{R: v, G: v, B: v, A: 255}
+}
+
+func linearToSRGB(c float64) float64 {
+	if c <= 0.0031308 {
+		return 12.92 * c
+	}
+	return 1.055*math.Pow(c, 1.0/2.4) - 0.055
+}
 
 // ExtractHeroGradients calculates left and right vertical 4-tier edge gradients from an image.
 // It accepts local file paths or external HTTP/HTTPS URLs.
