@@ -21,6 +21,8 @@ html,
 body {
     padding: 0;
     margin: 0;
+    overflow-x: hidden; /* IE/구형 브라우저 폴백 */
+    overflow-x: clip;   /* 최신 표준 (sticky nav 보존) */
 
     font-size: 16px; /* 1rem = 16px */
     font-family:
