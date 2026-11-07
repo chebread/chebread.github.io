@@ -92,8 +92,7 @@
     width: 100%;
 
     @media (min-width: 35rem) {
-        // 좌측 윙: 사진 좌측 가장자리의 상하 수직 색상 변화를 1:1로 이어받아 화면 좌측 끝까지 연장
-        // 사진의 0.8rem 페더링 마스크 하부로 2rem 깊숙이 파고들어, 바닥의 흰색 페이지 배경이 비치는 것을 원천 차단
+        // 좌측 윙: 사진 좌측 외부 마스크 영역 하부로 2rem 침투하여, 541px 외부 페더링과 1:1 유기적 융합
         &::before {
             content: '';
             position: absolute;
@@ -109,8 +108,7 @@
             z-index: 0;
         }
 
-        // 우측 윙: 사진 우측 가장자리의 상하 수직 색상 변화를 1:1로 이어받아 화면 우측 끝까지 연장
-        // 사진의 0.8rem 페더링 마스크 하부로 2rem 깊숙이 파고들어, 바닥의 흰색 페이지 배경이 비치는 것을 원천 차단
+        // 우측 윙: 사진 우측 외부 마스크 영역 하부로 2rem 침투하여, 541px 외부 페더링과 1:1 유기적 융합
         &::after {
             content: '';
             position: absolute;
@@ -144,37 +142,46 @@
     display: flex;
     flex-direction: column;
 
+    // 데스크탑: 540px(35rem) 원본 영역은 100% 선명도(black) 유지 + 541px 외부(2rem 구간)에서만 외부 마스크 페더링 동작
     @media (min-width: 35rem) {
+        max-width: 39rem; // 35rem(560px 원본) + 좌우 2rem(32px) 외부 마스크 영역
+        margin: 0 auto;
+
         mask-image: linear-gradient(
             to right,
             transparent 0%,
-            rgba(0, 0, 0, 0.05) 0.15rem,
-            rgba(0, 0, 0, 0.3) 0.35rem,
-            rgba(0, 0, 0, 0.7) 0.55rem,
-            rgba(0, 0, 0, 0.95) 0.7rem,
-            black 0.8rem,
-            black calc(100% - 0.8rem),
-            rgba(0, 0, 0, 0.95) calc(100% - 0.7rem),
-            rgba(0, 0, 0, 0.7) calc(100% - 0.55rem),
-            rgba(0, 0, 0, 0.3) calc(100% - 0.35rem),
-            rgba(0, 0, 0, 0.05) calc(100% - 0.15rem),
+            rgba(0, 0, 0, 0.05) 0.3rem,
+            rgba(0, 0, 0, 0.25) 0.7rem,
+            rgba(0, 0, 0, 0.6) 1.2rem,
+            rgba(0, 0, 0, 0.9) 1.7rem,
+            black 2rem,
+            black calc(100% - 2rem),
+            rgba(0, 0, 0, 0.9) calc(100% - 1.7rem),
+            rgba(0, 0, 0, 0.6) calc(100% - 1.2rem),
+            rgba(0, 0, 0, 0.25) calc(100% - 0.7rem),
+            rgba(0, 0, 0, 0.05) calc(100% - 0.3rem),
             transparent 100%
         );
         -webkit-mask-image: linear-gradient(
             to right,
             transparent 0%,
-            rgba(0, 0, 0, 0.05) 0.15rem,
-            rgba(0, 0, 0, 0.3) 0.35rem,
-            rgba(0, 0, 0, 0.7) 0.55rem,
-            rgba(0, 0, 0, 0.95) 0.7rem,
-            black 0.8rem,
-            black calc(100% - 0.8rem),
-            rgba(0, 0, 0, 0.95) calc(100% - 0.7rem),
-            rgba(0, 0, 0, 0.7) calc(100% - 0.55rem),
-            rgba(0, 0, 0, 0.3) calc(100% - 0.35rem),
-            rgba(0, 0, 0, 0.05) calc(100% - 0.15rem),
+            rgba(0, 0, 0, 0.05) 0.3rem,
+            rgba(0, 0, 0, 0.25) 0.7rem,
+            rgba(0, 0, 0, 0.6) 1.2rem,
+            rgba(0, 0, 0, 0.9) 1.7rem,
+            black 2rem,
+            black calc(100% - 2rem),
+            rgba(0, 0, 0, 0.9) calc(100% - 1.7rem),
+            rgba(0, 0, 0, 0.6) calc(100% - 1.2rem),
+            rgba(0, 0, 0, 0.25) calc(100% - 0.7rem),
+            rgba(0, 0, 0, 0.05) calc(100% - 0.3rem),
             transparent 100%
         );
+
+        .post-title {
+            max-width: 35rem;
+            margin: 0 auto;
+        }
     }
 
     /* 이미지 노출 공간 확보: flex:1로 남은 공간을 채우며, 제목이 2줄(≈8rem) 이하일 때는
