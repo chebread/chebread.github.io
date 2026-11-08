@@ -92,14 +92,14 @@
     width: 100%;
 
     @media (min-width: 35rem) {
-        // 좌측 윙: 사진 좌측 외부 마스크 영역 하부로 2rem 침투하여, 541px 외부 페더링과 1:1 유기적 융합
+        // 좌측 윙: 사진 좌측 외부 마스크 영역 하부로 1rem 침투하여, 541px 외부 페더링과 1:1 유기적 융합
         &::before {
             content: '';
             position: absolute;
             top: 0;
             bottom: 0;
             left: 0;
-            right: calc(50% + 17.5rem - 2rem);
+            right: calc(50% + 17.5rem - 1rem);
             background-image:
                 linear-gradient(
                     to bottom,
@@ -118,13 +118,13 @@
             z-index: 0;
         }
 
-        // 우측 윙: 사진 우측 외부 마스크 영역 하부로 2rem 침투하여, 541px 외부 페더링과 1:1 유기적 융합
+        // 우측 윙: 사진 우측 외부 마스크 영역 하부로 1rem 침투하여, 541px 외부 페더링과 1:1 유기적 융합
         &::after {
             content: '';
             position: absolute;
             top: 0;
             bottom: 0;
-            left: calc(50% + 17.5rem - 2rem);
+            left: calc(50% + 17.5rem - 1rem);
             right: 0;
             background-image:
                 linear-gradient(
@@ -177,17 +177,17 @@
     flex-direction: column;
 
     // 데스크탑: 본체(35rem/560px)는 기존 크기와 선명도를 100% 그대로 유지하고,
-    // 좌우 바깥 영역(-2rem ~ 0, 35rem ~ 37rem)에만 가상 요소(::after)로 외부 마스크 생성
+    // 좌우 바깥 영역(-1rem ~ 0, 35rem ~ 36rem)에만 가상 요소(::after)로 외부 마스크 생성
     @media (min-width: 35rem) {
         &::after {
             content: '';
             position: absolute;
             top: 0;
             bottom: 0;
-            left: -2rem;
-            right: -2rem;
-            border-left: 2rem solid transparent;
-            border-right: 2rem solid transparent;
+            left: -1rem;
+            right: -1rem;
+            border-left: 1rem solid transparent;
+            border-right: 1rem solid transparent;
             box-sizing: border-box;
             z-index: 1;
             pointer-events: none;
@@ -208,35 +208,35 @@
             mask-image: linear-gradient(
                 to right,
                 transparent 0%,
-                rgba(0, 0, 0, 0.05) 0.3rem,
-                rgba(0, 0, 0, 0.25) 0.7rem,
-                rgba(0, 0, 0, 0.6) 1.2rem,
-                rgba(0, 0, 0, 0.9) 1.7rem,
-                black 2rem,
-                transparent 2rem,
-                transparent calc(100% - 2rem),
-                black calc(100% - 2rem),
-                rgba(0, 0, 0, 0.9) calc(100% - 1.7rem),
-                rgba(0, 0, 0, 0.6) calc(100% - 1.2rem),
-                rgba(0, 0, 0, 0.25) calc(100% - 0.7rem),
-                rgba(0, 0, 0, 0.05) calc(100% - 0.3rem),
+                rgba(0, 0, 0, 0.05) 0.15rem,
+                rgba(0, 0, 0, 0.25) 0.35rem,
+                rgba(0, 0, 0, 0.6) 0.6rem,
+                rgba(0, 0, 0, 0.9) 0.85rem,
+                black 1rem,
+                transparent 1rem,
+                transparent calc(100% - 1rem),
+                black calc(100% - 1rem),
+                rgba(0, 0, 0, 0.9) calc(100% - 0.85rem),
+                rgba(0, 0, 0, 0.6) calc(100% - 0.6rem),
+                rgba(0, 0, 0, 0.25) calc(100% - 0.35rem),
+                rgba(0, 0, 0, 0.05) calc(100% - 0.15rem),
                 transparent 100%
             );
             -webkit-mask-image: linear-gradient(
                 to right,
                 transparent 0%,
-                rgba(0, 0, 0, 0.05) 0.3rem,
-                rgba(0, 0, 0, 0.25) 0.7rem,
-                rgba(0, 0, 0, 0.6) 1.2rem,
-                rgba(0, 0, 0, 0.9) 1.7rem,
-                black 2rem,
-                transparent 2rem,
-                transparent calc(100% - 2rem),
-                black calc(100% - 2rem),
-                rgba(0, 0, 0, 0.9) calc(100% - 1.7rem),
-                rgba(0, 0, 0, 0.6) calc(100% - 1.2rem),
-                rgba(0, 0, 0, 0.25) calc(100% - 0.7rem),
-                rgba(0, 0, 0, 0.05) calc(100% - 0.3rem),
+                rgba(0, 0, 0, 0.05) 0.15rem,
+                rgba(0, 0, 0, 0.25) 0.35rem,
+                rgba(0, 0, 0, 0.6) 0.6rem,
+                rgba(0, 0, 0, 0.9) 0.85rem,
+                black 1rem,
+                transparent 1rem,
+                transparent calc(100% - 1rem),
+                black calc(100% - 1rem),
+                rgba(0, 0, 0, 0.9) calc(100% - 0.85rem),
+                rgba(0, 0, 0, 0.6) calc(100% - 0.6rem),
+                rgba(0, 0, 0, 0.25) calc(100% - 0.35rem),
+                rgba(0, 0, 0, 0.05) calc(100% - 0.15rem),
                 transparent 100%
             );
         }
