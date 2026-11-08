@@ -86,7 +86,7 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/카테고리-소개-c897</loc>
+    <loc>https://chebread.org/post/카테고리-소개-247c</loc>
     <lastmod>2025-05-05</lastmod>
     <changefreq>weekly</changefreq>
   </url>
@@ -141,6 +141,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://chebread.org/post/카테고리-소개-3efc</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://chebread.org/post/프로그래머는-ai-정신병에-가장-취약하다</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -153,11 +158,6 @@
   <url>
     <loc>https://chebread.org/post/힙하게-코딩하는-방법</loc>
     <lastmod>2022-06-05</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://chebread.org/post/카테고리-소개-3efc</loc>
-    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
