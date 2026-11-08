@@ -2,6 +2,7 @@
 date: 2026-05-07
 category: [전체, 에세이]
 published: true
+thumbnail: https://images.unsplash.com/photo-1787758905763-5b36692ae077?q=80&w=1940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D
 ---
 
 > 또 전체적인 프로그램을 미리 신중하게 적어서 생각하는 방향이 옳은지 여부를 확인하기 전에 조각난 코드부터 대책 없이 늘어놓은 다음 그것의 모양을 조금씩 잡아 나가는 방법으로 프로그래밍을 했다.  
