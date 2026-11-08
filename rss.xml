@@ -5,8 +5,16 @@
     <link>https://chebread.org</link>
     <description>개발자 차한음 블로그</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 08 Nov 2026 02:07:31 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 21:55:18 +0000</lastBuildDate>
     <generator>Go Custom SSG</generator>
+    <item>
+      <title>카테고리 소개</title>
+      <link>https://chebread.org/post/카테고리-소개-e01f</link>
+      <description>Trusting Trust 카테고리는 켄트 벡의 『Tidy First?』를 정리한 포스팅으로 구성되어 있습니다. 코드 정리(Tidying)를 공부하시는 많은 분들께 도움이 되기를 ...</description>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.org/post/카테고리-소개-e01f</guid>
+      <category>Tidy First?</category>
+    </item>
     <item>
       <title>카테고리 소개</title>
       <link>https://chebread.org/post/카테고리-소개-92c8</link>
@@ -26,19 +34,19 @@
     </item>
     <item>
       <title>카테고리 소개</title>
-      <link>https://chebread.org/post/카테고리-소개-3efc</link>
-      <description>에세이 카테고리는 폴 그레이엄의 에세이처럼, 저의 생각을 담은 포스팅으로 구성되어 있습니다. 포스팅에 대한 여러분의 생각과 의견을 자유롭게 댓글로 남겨주세요.</description>
-      <pubDate>Sat, 26 Sep 2026 00:00:00 +0900</pubDate>
-      <guid>https://chebread.org/post/카테고리-소개-3efc</guid>
-      <category>에세이</category>
-    </item>
-    <item>
-      <title>카테고리 소개</title>
       <link>https://chebread.org/post/카테고리-소개</link>
       <description>CS:APP 카테고리는 『Bryant, R. E., &amp; O&#39;Hallaron, D. R. (2015). Computer systems: A programmer&#39;s perspectiv...</description>
       <pubDate>Sat, 26 Sep 2026 00:00:00 +0900</pubDate>
       <guid>https://chebread.org/post/카테고리-소개</guid>
       <category>CS:APP</category>
+    </item>
+    <item>
+      <title>카테고리 소개</title>
+      <link>https://chebread.org/post/카테고리-소개-3efc</link>
+      <description>에세이 카테고리는 폴 그레이엄의 에세이처럼, 저의 생각을 담은 포스팅으로 구성되어 있습니다. 포스팅에 대한 여러분의 생각과 의견을 자유롭게 댓글로 남겨주세요.</description>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.org/post/카테고리-소개-3efc</guid>
+      <category>에세이</category>
     </item>
     <item>
       <title>쥐의 눈물</title>
@@ -95,13 +103,22 @@
       <category>Trusting Trust</category>
     </item>
     <item>
+      <title>『행동하는 종이 건축』 서평</title>
+      <link>https://chebread.org/post/행동하는-종이-건축-서평</link>
+      <description>반 시게루의 『행동하는 종이 건축』이 건축 관련 책임에도 불구하고, 인사이트가 풍부하여 소개해 보고자 한다. 재료 강도와 건축 강도는 전혀 관계가 없다 &#34;재료 자체의 강도와 그것을...</description>
+      <pubDate>Sat, 01 Nov 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.org/post/행동하는-종이-건축-서평</guid>
+      <category>전체</category>
+      <category>에세이</category>
+    </item>
+    <item>
       <title>보호 구문을 활용하라</title>
       <link>https://chebread.org/post/보호-구문을-활용하라</link>
       <description>추석 때 켄트 벡의 『Tidy First?』를 읽게 되었다. 이 책에서 첫 번째로 나오는 개념인 &#39;보호 구문&#39;을 설명해 보도록 하겠다. 보호 구문이란, 전제조건이라고 생각하면 된다...</description>
       <pubDate>Sun, 12 Oct 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.org/post/보호-구문을-활용하라</guid>
       <category>전체</category>
-      <category>에세이</category>
+      <category>Tidy First?</category>
     </item>
     <item>
       <title>LLM을 사용하는 방법</title>
@@ -122,20 +139,11 @@
       <category>에세이</category>
     </item>
     <item>
-      <title>14. 파이 과학</title>
-      <link>https://chebread.org/post/14</link>
-      <description>지난 몇 년 동안 파이썬은 과학자들에게 매우 큰 인기를 얻고 있다. 이번 장에서 다루는 소프트웨어를 보면 왜 인기가 많은지 알게 될 것이다. 과학자이거나 과학도라면 matlab, ...</description>
+      <title>11. 데이터 길들이기</title>
+      <link>https://chebread.org/post/11</link>
+      <description>데이터를 충분히 고문하면, 자연은 언제나 바른 말을 할 것이다. - 로널드 코스 지금까지 파이썬 언어 자체(데이터 타입, 코드 구조, 구문 등)만 다뤘다. 2부부터는 실제 문제 적...</description>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.org/post/14</guid>
-      <category>전체</category>
-      <category>Introducing Python</category>
-    </item>
-    <item>
-      <title>13. 파일, 디렉터리</title>
-      <link>https://chebread.org/post/13</link>
-      <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.org/post/13</guid>
+      <guid>https://chebread.org/post/11</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
@@ -149,11 +157,20 @@
       <category>Introducing Python</category>
     </item>
     <item>
-      <title>11. 데이터 길들이기</title>
-      <link>https://chebread.org/post/11</link>
-      <description>데이터를 충분히 고문하면, 자연은 언제나 바른 말을 할 것이다. - 로널드 코스 지금까지 파이썬 언어 자체(데이터 타입, 코드 구조, 구문 등)만 다뤘다. 2부부터는 실제 문제 적...</description>
+      <title>13. 파일, 디렉터리</title>
+      <link>https://chebread.org/post/13</link>
+      <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.org/post/11</guid>
+      <guid>https://chebread.org/post/13</guid>
+      <category>전체</category>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>14. 파이 과학</title>
+      <link>https://chebread.org/post/14</link>
+      <description>지난 몇 년 동안 파이썬은 과학자들에게 매우 큰 인기를 얻고 있다. 이번 장에서 다루는 소프트웨어를 보면 왜 인기가 많은지 알게 될 것이다. 과학자이거나 과학도라면 matlab, ...</description>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.org/post/14</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
@@ -176,20 +193,20 @@
       <category>Introducing Python</category>
     </item>
     <item>
-      <title>07. 딕셔너리, 셋</title>
-      <link>https://chebread.org/post/07</link>
-      <description>딕셔너리 딕셔너리는 리스트와 비슷하다. 리스트와 다른 점은 항목의 순서를 따지지 않으며, 오프셋으로 항목을 선택할 수 없다. 대신 값에 상응하는 고유한 키를 지정한다. 키는 모든 ...</description>
-      <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.org/post/07</guid>
-      <category>전체</category>
-      <category>Introducing Python</category>
-    </item>
-    <item>
       <title>08. 함수</title>
       <link>https://chebread.org/post/08</link>
       <description>함수 코드 재사용을 위해 함수를 사용한다. 함수는 이름이 붙여진 코드 조각이다. 코드 스니펫(Code Snipet) 또는 코드 조각은 재사용 가능한 소스 코드, 기계어, 텍스트의 ...</description>
       <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.org/post/08</guid>
+      <category>전체</category>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>07. 딕셔너리, 셋</title>
+      <link>https://chebread.org/post/07</link>
+      <description>딕셔너리 딕셔너리는 리스트와 비슷하다. 리스트와 다른 점은 항목의 순서를 따지지 않으며, 오프셋으로 항목을 선택할 수 없다. 대신 값에 상응하는 고유한 키를 지정한다. 키는 모든 ...</description>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.org/post/07</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
