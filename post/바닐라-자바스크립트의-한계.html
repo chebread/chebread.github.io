@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a">
+
+    <meta name="giscus:backlink" content="https://chebread.org/post/바닐라-자바스크립트의-한계">
+
+    <title>바닐라 자바스크립트의 한계 | 차한음 블로그</title>
+    <meta name="description" content="저는 주로 Vanilla JavaScript로 Side project를 개발 중입니다. Vanilla JavaScript로 코딩하는 것이 어떤 방식으로 이루어지는 가에 대해 궁금하...">
+    <meta name="author" content="차한음">
+    <link rel="canonical" href="https://chebread.org/post/%eb%b0%94%eb%8b%90%eb%9d%bc-%ec%9e%90%eb%b0%94%ec%8a%a4%ed%81%ac%eb%a6%bd%ed%8a%b8%ec%9d%98-%ed%95%9c%ea%b3%84">
+    <link rel="alternate" type="application/rss+xml" title="차한음 블로그" href="https://chebread.org/rss.xml" />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+
+    <meta property="og:title" content="바닐라 자바스크립트의 한계 | 차한음 블로그">
+    <meta property="og:description" content="저는 주로 Vanilla JavaScript로 Side project를 개발 중입니다. Vanilla JavaScript로 코딩하는 것이 어떤 방식으로 이루어지는 가에 대해 궁금하...">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chebread.org/post/바닐라-자바스크립트의-한계">
+    <meta property="og:site_name" content="차한음 블로그">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:article:published_time" content="2022-08-30">
+    <meta property="og:article:author" content="차한음">
+    <meta property="og:image" content="https://img.sfist.com/assets_c/2014/04/mozillaceo-thumb-640xauto-836991.jpg">
+    <meta property="og:image:alt" content="바닐라 자바스크립트의 한계">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="바닐라 자바스크립트의 한계 | 차한음 블로그">
+    <meta name="twitter:description" content="저는 주로 Vanilla JavaScript로 Side project를 개발 중입니다. Vanilla JavaScript로 코딩하는 것이 어떤 방식으로 이루어지는 가에 대해 궁금하...">
+    <meta name="twitter:image" content="https://img.sfist.com/assets_c/2014/04/mozillaceo-thumb-640xauto-836991.jpg">
+    <meta name="twitter:image:alt" content="바닐라 자바스크립트의 한계">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "바닐라 자바스크립트의 한계 | 차한음 블로그",
+        "author": {
+            "@type": "Person",
+            "name": "차한음"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "차한음"
+        },
+        "datePublished": "2022-08-30",
+        "description": "저는 주로 Vanilla JavaScript로 Side project를 개발 중입니다. Vanilla JavaScript로 코딩하는 것이 어떤 방식으로 이루어지는 가에 대해 궁금하..."
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/color-palette.css">
+    <link rel="stylesheet" href="/styles/post.css">
+
+    <link rel="stylesheet" href="/styles/chroma-light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="/styles/chroma-dark.css" media="(prefers-color-scheme: dark)">
+
+    <link rel="stylesheet" href="/styles/github-markdown-light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="/styles/github-markdown-dark.css" media="(prefers-color-scheme: dark)">
+
+    <link rel="icon" href="/favicons/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css" integrity="sha384-vlBdW0r3AcZO/HboRPznQNowvexd3fY8qHOWkBi5q7KGgqJ+F48+DceybYmrVbmB" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.js" integrity="sha384-AtrdNsnxl/75rvBneBVH7DtOvCxSVahR2zWqle1coBKd8DEmLoviqNeJSx64gNAs" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '\\[', right: '\\]', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+        });">
+    </script>
+</head>
+<body>
+    <div class="root">
+        <div class="post">
+            <nav class="post-nav post-nav-hero">
+                <div class="nav-inner">
+                    <a href="/" class="">
+                        <span>홈</span>
+                    </a>
+                    <a href="/about" class="">
+                        <span>어바웃</span>
+                    </a>
+                    <a href="/posts" class="active">
+                        <span>포스트</span>
+                    </a>
+                </div>
+            </nav>
+            <header class="post-header post-header--hero" style="--hero-edge-left-gradient: linear-gradient(to bottom, rgb(5, 5, 5) 0%, rgb(8, 8, 8) 35%, rgb(8, 8, 8) 70%, rgb(6, 6, 6) 100%); --hero-edge-right-gradient: linear-gradient(to bottom, rgb(1, 1, 1) 0%, rgb(1, 1, 1) 35%, rgb(1, 1, 1) 70%, rgb(2, 2, 2) 100%);">
+                <div class="post-hero" style="--post-hero-image: url('https://img.sfist.com/assets_c/2014/04/mozillaceo-thumb-640xauto-836991.jpg');">
+                    <h1 class="post-title">바닐라 자바스크립트의 한계</h1>
+                </div>
+            </header>
+
+            <main class="post-content">
+                <div class="post-header post-meta">
+                    <p class="post-date"><time datetime="2022-08-30">2022년 08월 30일</time></p>
+                    <p class="post-category"><a href="/posts/%ec%a0%84%ec%b2%b4">[전체]</a><a href="/posts/%ec%97%90%ec%84%b8%ec%9d%b4">[에세이]</a></p>
+                </div>
+                <div class="post-body">
+                    <article class="markdown-body"><p>저는 주로 Vanilla JavaScript로 Side project를 개발 중입니다.
+Vanilla JavaScript로 코딩하는 것이 어떤 방식으로 이루어지는 가에 대해 궁금하신 분들을 위해 이번 <a href="https://github.com/chebread/gitits">gitits</a>를 개발하면서 알게 된 Vanilla JavaScript의 한계에 대해 알려드리고자 합니다.</p>
+<h2>SPA(Single Page Application)을 구현하기 위해서는 꽤나 많은 코드가 필요하다</h2>
+<p>저는 Vanilla JavaScript로 코딩을 하기 때문에 모든 상태 관리와 컴포넌트는 직접 구현하여 프로젝트에 사용해야 합니다. 필수로 구현을 필요로 하는 기능들은 이와 같습니다. (이 기능들은 React와 React 라이브러리에 내장되어 있는 함수와 기능이 유사하기에 함수명을 빌렸습니다)</p>
+<ul>
+<li><code>render</code></li>
+<li><code>useState</code></li>
+<li><code>useEffect</code></li>
+<li><code>router</code></li>
+<li><code>useParams</code></li>
+</ul>
+<p>이러한 기존의 기능과 제가 구현할 기능은 기능적인 측면으로서는 같지만 저의 프로젝트의 따라서 각각의 기능들은 최적화가 필요합니다. 그러하여, 이런 식의 많은 기능을 구현할 때 많은 시간과 코드가 작성되게 됩니다. 이는 꽤나 힘들고 귀찮은 일입니다.</p>
+<h2>Bundler를 구성하기 위해선 각각의 필요로 하는 기능의 Config 파일을 작성해야 한다</h2>
+<p>대표적으로는 <code>webpack</code> 이 있는데요. 여기서 <code>webpack</code> 은 그저 JavaScript의 파일을 하나의 파일로 합치는 역할만을 하기에 JavaScript 코드를 각각의 Browser에 최적화 하기 위해서는 컴파일러가 필요합니다. 대표적으로는 <code>babel</code> 이 있습니다. (저는 <code>esbuild-loader</code> 를 사용합니다) 이러한 패키지들은 Config 파일을 필수로 필요로 합니다. 그러하여 프로젝트에 맞는 이러한 Config 파일을 작성하는 데에 시간이 많이 소요됩니다. (NodeJS 일 경우에만 이러한 현상이 지속되게 됩니다. 만약 Bun, Deno를 사용한다면 꽤나 편하게 구성이 가능합니다)</p>
+<h2>Vanilla JavaScript로 구현한 기능들은 코드를 상대적으로 매우 많이 필요로 한다</h2>
+<p>일반적으로 <code>Vue</code> 로 Counter 예제를 만들게 된다면 대충 이러한 코드로 구현하게 될 것입니다.</p>
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;increase&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>{{ count }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span></code></pre><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// options api
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">count</span><span class="o">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">increase</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre><p>그렇지만 Vanilla JavaScript로 Counter 예제를 구현하게 된다면 꽤나 많은 코드를 가지게 됩니다.</p>
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;app&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">component</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">app</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;button id=&#34;increase&#34;&gt;&lt;/button&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">    &lt;div&gt;</span><span class="si">${</span><span class="nx">count</span><span class="si">}</span><span class="sb">&lt;/div&gt;
+</span></span></span><span class="line"><span class="cl"><span class="sb">  `</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">increaseId</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#increase&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">increaseId</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">component</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre><p>Vanilla JavaScript에서 Counter 예제를 만들기 위해서는 상태 업데이트를 위해 컴포넌트를 만들고, 상태가 변경될때 마다 컴포넌트를 실행해야 하는 컴포넌트의 동작 방식을 숙지해야 이러한 코드를 구현할 수 있습니다. 그러하여 JavaScript의 기초적인 것만 아는 분이라면 Vanilla JavaScript는 굉장히 쉬운 것이지만, 어떤 것을 구현하기 위해선 그것을 구현하는 것의 난이도로 봤을 때는 Vanilla JavaScript는 진입장벽 높다고 볼 수 있다. 꽤나 기초적인 지식이 요구되기 때문입니다.</p>
+<p>이렇게 Vanila JavaScript는 코드가 상대적으로 읽기가 불편하고, 굉장히 코드를 작성하는 데에 피로감이 있으며, 꽤나 쉽지 않은 그러한 언어라고 볼 수 있을 것입니다.</p>
+<h2>Vanill JavaScript에서 Mark-up을 Styling 하는 것은 꽤나 귀찮게 이루어 진다</h2>
+<p>Vanilla JavaScript가 뜻하는 것이 아주 기본, 아무 것도 입혀지지 않은 그러한 것이기 때문에 Mark-up을 Styling 하기 위해서는 가장 기본적인 방법인 CSS 파일을 <code>import</code> 하여 사용하는 방법과, CSS in JS를 구현하여 사용하는 방법 이 두 가지가 존재합니다.</p>
+<p>저는 CSS 파일을 <code>import</code> 해서 Styling 하는 방법과 CSS in JS를 사용하는 방법 이 두 가지를 혼용하여 사용합니다. <code>h-30</code> 같이 먼저 <code>define.css</code> 에 정의하여 속성으로 Styling 하는 방법과 <code>&amp;:hover</code> 같은 동적인 것을 사용하기 위해서 CSS in JS를 사용하고 있습니다. (Dark mode도 CSS in JS를 사용하여 지원하고 있습니다)</p>
+<p>만약 CSS in JS 같이 이러한 방식을 사용해야 한다면 이 또한 구현해야 하니 엄청난 코드가 필요로 되게 됩니다. 이를 구현하는 과정에서 나오는 피로감과 귀찮음은 엄청나게 증가되게 됩니다.</p>
+<p>또한, Vanilla JavaScript에서 Styling 하는 것은 거의 HTML에서 Styling 하는 것과 별반 다르지 않기 때문에 그렇게 재밌게 이루어지는 과정은 아닙니다.</p>
+<h2>프로젝트의 크기가 커질 수록 유지 보수를 하는 것은 굉장히 어려워 진다</h2>
+<p>Vanilla JavaScript로 Side project나 어떤 것을 어느 정도 개발을 완료하여 리팩토링을 하거나 유지 보수를 한다면, 매우 끔찍한 일이 벌어지게 될 것입니다. 만약 테스트 코드 조차 없다면 더욱더 힘든 과정이 벌어지게 될 것 입니다. 저의 코드일 경우 HTML을 그저 render 하여 Mark-up을 해가는 그러한 코드이며, HTML의 코드는 직관성과 신속성도 없기 때문에 유지 보수는 매우 불편합니다.</p>
+<hr>
+<blockquote>
+<p>섬네일 출처: <a href="https://sfist.com/2014/04/03/mozillas_anti-gay_ceo_brendan_eich/">https://sfist.com/2014/04/03/mozillas_anti-gay_ceo_brendan_eich/</a></p>
+</blockquote>
+</article>
+                </div>
+                <section class="post-comments">
+                    <script src="https://giscus.app/client.js"
+                            data-repo="chebread/chebread.github.io"
+                            data-repo-id="R_kgDOP0JptQ"
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOP0Jptc4CwG8I"
+                            data-mapping="title"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="ko"
+                            crossorigin="anonymous"
+                            async>
+                    </script>
+                </section>
+            </main>
+
+            <footer class="post-footer">
+                <section>
+                    <p>&copy; 2025-2026 차한음</p>
+                </section>
+                <section>
+                    <a href="https://link.chebread.org/github">
+                        <span>깃허브</span>
+                    </a>
+                    <a href="https://link.chebread.org/email">
+                        <span>이메일</span>
+                    </a>
+                    <a href="https://link.chebread.org/sponsor">
+                        <span>후원</span>
+                    </a>
+                    <a href="/rss.xml">
+                        <span>RSS</span>
+                    </a>
+                </section>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
