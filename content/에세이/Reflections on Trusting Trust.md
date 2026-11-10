@@ -2,7 +2,7 @@
 date: 2025-12-26
 category:
   - 전체
-  - Trusting Trust
+  - 에세이
 published: true
 desc:
 thumbnail: /assets/ken-thompson.webp
