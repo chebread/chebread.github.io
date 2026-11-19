@@ -14,6 +14,7 @@ Blog link: [https://chebread.org/](https://chebread.org/)
 - [How to Use Callouts](#how-to-use-callouts)
 - [How to Configure Title-Sorted Categories](#how-to-configure-title-sorted-categories)
 - [How to Deploy](#how-to-deploy)
+- [Commit Attribution Policy](#commit-attribution-policy)
 - [License](#license)
 
 ## Features
@@ -222,6 +223,16 @@ git push origin post/2025-09-23-01
 ```
 
 You can now go to the Actions tab in your GitHub repository to watch the deployment progress. Your site will be live with the new content in a few minutes.
+
+## Commit Attribution Policy
+Every new commit in this repository explicitly declares its authorship using Git trailers:
+
+| Commit Trailer | Meaning |
+| :--- | :--- |
+| `Written-by: Human` | Purely human-authored code |
+| `Assisted-by: <model>` | Primarily human-authored code containing AI-generated snippets |
+| `Generated-by: <model> (with human modifications)` | Primarily AI-generated code modified by human |
+| `Generated-by: <model>` | Logic generated entirely by AI |
 
 ## License
 Copyright &copy; 2026 Haneum Cha
