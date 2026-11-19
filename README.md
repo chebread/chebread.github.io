@@ -224,7 +224,7 @@ git push origin post/2025-09-23-01
 You can now go to the Actions tab in your GitHub repository to watch the deployment progress. Your site will be live with the new content in a few minutes.
 
 ## License
-Copyright &copy; 2025-2026 Cha Haneum
+Copyright &copy; 2026 Haneum Cha
 
 This project is licensed under the Hippocratic License 3.0 (HL-3.0).
 By using this software, you agree to the terms and conditions set forth in the [LICENSE](./LICENSE) file.
