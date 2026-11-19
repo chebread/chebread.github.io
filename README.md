@@ -231,7 +231,7 @@ Every new commit in this repository explicitly declares its authorship using Git
 | :--- | :--- |
 | `Written-by: Human` | Purely human-authored code |
 | `Assisted-by: <model>` | Primarily human-authored code containing AI-generated snippets |
-| `Generated-by: <model> (with human modifications)` | Primarily AI-generated code modified by human |
+| `Generated-by: <model> with human modifications` | Primarily AI-generated code modified by human |
 | `Generated-by: <model>` | Logic generated entirely by AI |
 
 ## License
