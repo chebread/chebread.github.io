@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a">
+
+    <meta name="giscus:backlink" content="https://chebread.org/post/2026-디노티시아-nipa-오픈소스-해커톤-회고">
+
+    <title>2026 디노티시아 NIPA 오픈소스 해커톤 회고 | 차한음 블로그</title>
+    <meta name="description" content="모두의연구소 강남캠퍼스에서 열린 2026 디노티시아 NIPA 오픈소스 해커톤 (2회차)에 참가했다. 이번 포스트에서는 해당 해커톤에 대한 일상적인 회고를 남겨보고자 한다. 행사장에...">
+    <meta name="author" content="차한음">
+    <link rel="canonical" href="https://chebread.org/post/2026-%eb%94%94%eb%85%b8%ed%8b%b0%ec%8b%9c%ec%95%84-nipa-%ec%98%a4%ed%94%88%ec%86%8c%ec%8a%a4-%ed%95%b4%ec%bb%a4%ed%86%a4-%ed%9a%8c%ea%b3%a0">
+    <link rel="alternate" type="application/rss+xml" title="차한음 블로그" href="https://chebread.org/rss.xml" />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+
+    <meta property="og:title" content="2026 디노티시아 NIPA 오픈소스 해커톤 회고 | 차한음 블로그">
+    <meta property="og:description" content="모두의연구소 강남캠퍼스에서 열린 2026 디노티시아 NIPA 오픈소스 해커톤 (2회차)에 참가했다. 이번 포스트에서는 해당 해커톤에 대한 일상적인 회고를 남겨보고자 한다. 행사장에...">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chebread.org/post/2026-디노티시아-nipa-오픈소스-해커톤-회고">
+    <meta property="og:site_name" content="차한음 블로그">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:article:published_time" content="2026-11-22">
+    <meta property="og:article:author" content="차한음">
+    <meta property="og:image" content="/assets/dnotitia-nipa-hackathon.webp">
+    <meta property="og:image:alt" content="2026 디노티시아 NIPA 오픈소스 해커톤 회고">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="2026 디노티시아 NIPA 오픈소스 해커톤 회고 | 차한음 블로그">
+    <meta name="twitter:description" content="모두의연구소 강남캠퍼스에서 열린 2026 디노티시아 NIPA 오픈소스 해커톤 (2회차)에 참가했다. 이번 포스트에서는 해당 해커톤에 대한 일상적인 회고를 남겨보고자 한다. 행사장에...">
+    <meta name="twitter:image" content="/assets/dnotitia-nipa-hackathon.webp">
+    <meta name="twitter:image:alt" content="2026 디노티시아 NIPA 오픈소스 해커톤 회고">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "2026 디노티시아 NIPA 오픈소스 해커톤 회고 | 차한음 블로그",
+        "author": {
+            "@type": "Person",
+            "name": "차한음"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "차한음"
+        },
+        "datePublished": "2026-11-22",
+        "description": "모두의연구소 강남캠퍼스에서 열린 2026 디노티시아 NIPA 오픈소스 해커톤 (2회차)에 참가했다. 이번 포스트에서는 해당 해커톤에 대한 일상적인 회고를 남겨보고자 한다. 행사장에..."
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/color-palette.css">
+    <link rel="stylesheet" href="/styles/post.css">
+
+    <link rel="stylesheet" href="/styles/chroma-light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="/styles/chroma-dark.css" media="(prefers-color-scheme: dark)">
+
+    <link rel="stylesheet" href="/styles/github-markdown-light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="/styles/github-markdown-dark.css" media="(prefers-color-scheme: dark)">
+
+    <link rel="icon" href="/favicons/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css" integrity="sha384-vlBdW0r3AcZO/HboRPznQNowvexd3fY8qHOWkBi5q7KGgqJ+F48+DceybYmrVbmB" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.js" integrity="sha384-AtrdNsnxl/75rvBneBVH7DtOvCxSVahR2zWqle1coBKd8DEmLoviqNeJSx64gNAs" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '\\[', right: '\\]', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+        });">
+    </script>
+</head>
+<body>
+    <div class="root">
+        <div class="post">
+            <nav class="post-nav post-nav-hero">
+                <div class="nav-inner">
+                    <a href="/" class="">
+                        <span>홈</span>
+                    </a>
+                    <a href="/about" class="">
+                        <span>어바웃</span>
+                    </a>
+                    <a href="/posts" class="active">
+                        <span>포스트</span>
+                    </a>
+                </div>
+            </nav>
+            <header class="post-header post-header--hero" style="--hero-edge-left-gradient: linear-gradient(to bottom, rgb(120, 117, 95) 0%, rgb(127, 129, 132) 35%, rgb(150, 139, 111) 70%, rgb(214, 204, 172) 100%); --hero-edge-right-gradient: linear-gradient(to bottom, rgb(103, 104, 90) 0%, rgb(117, 95, 59) 35%, rgb(140, 127, 104) 70%, rgb(210, 200, 167) 100%);">
+                <div class="post-hero" style="--post-hero-image: url('/assets/dnotitia-nipa-hackathon.webp');">
+                    <h1 class="post-title">2026 디노티시아 NIPA 오픈소스 해커톤 회고</h1>
+                </div>
+            </header>
+
+            <main class="post-content">
+                <div class="post-header post-meta">
+                    <p class="post-date"><time datetime="2026-11-22">2026년 11월 22일</time></p>
+                    <p class="post-category"><a href="/posts/%ec%a0%84%ec%b2%b4">[전체]</a><a href="/posts/%ec%97%90%ec%84%b8%ec%9d%b4">[에세이]</a></p>
+                </div>
+                <div class="post-body">
+                    <article class="markdown-body"><p>모두의연구소 강남캠퍼스에서 열린 2026 디노티시아 NIPA 오픈소스 해커톤 (2회차)에 참가했다.
+이번 포스트에서는 해당 해커톤에 대한 일상적인 회고를 남겨보고자 한다.</p>
+<p>행사장에 일찍 도착한 나는 이번 해커톤의 성격을 알고자 1회차 때 진행한 것을 찾아보니, 디노티시아의 오픈소스에 대한 PR을 날려서 좋은 PR을 날린 사람이 수상을 하는 해커톤이라는 것을 알게 되었다.
+그래서 나는 이번 해커톤에서 주요하게 다루는 디노티시아의 오픈소스인 <a href="#1" id="ref-1">dna-factory<sup>1</sup></a>와 <a href="#2" id="ref-2">dna-eval<sup>2</sup></a>에 대해서 알아보았다.
+dna-factory는 LLM 파인튜닝을 쉽게 해주는 도구이며, dna-eval은 LLM을 평가하는 도구임을 알게 되었다.
+이때 나는 해당 해커톤의 성격이 'AI'임을 알게 되었고, AI에 대해서 문외한인 나는 걱정이 들게 되었다.</p>
+<p>해커톤에 대해서 전반적으로 알고 나서, 모두의연구소 관계자분께 아까의 걱정에 대해서 문의를 해보았다.
+시스템 프로그래밍만 조금 알며 AI에 대해서는 아예 모른다고 말했더니, 관계자님께서는 괜찮다며 해커톤이 시작되면 다 차근차근 알려주신다고 하셨다.
+또한, 오늘도 1회차 때 처럼 PR 방식으로 해커톤을 진행하느냐고 여쭤보았더니, 2회차 때는 그렇게 하지 않는다는 말을 듣게 되었다.
+그래서 나는 아까 규명한 이번 해커톤의 성격이 잘못되었음을 알게 되었고, 그렇다면 이번 해커톤에서는 어떤 것을 수행하는지에 대한 초조함이 남게 되었다.</p>
+<p>시간이 흘러 해커톤이 시작되고 디노티시아 기업 소개를 했다.
+디노티시아는 VDPU, Seahorse 등 Vector DB 관련 제품을 만든다는 것을 알게 되었다.
+그리고 디노티시아에서 파인튜닝한 DNA라는 LLM 모델에 대한 소개를 했다.
+DNA-R1이 최초로 한국어로 추론을 수행하는 LLM이라는 사실이 신기했다.
+그리고 디노티시아에서 공개한 오픈소스인 dna-factory, dna-eval에 대해서 소개를 했다.
+dna-factory를 소개하는 과정에서 해커톤에서 활용될 AI적 지식도 함께 알려주셨는데, 이때 내가 이해한 것을 조금만 정리해 보겠다.</p>
+<p>LLM 학습 과정은 3단계로 이뤄져 있다고 한다.
+1단계는 Pretraining이라는 과정으로, LLM이 모든 데이터를 읽어서 날것의 LLM을 만드는 과정이라고 한다.
+이 과정에서는 엄청난 데이터가 필요하므로 디노티시아는 1단계를 수행하지 않는다고 밝혔다.
+이때 내가 궁금했던 것은, 발표에 따르면 처음부터 LLM이라는 지능 자체를 만들기 위해서는 오직 대량의 데이터만 있으면 된다는 것이므로, 그렇다면 <a href="#3" id="ref-3">데이터의 양에 지능이 비례하는가에 대해서 궁금증<sup>3</sup></a>이 들게 되었다.
+그래서 모두의연구소 관계자님께 쉬는 시간에 여쭤보니 본인도 AI를 잘 모른다고 밝혔지만, 그럴 것이라고 말씀을 주셨다.</p>
+<p>2단계는 SFT라는 과정이다.
+1단계만 수행한 LLM은 대화가 불가능한 상태이므로 SFT라는 과정을 통해서 대화가 어느 정도 가능하게 만드는 과정이라고 하였다.
+3단계는 선호도 기반 정렬이라는 과정이다.
+선호도 기반 정렬이란 SFT한 LLM에 대해서 더욱더 세부적으로 대화를 조정하는 어떤 방법이라고 하였다.
+선호도 기반 정렬에는 DPO, GRPO 등의 알고리즘이 사용된다고 하였다.
+GRPO는 DeepSeek 충격을 제공한 알고리즘이라고 했다.
+이때 나는 DeepSeek가 LLM 파인튜닝을 통해서 엄청난 성능을 이룩한 것임을 알게 되었다.</p>
+<p>dna-factory라는 것은 결국 LLM 학습 과정에서 2-3단계를 쉽게 해주는 도구라고 했다.
+그리고 2-3단계에서 사용되는 알고리즘에 대해서는 플러그인적으로 수정-교체하는 것은 불가하며, 디노티시아 측에서 제공하는 알고리즘만 사용해서 LLM 파인튜닝을 쉽게 할 수 있다고 하였다.
+그리고 오늘 해커톤에서는 dna-factory를 사용해서 2단계 SFT를 수행해 본다고 했다.
+수행 방법은 dna-factory를 <code>git clone</code> 한 후에 <code>uv sync</code>를 하고 <code>python sft.py --config foo</code>만 하면 된다고 했다.
+SFT와 선호도 기반 정렬의 차이점이 잘 이해가 안 가서 이에 대해서 질문을 드리기는 했지만, 솔직히 당시에 <a href="#4" id="ref-4">이 두 단계의 차이점<sup>4</sup></a>에 대해서 잘 이해하지 못했다.</p>
+<p>이렇게 이해한 것을 정리하기는 했지만, 아예 AI에 대해서 모르는 내가 이해하기에는 너무 어려웠다.
+dna-eval에 대해서도 설명을 해주셨는데, dna-eval이 독자 파운데이션 모델 프로젝트(독파모) 1차, 2차, 그리고 현재 3차 평가에서 사용되는 도구라는 것을 알려주셨다.
+그 유명한 독파모를 평가한 기관이 디노티시아라는 것과, dna-eval이라는 사실이 엄청 신기했다.
+그리고 dna-eval에 대해서도 AI적으로 설명을 해주셨지만, 나의 역량의 한계로 인해 거의 전부 이해하지 못해 정리하지 못했다.</p>
+<p>이렇게 강의를 마치고 미션을 진행한다고 했다.
+미션은 총 3개로 첫 번째는 vast.ai에서 GPU 인스턴스를 생성한 후 ssh로 접속하는 것이었고,
+두 번째는 dna-factory를 사용해서 SFT를 수행해 보는 것이었으며,
+세 번째는 dna-eval을 사용해서 LLM을 평가하는 것이었다.
+이렇게 미션의 내용에 대해서 알려주신 후, 나는 어떻게 미션을 수행하면 되는지에 대해서 알려주실 줄 알았다.
+그러나 디노티시아 관계자님은 미션을 알려주시고 마이크를 내려놓으셨다.
+나는 이 미션을 어떻게 수행하면 되는지 배경지식이 없었으므로 매우 당황했다.
+그러나, 대부분의 참가자들은 AI 관련에 계신 분들이라서 그런지 척척 잘 수행해 내는 것 같았다.
+나는 AI에 대해서는 몰랐으므로 손을 들고 vast.ai에서 어떻게 GPU 인스턴스를 발급하는지부터 해서 거의 모든 과정에 대해서 여쭤봤다.
+디노티시아 및 모두의연구소 관계자님께서는 친절히 차근차근 알려주셨다.</p>
+<p>그 당시에 내가 수행한 미션을 짧게 요약해 보자면,
+1단계는 local에서 ssh 공개키를 ssh-keygen을 이용해서 발급받은 후 <code>ssh -p foo root@boo</code>로 vast.ai에서 생성한 GPU 인스턴스에 접속하는데, Ghostty에서 접속한지라 오류가 발생했다.
+그래서 <code>TERM=xterm-256color</code>라는 인수를 <code>ssh</code>에 줌으로써 인스턴스 접속에 성공했다.
+2단계는 접속한 인스턴스에서 <code>git clone https://github.com/dnotitia/dna-factory</code> 한 뒤에 <code>uv sync</code> 하고 <code>source .venv/bin/activate</code>로 가상환경을 설정한 후 <code>_my_custom.yaml</code> 파일을 <code>configs</code> 디렉토리에 만들어서 <code>python sft.py --config configs/_my_custom.yaml</code> 로 SFT를 수행해보았다.
+실제로 수행해 보니 약 30분 정도 소요돼서, 시간이 별로 안 남게 되었다.
+그래서 3단계는 시간 부족으로 수행하지 못했다.</p>
+<p>더불어 이렇게 dna-factory를 실제로 사용해 보니, CLI를 자주 사용하는 프로그래머로서 한 가지 눈에 밟히는 것이 있었다.
+바로 dna-factory의 거의 모든 출력 결과에 ANSI Color가 적용된다는 것이었다.
+그래서 나는 이러한 문제의식을 AI를 활용하여 더욱더 찾아보니 상당히 유의미한 Issue라는 것을 알게 되었다.
+예를 들자면, <code>python sft.py 2&gt;&amp;1 | grep &quot; - ERROR - &quot;</code> 처럼 grep을 사용해서 dna-factory의 결과를 조사하는 등의 행위를 할 때 <code>- ERROR -</code> 라는 출력 결과 속 ERROR 문자열 앞에 ANSI Color 문자열이 삽입되므로 실제적으로는 <code>&quot; - \x1b[31mERROR\x1b[0m - &quot;</code>라는 출력이 된다는 것을 알게 되었다.
+그래서 나는 이러한 Issue를 <a href="#5" id="ref-5">dna-factory의 GitHub에 등록<sup>5</sup></a>했다.
+또한, 이렇게 등록 후에 실제 디노티시아 관계자님께도 찾아가 해당 문제점에 대해서 알려드렸고, 관계자님께서는 검토를 해보겠다고 하셨다.</p>
+<p>이러한 미션 수행 후 상품 전달식이 시작됐다.
+상품은 4개의 고가 키보드와 여러 상품이 있었다.
+상품 전달 방법은 피드백을 잘 작성한 4분을 추려서 4개의 고가의 키보드를 먼저 수여하고, 나머지 상품에 대해서는 3단계 미션을 모두 수행한 분들 중에서 랜덤으로 수여하고, 남은 선물에 대해서는 남은 사람들 중에서 랜덤으로 수여하는 방식이었다.
+나는 내심 상품의 개수와 참여자의 수가 동일하여, 혈투의 장이 벌어지지 않겠다는 안도감이 들었다.
+그러나 막상 상품 수여식이 시작되고 나서 나의 생각이 틀렸음을 알게 되었다.
+3단계 미션을 모두 수행하신 분들에 대한 상품 수여까지는 평온하게 행사가 진행되었지만, 나머지 사람들에 대한 상품 수여가 시작되고 나서 뒤에서 태도가 좋지 못한 말들이 들려왔다.
+나는 이러한 상황을 목도하면서 일말의 씁쓸한 마음이 들었다.</p>
+<p>이러한 상품 수여식이 종료되고 사진 촬영식이 시작되었다.
+해커톤 참여자 모두와 관계자분들이 모여서 행복한 미소로 촬영을 했다.
+이렇게 행사가 끝나고 나는 한 가지 의문이 들게 되었다.
+이번 행사는 결국 강의와 미션이 주된 콘텐츠였는데, 이것이 '오픈소스 해커톤'이라는 행사 명칭에 부합하는 것인가라는 의문점이다.
+내가 알고 있던 해커톤이라는 것은 꽤 오랜 시간을 몇 시간 정하고, 주어진 문제를 해결하여 참가한 개발자들과 경쟁하는 형태의 행사였다.
+그러나 이번 행사는 시간도 약 1시간 정도 주어졌으며, 3가지 미션이라는 주어진 문제를 해결해 경쟁하기는 했지만, 결국 그 경쟁의 결론이 상품에 귀착되었으며, 상품마저도 랜덤이 그 본질적인 메커니즘인지라, 이것이 과연 내가 알던 해커톤에 부합하는 행사였는가에 대한 의문이 남기는 하다.</p>
+<p>그럼에도 불구하고 향후 대학교에 진학 후 시스템 프로그래밍을 주력으로 공부할 계획이므로 AI쪽으로 거의 학습하지 않을 것을 감안하면, AI에 관련해서 개발자들이 어떤 것을 하는지에 대해서 알 수 있는, '백문이 불여일견'적으로 아주 좋은 기회였다고 생각한다.
+또한, 디노티시아에서도 시스템 프로그래밍 관련 직무가 존재한다는 사실을 알게 된 좋은 기회였다고 생각한다.</p>
+<hr>
+<p id="1"><sup>1</sup> <a href="https://github.com/dnotitia/dna-factory">https://github.com/dnotitia/dna-factory</a> 참고. <a href="#ref-1">[되돌아가기]</a></p>
+<p id="2"><sup>2</sup> <a href="https://github.com/dnotitia/dna-eval">https://github.com/dnotitia/dna-eval</a> 참고. <a href="#ref-2">[되돌아가기]</a></p>
+<p id="3"><sup>3</sup> 추후 찾아보니, LLM의 성능은 데이터의 양뿐만 아니라 파라미터 수, 연산량, 그리고 데이터의 품질이 함께 작용하는 스케일링 법칙을 따른다는 것을 알게 되었다. <a href="#ref-3">[되돌아가기]</a></p>
+<p id="4"><sup>4</sup> 추후 찾아보니, SFT는 질문과 모범 답안 쌍을 학습시켜 대화 형식을 익히게 하는 단계이고, 선호도 기반 정렬은 모델이 생성한 여러 답변 중 더 바람직하거나 정확한 응답을 강화하도록 미세 조정하는 단계라는 차이를 알게 되었다. <a href="#ref-4">[되돌아가기]</a></p>
+<p id="5"><sup>5</sup> <a href="https://github.com/dnotitia/dna-factory/issues/66">https://github.com/dnotitia/dna-factory/issues/66</a> 참고. <a href="#ref-5">[되돌아가기]</a></p>
+</article>
+                </div>
+                <section class="post-comments">
+                    <script src="https://giscus.app/client.js"
+                            data-repo="chebread/chebread.github.io"
+                            data-repo-id="R_kgDOP0JptQ"
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOP0Jptc4CwG8I"
+                            data-mapping="title"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="ko"
+                            crossorigin="anonymous"
+                            async>
+                    </script>
+                </section>
+            </main>
+
+            <footer class="post-footer">
+                <section>
+                    <p>&copy; 2026 차한음</p>
+                </section>
+                <section>
+                    <a href="https://github.com/chebread">
+                        <span>깃허브</span>
+                    </a>
+                    <a href="https://link.chebread.org/email">
+                        <span>이메일</span>
+                    </a>
+                    <a href="https://link.chebread.org/sponsor">
+                        <span>후원</span>
+                    </a>
+                    <a href="/rss.xml">
+                        <span>RSS</span>
+                    </a>
+                </section>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
