@@ -31,9 +31,82 @@ function initializeBackLink() {
   });
 }
 
+function getTargetElementByHash(hash: string): HTMLElement | null {
+  if (!hash.startsWith('#') || hash.length < 2) return null;
+
+  const rawId = hash.slice(1);
+  let decodedId: string;
+  try {
+    decodedId = decodeURIComponent(rawId);
+  } catch {
+    decodedId = rawId;
+  }
+
+  return document.getElementById(decodedId) || document.getElementById(rawId);
+}
+
+function scrollElementToCenter(target: HTMLElement, smooth: boolean): void {
+  const nav = document.querySelector<HTMLElement>('.post-nav, .home-nav, .about-nav');
+  const navHeight = nav ? nav.getBoundingClientRect().height : 0;
+
+  const rect = target.getBoundingClientRect();
+  const currentScrollY = typeof window.scrollY === 'number' ? window.scrollY : window.pageYOffset;
+  const visibleCenter = navHeight + (window.innerHeight - navHeight) / 2;
+  const targetCenter = rect.top + currentScrollY + rect.height / 2;
+  const maxScrollY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  const top = Math.min(maxScrollY, Math.max(0, targetCenter - visibleCenter));
+
+  const prefersReducedMotion =
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const supportsSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+
+  if (supportsSmoothScroll) {
+    window.scrollTo({
+      top,
+      behavior: smooth && !prefersReducedMotion ? 'smooth' : 'auto',
+    });
+  } else {
+    window.scrollTo(0, top);
+  }
+}
+
+function initializeAnchorCenterScroll(): void {
+  const anchorLinks = document.querySelectorAll<HTMLAnchorElement>('.markdown-body a[href^="#"]');
+
+  anchorLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const target = getTargetElementByHash(href);
+      if (!target) return;
+
+      event.preventDefault();
+      scrollElementToCenter(target, true);
+
+      if (window.location.hash !== href) {
+        history.pushState(null, '', href);
+      }
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initializeStickyNav();
     initializeBackLink();
+    initializeAnchorCenterScroll();
     mediumZoom('.markdown-body img', {
          background: 'var(--bg-page)',
        });
