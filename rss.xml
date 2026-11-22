@@ -5,7 +5,7 @@
     <link>https://chebread.org</link>
     <description>개발자 차한음 블로그</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 22 Nov 2026 15:23:31 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 16:04:22 +0000</lastBuildDate>
     <generator>Go Custom SSG</generator>
     <item>
       <title>2026 디노티시아 NIPA 오픈소스 해커톤 회고</title>
@@ -14,6 +14,14 @@
       <pubDate>Sun, 22 Nov 2026 00:00:00 +0900</pubDate>
       <guid>https://chebread.org/post/2026-디노티시아-nipa-오픈소스-해커톤-회고</guid>
       <category>전체</category>
+      <category>에세이</category>
+    </item>
+    <item>
+      <title>에세이 카테고리 소개</title>
+      <link>https://chebread.org/post/에세이-카테고리-소개</link>
+      <description>에세이 카테고리는 폴 그레이엄의 에세이처럼, 나의 생각을 담은 다양한 포스팅으로 구성되어 있다. 포스팅에 대한 여러분의 생각을 자유롭게 댓글로 남겨달라. 섬네일 출처: https:...</description>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0900</pubDate>
+      <guid>https://chebread.org/post/에세이-카테고리-소개</guid>
       <category>에세이</category>
     </item>
     <item>
@@ -116,20 +124,20 @@
       <category>Introducing Python</category>
     </item>
     <item>
-      <title>13. 파일, 디렉터리</title>
-      <link>https://chebread.org/post/13</link>
-      <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>https://chebread.org/post/13</guid>
-      <category>전체</category>
-      <category>Introducing Python</category>
-    </item>
-    <item>
       <title>14. 파이 과학</title>
       <link>https://chebread.org/post/14</link>
       <description>지난 몇 년 동안 파이썬은 과학자들에게 매우 큰 인기를 얻고 있다. 이번 장에서 다루는 소프트웨어를 보면 왜 인기가 많은지 알게 될 것이다. 과학자이거나 과학도라면 matlab, ...</description>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
       <guid>https://chebread.org/post/14</guid>
+      <category>전체</category>
+      <category>Introducing Python</category>
+    </item>
+    <item>
+      <title>13. 파일, 디렉터리</title>
+      <link>https://chebread.org/post/13</link>
+      <description>파일과 디렉터리 파일(file)은 일련의 바이트이며 일부 파일 시스템(file system)에 저장되어 있는 파일 이름(filename)으로 접근한다. 디렉터리(directory)...</description>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
+      <guid>https://chebread.org/post/13</guid>
       <category>전체</category>
       <category>Introducing Python</category>
     </item>
