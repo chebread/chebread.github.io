@@ -82,7 +82,7 @@
 <body>
     <div class="root">
         <div class="post">
-            <nav class="post-nav">
+            <nav class="post-nav post-nav-hero">
                 <div class="nav-inner">
                     <a href="/" class="">
                         <span>홈</span>
@@ -95,13 +95,17 @@
                     </a>
                 </div>
             </nav>
+            <header class="post-header post-header--hero" style="--hero-edge-left-gradient: linear-gradient(to bottom, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 0%, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 35%, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 70%, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 100%); --hero-edge-right-gradient: linear-gradient(to bottom, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 0%, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 35%, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 70%, light-dark(rgb(212, 212, 212), rgb(64, 64, 64)) 100%);">
+                <div class="post-hero" style="--post-hero-image: none;">
+                    <h1 class="post-title">단일 책임 원칙이 무너지고 있다</h1>
+                </div>
+            </header>
 
             <main class="post-content">
-                <header class="post-header">
-                    <h1 class="post-title">단일 책임 원칙이 무너지고 있다</h1>
+                <div class="post-header post-meta">
                     <p class="post-date"><time datetime="2025-09-13">2025년 09월 13일</time></p>
                     <p class="post-category"><a href="/posts/%ec%a0%84%ec%b2%b4">[전체]</a><a href="/posts/%ec%97%90%ec%84%b8%ec%9d%b4">[에세이]</a></p>
-                </header>
+                </div>
                 <div class="post-body">
                     <article class="markdown-body"><blockquote>
 <p>단일 책임 원칙: 하나의 것은 하나의 일만 해야 한다.</p>
@@ -113,6 +117,10 @@
 <p>나는 이해가 되지 않는다. 프로그램은 계속해서 가벼워지고, 빨라지고, 버그가 fix 되어야 하며, 기능은 더욱더 간단해져야 한다. 근데 왜 요즘의 프로그램들은 기능은 점점 불어나며, 이로 인해 버그는 계속해서 증가하고, 앱은 느려지며, 프로그램은 기하급수적으로 큰 용량을 차지하게 되는가? 이는 결국 '기능 블로트'로 이어진다.</p>
 <p>그리고 웃긴 것은, AI 랍시고 갖다 붙여 놓았으나, 막상 사용해 보면 LLM 모델에 대한 API 호출이다. 그냥 호출하고 필요에 맞게 조작해놓은 것을 AI랍시고 갖다 붙여놓은 거다. 자체 모델을 구축하려는 시도조차 하지 않는 데, 이게 뭔 AI 기능인가?</p>
 <p>시대가 아무리 봐도 역행하는 듯하다. 단일 책임 원칙은 아마 10년 전이 더 잘 지켜진 듯하다. 하나의 것은 하나의 일만 해야 한다. 하나의 것들이 모여 새로운 일을 해야 한다.</p>
+<hr>
+<blockquote>
+<p>섬네일 출처: <a href="https://en.wikipedia.org/wiki/Dave_Thomas_(programmer)">https://en.wikipedia.org/wiki/Dave_Thomas_(programmer)</a></p>
+</blockquote>
 </article>
                 </div>
                 <section class="post-comments">
