@@ -2,7 +2,7 @@
 date: 2026-05-07
 category: [전체, 에세이]
 published: true
-thumbnail: https://media.wired.com/photos/66eca25ebd96d77025cfe11b/3:2/w_2560%2Cc_limit/Plaintext-Paul-Graham-Founder-Mode-Business-114681699.jpg
+thumbnail: https://cdn.chebread.org/blog/paul-graham.webp
 ---
 
 > 또 전체적인 프로그램을 미리 신중하게 적어서 생각하는 방향이 옳은지 여부를 확인하기 전에 조각난 코드부터 대책 없이 늘어놓은 다음 그것의 모양을 조금씩 잡아 나가는 방법으로 프로그래밍을 했다.  

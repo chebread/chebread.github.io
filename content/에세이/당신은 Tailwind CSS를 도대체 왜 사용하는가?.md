@@ -4,7 +4,7 @@ category: [전체, 에세이]
 published: true
 ---
 
-<img src="https://velog.velcdn.com/images/haneum/post/3429909d-9e4d-4160-ab4e-eac7f383e90e/image.png" width="300" />
+<img src="https://cdn.chebread.org/blog/tailwind-css-1.webp" width="300" />
 
 위와 같은 반응형 레이아웃을 만들기 위해서 Tailwind CSS는 이 정도의 코드를 요구한다.
 
@@ -64,7 +64,7 @@ Tailwind CSS는 CSS 용 부트스트랩이다.
 
 당신이 Tailwind CSS에 지나치게 의존한다면, 깊은 의미로는 그만큼의 CSS 스타일링 실력이 없다는 것이다.
 
-<img src="https://velog.velcdn.com/images/haneum/post/f995ad49-2c11-4759-94b6-3dd08f6cea21/image.png" width="300" />
+<img src="https://cdn.chebread.org/blog/tailwind-css-2.webp" width="300" />
 
 위처럼 이미 모든 스타일은 Tailwind CSS 상에서 정해져 있다. 그리고 개발자는 이런 정의된 스타일을 차용하여 프론트엔드를 구성한다. 그리고 정의되지 않은 스타일은 따로 관리한다.
 
@@ -78,11 +78,11 @@ Tailwind CSS는 CSS 용 부트스트랩이다.
 그리고 재사용성을 지원하지 않는다는 것이다.
 Tailwind CSS는 재사용을 하기 위해서는 멀티 커서를 사용하라고 한다.
 
-![](https://velog.velcdn.com/images/haneum/post/5b9edc20-759e-4f71-9894-592cc30dae39/image.png)
+![](https://cdn.chebread.org/blog/tailwind-css-3.webp)
 
 아니면 루프를 사용하라고 한다.
 
-![](https://velog.velcdn.com/images/haneum/post/16d21dd0-9346-42cc-8be8-0b199fd3f8b2/image.png)
+![](https://cdn.chebread.org/blog/tailwind-css-4.webp)
 
 아니면 @apply라는 기능을 활용하라고 한다.
 
