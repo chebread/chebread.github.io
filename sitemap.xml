@@ -11,6 +11,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://chebread.org/post/csapp-카테고리-소개</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://chebread.org/post/01</loc>
     <lastmod>2025-05-01</lastmod>
     <changefreq>weekly</changefreq>
