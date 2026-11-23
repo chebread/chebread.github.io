@@ -8,6 +8,7 @@ import (
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/parser"
 	"github.com/yuin/goldmark/text"
+	"github.com/yuin/goldmark/util"
 )
 
 func isSupOrSubOpenTag(tag string) bool {
@@ -59,7 +60,12 @@ func MarkdownToPlainText(markdownContent []byte) (string, error) {
 				}
 			case *ast.Text:
 				if ignoredTagDepth == 0 {
-					plainTextBuf.Write(node.Segment.Value(markdownContent))
+					val := node.Segment.Value(markdownContent)
+					isCodeSpan := node.Parent() != nil && node.Parent().Kind() == ast.KindCodeSpan
+					if !node.IsRaw() && !isCodeSpan {
+						val = util.UnescapePunctuations(val)
+					}
+					plainTextBuf.Write(val)
 				}
 
 				if node.SoftLineBreak() || node.HardLineBreak() {
