@@ -162,7 +162,7 @@
     // 중앙 사진: 35rem(560px) 전체 너비에서 100% 선명하게 표시 (내부 마스크 제거로 원본 크기 및 선명도 100% 보존)
     // 이미지 로드 실패 시 color-palette.css 기반 폴백(--neutral-300 / --neutral-700) 적용
     background-color: var(--hero-fallback-bg);
-    background-image:
+    $hero-overlay-gradients:
         linear-gradient(
             to bottom,
             rgba(0, 0, 0, 0.6) 0%,
@@ -173,9 +173,16 @@
             rgba(0, 0, 0, 0.02) 5.8rem,
             rgba(0, 0, 0, 0) 7rem
         ),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
-        url("/assets/profile.webp"),
-        url("/assets/profile.png");
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+    background-image:
+        $hero-overlay-gradients,
+        url("https://cdn.chebread.org/blog/profile.png");
+    background-image:
+        $hero-overlay-gradients,
+        image-set(
+            url("https://cdn.chebread.org/blog/profile.webp") type("image/webp"),
+            url("https://cdn.chebread.org/blog/profile.png") type("image/png")
+        );
     background-size: cover;
     background-position: center;
 

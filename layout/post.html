@@ -6,6 +6,11 @@
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a">
 
+    <link rel="preconnect" href="https://cdn.chebread.org">
+    {{- if .ThumbnailValid}}
+    <link rel="preload" href="{{ .Thumbnail }}" as="image" fetchpriority="high">
+    {{- end}}
+
     <meta name="giscus:backlink" content="https://chebread.org/{{ .Permalink }}">
 
     <title>{{ .Title }} | 차한음 블로그</title>
@@ -27,7 +32,7 @@
     <meta property="og:image" content="{{ .Thumbnail }}">
     <meta property="og:image:alt" content="{{ .Title }}">
     {{- else}}
-    <meta property="og:image" content="{{if .IsProduction}}https://chebread.org/assets/profile.png{{else}}/assets/profile.png{{end}}">
+    <meta property="og:image" content="https://cdn.chebread.org/blog/profile.png">
     <meta property="og:image:alt" content="차한음 블로그 프로필 이미지">
     {{- end}}
 
@@ -38,7 +43,7 @@
     <meta name="twitter:image" content="{{ .Thumbnail }}">
     <meta name="twitter:image:alt" content="{{ .Title }}">
     {{- else}}
-    <meta name="twitter:image" content="{{if .IsProduction}}https://chebread.org/assets/profile.png{{else}}/assets/profile.png{{end}}">
+    <meta name="twitter:image" content="https://cdn.chebread.org/blog/profile.png">
     <meta name="twitter:image:alt" content="차한음 블로그 프로필 이미지">
     {{- end}}
 

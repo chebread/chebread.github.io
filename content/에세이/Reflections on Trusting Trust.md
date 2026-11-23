@@ -5,7 +5,7 @@ category:
   - 에세이
 published: true
 desc:
-thumbnail: /assets/ken-thompson.webp
+thumbnail: https://cdn.chebread.org/blog/ken-thompson.webp
 ---
 
 ## 논문 정보

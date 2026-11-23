@@ -378,10 +378,10 @@ func main() {
 	}
 
 	type PostTmplData struct {
-		IsProduction      bool
-		Title             string
-		Date              string
-		FormattedDate     string
+		IsProduction  bool
+		Title         string
+		Date          string
+		FormattedDate string
 		// Category      []string
 		Description       string
 		Permalink         string
@@ -477,10 +477,10 @@ func main() {
 		}
 
 		postTmplData := PostTmplData{
-			IsProduction:      appEnv == "production",
-			Title:             title,
-			Date:              date,
-			FormattedDate:     formattedDate,
+			IsProduction:  appEnv == "production",
+			Title:         title,
+			Date:          date,
+			FormattedDate: formattedDate,
 			// Category:      category,
 			Description:       description,
 			Permalink:         permalink,
@@ -824,7 +824,7 @@ func main() {
 		HeroEdgeLeftGrad  template.CSS
 		HeroEdgeRightGrad template.CSS
 	}
-	homeLeftGrad, homeRightGrad := lib.ExtractHeroGradients("/assets/profile.webp")
+	homeLeftGrad, homeRightGrad := lib.ExtractHeroGradients("https://cdn.chebread.org/blog/profile.webp")
 	homePageData := HomePageData{
 		IsProduction:      appEnv == "production",
 		CurrentURL:        "/",
@@ -890,7 +890,7 @@ func main() {
 		HeroEdgeLeftGrad  template.CSS
 		HeroEdgeRightGrad template.CSS
 	}
-	aboutLeftGrad, aboutRightGrad := lib.ExtractHeroGradients("/assets/profile.webp")
+	aboutLeftGrad, aboutRightGrad := lib.ExtractHeroGradients("https://cdn.chebread.org/blog/profile.webp")
 	aboutPageData := AboutPageData{
 		IsProduction:      appEnv == "production",
 		CurrentURL:        "/about",

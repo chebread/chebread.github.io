@@ -29,7 +29,9 @@ run_step ".nojekyll 파일 생성" touch public/.nojekyll
 
 run_step "robots.txt 파일 복사" cp layout/robots.txt public/robots.txt
 
-run_step "assets 디렉토리 복사" cp -r assets/ public/assets
+if [ -d assets ]; then
+  run_step "assets 디렉토리 복사" cp -r assets/ public/assets
+fi
 
 run_step "favicons 디렉토리 복사" cp -r layout/favicons public/favicons
 
