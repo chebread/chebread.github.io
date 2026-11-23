@@ -83,7 +83,7 @@ function initializeAnchorScroll(): void {
 
       event.preventDefault();
       if (window.location.hash !== href) {
-        history.pushState(null, '', href);
+        history.replaceState(null, '', href);
       }
       scrollElementToViewportPosition(target);
     });
