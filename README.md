@@ -10,6 +10,7 @@ Blog link: [https://chebread.org/](https://chebread.org/)
 - [How to Run](#how-to-run)
 - [How to Use devd](#how-to-use-devd)
 - [How to Use localias](#how-to-use-localias)
+- [How to Use rclone](#how-to-use-rclone)
 - [How to Create Manual Anchor Links](#how-to-create-manual-anchor-links)
 - [How to Use Callouts](#how-to-use-callouts)
 - [How to Configure Title-Sorted Categories](#how-to-configure-title-sorted-categories)
@@ -96,6 +97,73 @@ localias start
 localias stop
 
 localias run
+```
+
+## How to Use rclone
+Blog images are hosted on Cloudflare R2 (`https://cdn.chebread.org/blog/`) and uploaded with `rclone`.
+
+- `r2:chebread-cdn/blog/` → `https://cdn.chebread.org/blog/<file>` (blog post images & thumbnails)
+
+### Initial Setup
+Install `rclone` and check your config file path (e.g., `~/.rclone.conf`):
+
+```shell
+brew install rclone
+rclone config file
+```
+
+Add the `r2` remote using placeholder credentials from Cloudflare R2 Account API Tokens (`Object Read & Write` scoped to `chebread-cdn`):
+
+```ini
+[r2]
+type = s3
+provider = Cloudflare
+access_key_id = <ACCESS_KEY_ID>
+secret_access_key = <SECRET_ACCESS_KEY>
+region = auto
+endpoint = https://<ACCOUNT_ID>.r2.cloudflarestorage.com
+acl = private
+no_check_bucket = true
+```
+
+### Upload Files
+```shell
+# Upload a single file -> https://cdn.chebread.org/blog/image.webp
+rclone copy -P ./image.webp r2:chebread-cdn/blog/
+
+# Upload and rename -> https://cdn.chebread.org/blog/new-name.webp
+rclone copyto -P ./source.webp r2:chebread-cdn/blog/new-name.webp
+
+# Upload multiple specific files from the same directory
+rclone copy -P ./assets/ r2:chebread-cdn/blog/ \
+  --include "a.webp" \
+  --include "b.webp"
+
+# Upload multiple files using a brace pattern (keep quotes so zsh does not expand it)
+rclone copy -P ./assets/ r2:chebread-cdn/blog/ --include "{a,b}.webp"
+
+# Upload all files matching an extension
+rclone copy -P ./assets/ r2:chebread-cdn/blog/ --include "*.webp"
+
+# Upload an entire directory (skips unchanged files already on R2)
+rclone copy -P ./assets/ r2:chebread-cdn/blog/ --exclude ".DS_Store"
+
+# Upload multiple files from different directories
+for f in ./assets/a.webp ~/Downloads/b.png; do
+  rclone copy -P "$f" r2:chebread-cdn/blog/
+done
+```
+
+### Preview, List, and Delete
+```shell
+# Dry run (preview what would be uploaded without transferring)
+rclone copy -n ./assets/ r2:chebread-cdn/blog/ --include "*.webp"
+
+# List files on R2
+rclone ls r2:chebread-cdn/blog/
+
+# Delete a single file from R2
+rclone deletefile r2:chebread-cdn/blog/image.webp
 ```
 
 ## How to Create Manual Anchor Links
