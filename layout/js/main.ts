@@ -45,33 +45,21 @@ function getTargetElementByHash(hash: string): HTMLElement | null {
   return document.getElementById(decodedId) || document.getElementById(rawId);
 }
 
-function scrollElementToCenter(target: HTMLElement, smooth: boolean): void {
+function scrollElementToViewportPosition(target: HTMLElement): void {
   const nav = document.querySelector<HTMLElement>('.post-nav, .home-nav, .about-nav');
   const navHeight = nav ? nav.getBoundingClientRect().height : 0;
 
   const rect = target.getBoundingClientRect();
   const currentScrollY = typeof window.scrollY === 'number' ? window.scrollY : window.pageYOffset;
-  const visibleCenter = navHeight + (window.innerHeight - navHeight) / 2;
+  const targetViewportY = Math.max(navHeight + 16, window.innerHeight * 0.45);
   const targetCenter = rect.top + currentScrollY + rect.height / 2;
   const maxScrollY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-  const top = Math.min(maxScrollY, Math.max(0, targetCenter - visibleCenter));
+  const targetTop = Math.min(maxScrollY, Math.max(0, targetCenter - targetViewportY));
 
-  const prefersReducedMotion =
-    typeof window.matchMedia === 'function' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const supportsSmoothScroll = 'scrollBehavior' in document.documentElement.style;
-
-  if (supportsSmoothScroll) {
-    window.scrollTo({
-      top,
-      behavior: smooth && !prefersReducedMotion ? 'smooth' : 'auto',
-    });
-  } else {
-    window.scrollTo(0, top);
-  }
+  window.scrollTo(0, targetTop);
 }
 
-function initializeAnchorCenterScroll(): void {
+function initializeAnchorScroll(): void {
   const anchorLinks = document.querySelectorAll<HTMLAnchorElement>('.markdown-body a[href^="#"]');
 
   anchorLinks.forEach(link => {
@@ -94,11 +82,10 @@ function initializeAnchorCenterScroll(): void {
       if (!target) return;
 
       event.preventDefault();
-      scrollElementToCenter(target, true);
-
       if (window.location.hash !== href) {
         history.pushState(null, '', href);
       }
+      scrollElementToViewportPosition(target);
     });
   });
 }
@@ -106,7 +93,7 @@ function initializeAnchorCenterScroll(): void {
 document.addEventListener('DOMContentLoaded', () => {
     initializeStickyNav();
     initializeBackLink();
-    initializeAnchorCenterScroll();
+    initializeAnchorScroll();
     mediumZoom('.markdown-body img', {
          background: 'var(--bg-page)',
        });
