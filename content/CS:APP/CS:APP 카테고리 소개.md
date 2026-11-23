@@ -2,7 +2,7 @@
 date: 2026-09-26
 category:
   - CS:APP
-published: false
+published: true
 thumbnail: https://cdn.chebread.org/blog/randall-bryant.webp
 fixed: true
 ---
