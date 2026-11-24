@@ -278,6 +278,22 @@ For multi-paragraph footnotes, indent continuation paragraphs with 4 spaces:
 - **45% Instant Anchor Scroll**: Clicking a footnote number or `[되돌아가기]` jumps instantly to `45%` of the viewport height and updates the URL hash with `history.replaceState` so browser Back navigation is not polluted.
 - **Important**: Always include the colon (`[^1]: ...`). Without the colon, `[^1]` is treated as plain text instead of a footnote.
 
+### Linking an Entire Phrase (Manual HTML)
+Standard Markdown footnotes (`[^1]`) only make the superscript number (`1`) clickable. If you want an entire phrase to be clickable (`boo¹`), write both the inline reference and the bottom footnote manually in HTML:
+
+```md
+이번 해커톤에서 <a href="#1" id="ref-1">dna-factory<sup>1</sup></a>를 사용해 보았다.
+
+---
+
+<p id="1"><sup>1</sup> <a href="https://github.com/dnotitia/dna-factory">https://github.com/dnotitia/dna-factory</a> 참고. <a href="#ref-1">[되돌아가기]</a></p>
+```
+
+> [!NOTE]
+> - Do not mix a manual HTML inline link (`<a href="#fn:1">...</a>`) with a Markdown footnote definition (`[^1]: ...`)—Goldmark removes footnote definitions that have no matching `[^1]` reference in the body.
+> - Avoid mixing Markdown footnotes (`[^1]`) and manual HTML footnotes (`#1`) within the same post so numbering stays consistent.
+> - If you use this inside a heading and want the heading text included in auto `desc`, use Markdown heading syntax (`# <a href="#1" id="ref-1">Title<sup>1</sup></a>`) rather than `<h1>...</h1>`.
+
 ## How Auto Description Extraction Works
 Each post's `description` is used on `/posts`, `/posts/<category>`, HTML meta/OG/Twitter/JSON-LD tags, and `rss.xml`.
 
