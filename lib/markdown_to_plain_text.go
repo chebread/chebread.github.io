@@ -6,6 +6,7 @@ import (
 
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/ast"
+	"github.com/yuin/goldmark/extension"
 	"github.com/yuin/goldmark/parser"
 	"github.com/yuin/goldmark/text"
 	"github.com/yuin/goldmark/util"
@@ -38,7 +39,7 @@ func isSupOrSubCloseTag(tag string) bool {
 // MarkdownToPlainText는 Markdown 바이트 슬라이스를 받아 순수 텍스트 문자열로 변환합니다.
 func MarkdownToPlainText(markdownContent []byte) (string, error) {
 	md := goldmark.New(
-		goldmark.WithExtensions(MarkExtension, CalloutExtension),
+		goldmark.WithExtensions(MarkExtension, CalloutExtension, extension.Footnote),
 	)
 
 	reader := text.NewReader(markdownContent)

@@ -9,7 +9,6 @@ import (
 	"fmt"
 	stdhtml "html"
 	"html/template"
-	"io"
 	"net/url"
 	"os"
 	"path/filepath"
@@ -145,6 +144,7 @@ func main() {
 		),
 		goldmark.WithExtensions(
 			extension.GFM,
+			lib.NewFootnoteExtension("[되돌아가기]"),
 			lib.CalloutExtension,
 			highlighting.NewHighlighting(
 				highlighting.WithStyle("github"),
@@ -197,19 +197,11 @@ func main() {
 	}
 
 	for _, path := range contentFilePaths {
-		file, err := os.Open(path)
+		content, err := os.ReadFile(path)
 		if err != nil {
-			fmt.Printf("warning: %s - 파일 열기 실패\n", path)
-			continue
-		}
-		defer file.Close()
-		buffer := make([]byte, 4096)
-		n, err := file.Read(buffer)
-		if err != nil && err != io.EOF {
 			fmt.Printf("warning: %s - 파일 읽기 실패: %v\n", path, err)
 			continue
 		}
-		content := buffer[:n]
 		if !bytes.HasPrefix(content, []byte("---")) {
 			fmt.Printf("warning: %s - 프론트 매터를 찾을 수 없습니다\n", path)
 			continue
