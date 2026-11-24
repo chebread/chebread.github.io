@@ -273,6 +273,7 @@ For multi-paragraph footnotes, indent continuation paragraphs with 4 spaces:
 
 ### Rendering & Navigation Behavior
 - **Paragraph Style (No `<ol>` / `<li>`)**: Single-paragraph footnotes render as standard `<p id="fn:1"><sup>1</sup> ... [되돌아가기]</p>` elements, matching the exact font size and text color of normal body paragraphs.
+- **In-Place Rendering**: Each footnote renders at the exact position where its `[^id]: ...` definition is written (not moved to the bottom of the document), both in HTML and in auto `desc` extraction.
 - **Automatic Backlinks**: A `[되돌아가기]` link returning to `#fnref:1` is appended automatically—do not write it manually.
 - **Manual Divider**: No automatic `<hr>` or `border-top` is inserted above footnotes. Add `---` in Markdown whenever you want a divider line.
 - **45% Instant Anchor Scroll**: Clicking a footnote number or `[되돌아가기]` jumps instantly to `45%` of the viewport height and updates the URL hash with `history.replaceState` so browser Back navigation is not polluted.
@@ -302,7 +303,7 @@ Each post's `description` is used on `/posts`, `/posts/<category>`, HTML meta/OG
 2. **Automatic Extraction**: If `desc:` is omitted or empty, `main.go` reads the full Markdown body and converts it to plain text via `lib/markdown_to_plain_text.go`.
 
 ### Extraction Rules (`lib/markdown_to_plain_text.go`)
-The body is parsed with Goldmark (`MarkExtension`, `CalloutExtension`, `extension.Footnote`) and walked in document order:
+The body is parsed with Goldmark (`MarkExtension`, `CalloutExtension`, `NewFootnoteExtension`) and walked in document order:
 
 | Markdown / HTML Element | Included in `desc`? | Details |
 | :--- | :--- | :--- |

@@ -29,27 +29,79 @@ func (n *FootnoteNumber) Dump(source []byte, level int) {
 	gast.DumpHelper(n, source, level, nil, nil)
 }
 
+// footnotePlaceholder marks the original document position of a parsed Footnote node
+// before Goldmark's FootnoteBlockParser moves it into FootnoteList.
+type footnotePlaceholder struct {
+	gast.BaseBlock
+	fn *extast.Footnote
+}
+
+var kindFootnotePlaceholder = gast.NewNodeKind("FootnotePlaceholder")
+
+func (n *footnotePlaceholder) Kind() gast.NodeKind {
+	return kindFootnotePlaceholder
+}
+
+func (n *footnotePlaceholder) Dump(source []byte, level int) {
+	gast.DumpHelper(n, source, level, nil, nil)
+}
+
+type inPlaceFootnoteBlockParser struct {
+	parser.BlockParser
+}
+
+func (b *inPlaceFootnoteBlockParser) Close(node gast.Node, reader text.Reader, pc parser.Context) {
+	if fn, ok := node.(*extast.Footnote); ok && node.Parent() != nil {
+		placeholder := &footnotePlaceholder{fn: fn}
+		node.Parent().InsertBefore(node.Parent(), node, placeholder)
+	}
+	b.BlockParser.Close(node, reader, pc)
+}
+
 type footnoteParagraphTransformer struct{}
 
 func (t *footnoteParagraphTransformer) Transform(doc *gast.Document, reader text.Reader, pc parser.Context) {
-	for child := doc.FirstChild(); child != nil; child = child.NextSibling() {
-		if child.Kind() != extast.KindFootnoteList {
+	var placeholders []*footnotePlaceholder
+	_ = gast.Walk(doc, func(n gast.Node, entering bool) (astStatus gast.WalkStatus, err error) {
+		if entering {
+			if ph, ok := n.(*footnotePlaceholder); ok {
+				placeholders = append(placeholders, ph)
+				return gast.WalkSkipChildren, nil
+			}
+		}
+		return gast.WalkContinue, nil
+	})
+
+	for _, ph := range placeholders {
+		parent := ph.Parent()
+		if parent == nil {
 			continue
 		}
-		for item := child.FirstChild(); item != nil; item = item.NextSibling() {
-			fn, ok := item.(*extast.Footnote)
-			if !ok {
-				continue
-			}
-			first := fn.FirstChild()
-			if first != nil && first.Kind() == gast.KindParagraph {
-				numNode := &FootnoteNumber{Index: fn.Index}
-				first.InsertBefore(first, first.FirstChild(), numNode)
-				if fn.ChildCount() == 1 {
-					first.SetAttributeString("id", []byte("fn:"+strconv.Itoa(fn.Index)))
-				}
+		fn := ph.fn
+		if fn == nil || fn.Index < 0 {
+			parent.RemoveChild(parent, ph)
+			continue
+		}
+		if fn.Parent() != nil {
+			fn.Parent().RemoveChild(fn.Parent(), fn)
+		}
+		first := fn.FirstChild()
+		if first != nil && first.Kind() == gast.KindParagraph {
+			numNode := &FootnoteNumber{Index: fn.Index}
+			first.InsertBefore(first, first.FirstChild(), numNode)
+			if fn.ChildCount() == 1 {
+				first.SetAttributeString("id", []byte("fn:"+strconv.Itoa(fn.Index)))
 			}
 		}
+		parent.ReplaceChild(parent, ph, fn)
+	}
+
+	for child := doc.FirstChild(); child != nil; {
+		next := child.NextSibling()
+		if child.Kind() == extast.KindFootnoteList && child.ChildCount() == 0 {
+			doc.RemoveChild(doc, child)
+		}
+		child = next
 	}
 }
 
@@ -64,11 +116,6 @@ func (r *footnoteParagraphRenderer) RegisterFuncs(reg renderer.NodeRendererFuncR
 func (r *footnoteParagraphRenderer) renderFootnoteList(
 	w util.BufWriter, source []byte, node gast.Node, entering bool,
 ) (gast.WalkStatus, error) {
-	if entering {
-		_, _ = w.WriteString(`<div role="doc-endnotes">` + "\n")
-	} else {
-		_, _ = w.WriteString("</div>\n")
-	}
 	return gast.WalkContinue, nil
 }
 
@@ -107,24 +154,31 @@ type footnoteExtension struct {
 }
 
 func (e *footnoteExtension) Extend(m goldmark.Markdown) {
-	extension.NewFootnote(
-		extension.WithFootnoteBacklinkHTML(e.backlinkHTML),
-	).Extend(m)
-
 	m.Parser().AddOptions(
+		parser.WithBlockParsers(
+			util.Prioritized(&inPlaceFootnoteBlockParser{BlockParser: extension.NewFootnoteBlockParser()}, 999),
+		),
+		parser.WithInlineParsers(
+			util.Prioritized(extension.NewFootnoteParser(), 101),
+		),
 		parser.WithASTTransformers(
+			util.Prioritized(extension.NewFootnoteASTTransformer(), 999),
 			util.Prioritized(&footnoteParagraphTransformer{}, 1000),
 		),
 	)
 	m.Renderer().AddOptions(
 		renderer.WithNodeRenderers(
+			util.Prioritized(extension.NewFootnoteHTMLRenderer(
+				extension.WithFootnoteBacklinkHTML(e.backlinkHTML),
+			), 500),
 			util.Prioritized(&footnoteParagraphRenderer{}, 400),
 		),
 	)
 }
 
 // NewFootnoteExtension returns a Goldmark footnote extension that renders each footnote
-// as a standard paragraph ("<p id=\"fn:1\"><sup>1</sup> ... [되돌아가기]</p>") instead of an <ol>/<li> list.
+// in-place where it is defined as a standard paragraph ("<p id=\"fn:1\"><sup>1</sup> ... [되돌아가기]</p>")
+// instead of moving all footnotes into an <ol>/<li> list at the end of the document.
 func NewFootnoteExtension(backlinkHTML string) goldmark.Extender {
 	return &footnoteExtension{backlinkHTML: backlinkHTML}
 }
