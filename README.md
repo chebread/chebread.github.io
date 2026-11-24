@@ -13,6 +13,8 @@ Blog link: [https://chebread.org/](https://chebread.org/)
 - [How to Use rclone](#how-to-use-rclone)
 - [How to Create Manual Anchor Links](#how-to-create-manual-anchor-links)
 - [How to Use Callouts](#how-to-use-callouts)
+- [How to Use Footnotes](#how-to-use-footnotes)
+- [How Auto Description Extraction Works](#how-auto-description-extraction-works)
 - [How to Configure Title-Sorted Categories](#how-to-configure-title-sorted-categories)
 - [How to Deploy](#how-to-deploy)
 - [Commit Attribution Policy](#commit-attribution-policy)
@@ -243,6 +245,67 @@ If you do not specify a style, it defaults to the `note` (blue) style:
 > [!foo]
 > boo
 ```
+
+## How to Use Footnotes
+You can write footnotes using standard Markdown footnote syntax (`[^id]` and `[^id]: ...`), powered by a custom Goldmark footnote extension (`lib/footnote.go`).
+
+### Basic Syntax
+Place `[^1]` inline where you want the superscript link, and define the footnote anywhere below (typically at the bottom of the post) using `[^1]:` **with a colon immediately after the closing bracket**.
+
+```md
+이번 해커톤에서 dna-factory[^1]와 dna-eval[^2]를 사용해 보았다.
+
+---
+
+[^1]: https://github.com/dnotitia/dna-factory 참고.
+[^2]: https://github.com/dnotitia/dna-eval 참고.
+```
+
+For multi-paragraph footnotes, indent continuation paragraphs with 4 spaces:
+
+```md
+본문 내용[^1].
+
+[^1]: 첫 번째 문단입니다.
+
+    두 번째 문단입니다.
+```
+
+### Rendering & Navigation Behavior
+- **Paragraph Style (No `<ol>` / `<li>`)**: Single-paragraph footnotes render as standard `<p id="fn:1"><sup>1</sup> ... [되돌아가기]</p>` elements, matching the exact font size and text color of normal body paragraphs.
+- **Automatic Backlinks**: A `[되돌아가기]` link returning to `#fnref:1` is appended automatically—do not write it manually.
+- **Manual Divider**: No automatic `<hr>` or `border-top` is inserted above footnotes. Add `---` in Markdown whenever you want a divider line.
+- **45% Instant Anchor Scroll**: Clicking a footnote number or `[되돌아가기]` jumps instantly to `45%` of the viewport height and updates the URL hash with `history.replaceState` so browser Back navigation is not polluted.
+- **Important**: Always include the colon (`[^1]: ...`). Without the colon, `[^1]` is treated as plain text instead of a footnote.
+
+## How Auto Description Extraction Works
+Each post's `description` is used on `/posts`, `/posts/<category>`, HTML meta/OG/Twitter/JSON-LD tags, and `rss.xml`.
+
+### Priority
+1. **Manual `desc` in Front Matter**: If `desc:` is provided and non-empty in YAML front matter, that exact value is used as-is (no truncation).
+2. **Automatic Extraction**: If `desc:` is omitted or empty, `main.go` reads the full Markdown body and converts it to plain text via `lib/markdown_to_plain_text.go`.
+
+### Extraction Rules (`lib/markdown_to_plain_text.go`)
+The body is parsed with Goldmark (`MarkExtension`, `CalloutExtension`, `extension.Footnote`) and walked in document order:
+
+| Markdown / HTML Element | Included in `desc`? | Details |
+| :--- | :--- | :--- |
+| Paragraphs, headings, lists, blockquotes | **Included** | Plain text extracted; block boundaries and line breaks become spaces |
+| Links (`[text](url)`), emphasis (`**b**`, `==m==`) | **Included (text only)** | Markdown markers and link URLs are stripped |
+| Images (`![alt](url)`) | **Alt text only** | Image URL is stripped; alt text (if any) is kept |
+| Inline code (`` `code` ``) | **Included** | Backticks stripped; backslash escapes inside code spans are kept literally |
+| Escaped punctuation (`\-`, `\*`, etc.) | **Included (unescaped)** | Unescaped to plain punctuation (`-`, `*`) in normal text |
+| Callouts (`> [!NOTE]` / `> [!tip\|Title]`) | **Body included** | Callout tag syntax (`[!...]`) is stripped; body text is kept |
+| Markdown footnotes (`[^1]` / `[^1]: text`) | **Body included, markers excluded** | Inline `[^1]` and `[되돌아가기]` are omitted; footnote body text (`text`) is included if within the character limit |
+| Inline HTML (`<a href="#1">text</a>`) | **Inner text included** | HTML tags themselves are stripped; plain text between them is kept |
+| Inline `<sup>...</sup>` and `<sub>...</sub>` | **Excluded** | Both tags and inner content (e.g., `<sup>1</sup>`) are skipped |
+| Block HTML (`<h1>...</h1>`, `<p id="1">...</p>`, `<div>...</div>`) | **Excluded (entire block)** | Lines starting with a block HTML tag are parsed as `HTMLBlock` and skipped completely. Use `# <a ...>Title</a>` if you want heading text included |
+| Fenced / indented code blocks (```` ``` ````) | **Excluded** | Code blocks are skipped |
+| Horizontal rules (`---`) | **Excluded** | No text emitted |
+
+### Normalization & Length Limit (`main.go`)
+- All consecutive whitespace and newlines are collapsed into single spaces.
+- If the resulting text exceeds **100 characters (Unicode runes)**, it is truncated to the first 100 characters followed by `...`; otherwise, it is used in full.
 
 ## How to Configure Title-Sorted Categories
 By default, posts in each category are sorted chronologically by date (newest first).
