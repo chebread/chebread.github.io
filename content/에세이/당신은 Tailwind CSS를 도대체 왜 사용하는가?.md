@@ -2,6 +2,7 @@
 date: 2024-07-23 
 category: [전체, 에세이] 
 published: true
+thumbnail: https://cdn.chebread.org/blog/adam-wathan.webp
 ---
 
 <img src="https://cdn.chebread.org/blog/tailwind-css-1.webp" width="300" />
@@ -104,3 +105,7 @@ Tailwind CSS는 재사용을 하기 위해서는 멀티 커서를 사용하라�
 결론적으로 당신이 Tailwind CSS에만 익숙해지게 되면 당신은 더욱더 창의적인 레이아웃을 구현할 수 없을 것이다. Tailwind CSS는 아주 빠른 기일 내에 프로젝트를 구현하는 데에만 아주 적합하므로, 유지 보수의 관점에서는 정말 끔찍하다.
 
 나는 이것이 과연 프론트엔드가 지향하는 관점이 맞는가 묻고 싶다.
+
+---
+
+> 섬네일 출처: https://tailwindcss.com/blog/2023-07-18-tailwind-connect-2023-recap

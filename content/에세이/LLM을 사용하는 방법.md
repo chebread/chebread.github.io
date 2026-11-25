@@ -2,6 +2,7 @@
 date: 2025-10-02
 category: [전체, 에세이]
 published: true
+thumbnail: https://cdn.chebread.org/blog/llm.webp
 ---
 
 ## 이해하라
@@ -77,3 +78,7 @@ LLM은 지능은 있으나, 인격은 없다.
 LLM은 그냥 기계일 뿐이다.
 그들에게 있어서 감정적 표현은
 쓸데없는 입력값일 뿐이다.
+
+---
+
+> 섬네일 출처: https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EA%B8%80%EC%94%A8%EA%B0%80-%EC%A0%81%ED%9E%8C-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%B3%B4%EB%93%9C-1xE5QnNXJH0
