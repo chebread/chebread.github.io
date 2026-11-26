@@ -2,181 +2,186 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.1/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://chebread.org/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://chebread.org/about.html</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/csapp-카테고리-소개</loc>
+    <loc>https://chebread.org/post/카테고리-소개-38ea</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/01</loc>
+    <loc>https://chebread.org/post/01-ecf2</loc>
     <lastmod>2025-05-01</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/02</loc>
+    <loc>https://chebread.org/post/02-b8f3</loc>
     <lastmod>2025-05-03</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/03</loc>
+    <loc>https://chebread.org/post/03-bfd4</loc>
     <lastmod>2025-05-05</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/04</loc>
+    <loc>https://chebread.org/post/04-92b3</loc>
     <lastmod>2025-05-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/05</loc>
+    <loc>https://chebread.org/post/05-9553</loc>
     <lastmod>2025-05-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/06</loc>
+    <loc>https://chebread.org/post/06-a610</loc>
     <lastmod>2025-05-10</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/07</loc>
+    <loc>https://chebread.org/post/07-49f7</loc>
     <lastmod>2025-05-11</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/08</loc>
+    <loc>https://chebread.org/post/08-cee8</loc>
     <lastmod>2025-05-11</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/09</loc>
+    <loc>https://chebread.org/post/09-2ba9</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/10</loc>
+    <loc>https://chebread.org/post/10-d18e</loc>
     <lastmod>2025-06-03</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/11</loc>
+    <loc>https://chebread.org/post/11-2ebc</loc>
     <lastmod>2025-06-20</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/12</loc>
+    <loc>https://chebread.org/post/12-6062</loc>
     <lastmod>2025-06-20</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/13</loc>
+    <loc>https://chebread.org/post/13-81ee</loc>
     <lastmod>2025-06-20</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/14</loc>
+    <loc>https://chebread.org/post/14-fc3f</loc>
     <lastmod>2025-06-20</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/introduce-python-카테고리-소개</loc>
+    <loc>https://chebread.org/post/카테고리-소개-428b</loc>
     <lastmod>2025-05-05</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/2026-디노티시아-nipa-오픈소스-해커톤-회고</loc>
-    <lastmod>2026-11-22</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://chebread.org/post/chaos-to-cosmos</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://chebread.org/post/llm을-사용하는-방법</loc>
-    <lastmod>2025-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://chebread.org/post/reflections-on-trusting-trust</loc>
+    <loc>https://chebread.org/post/reflections-on-trusting-trust-8d05</loc>
     <lastmod>2025-12-26</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/행동하는-종이-건축-서평</loc>
+    <loc>https://chebread.org/post/카테고리-소개-7770</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://chebread.org/post/2026-디노티시아-nipa-오픈소스-해커톤-회고-cb4f</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://chebread.org/post/chaos-to-cosmos-2a34</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://chebread.org/post/llm을-사용하는-방법-32f5</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://chebread.org/post/행동하는-종이-건축-서평-e9fb</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/단일-책임-원칙이-무너지고-있다</loc>
+    <loc>https://chebread.org/post/단일-책임-원칙이-무너지고-있다-d4d3</loc>
     <lastmod>2025-09-13</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/당신은-tailwind-css를-도대체-왜-사용하는가</loc>
+    <loc>https://chebread.org/post/당신은-tailwind-css를-도대체-왜-사용하는가-41f5</loc>
     <lastmod>2024-07-23</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/바닐라-자바스크립트의-한계</loc>
+    <loc>https://chebread.org/post/바닐라-자바스크립트의-한계-3c8a</loc>
     <lastmod>2022-08-30</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/보호-구문을-활용하라</loc>
+    <loc>https://chebread.org/post/보호-구문을-활용하라-8501</loc>
     <lastmod>2025-10-12</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/블로그-유목민-역사</loc>
+    <loc>https://chebread.org/post/블로그-유목민-역사-2dce</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/에세이-카테고리-소개</loc>
-    <lastmod>2026-11-11</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://chebread.org/post/인공지능에-거부감을-느끼는-이유</loc>
+    <loc>https://chebread.org/post/인공지능에-거부감을-느끼는-이유-a16f</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/쥐의-눈물</loc>
+    <loc>https://chebread.org/post/쥐의-눈물-704b</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/프로그래머-인생에-대한-고찰</loc>
+    <loc>https://chebread.org/post/카테고리-소개-e2a7</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://chebread.org/post/프로그래머-인생에-대한-고찰-23c7</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/프로그래머는-인공지능-정신병에-가장-취약하다</loc>
+    <loc>https://chebread.org/post/프로그래머는-인공지능-정신병에-가장-취약하다-9e57</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/해커톤에서-수상하는-방법</loc>
+    <loc>https://chebread.org/post/해커톤에서-수상하는-방법-03a0</loc>
     <lastmod>2022-12-10</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/핸드폰을-보고-만족하는-k씨</loc>
+    <loc>https://chebread.org/post/핸드폰을-보고-만족하는-k씨-4d6f</loc>
     <lastmod>2025-12-29</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://chebread.org/post/힙하게-코딩하는-방법</loc>
+    <loc>https://chebread.org/post/힙하게-코딩하는-방법-73b5</loc>
     <lastmod>2022-06-05</lastmod>
     <changefreq>weekly</changefreq>
   </url>
