@@ -2,7 +2,7 @@
 date: 2025-12-26
 category:
   - 전체
-  - 에세이
+  - 논문 리뷰
 published: true
 desc:
 thumbnail: https://cdn.chebread.org/blog/ken-thompson.webp
