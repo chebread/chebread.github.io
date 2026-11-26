@@ -2,7 +2,6 @@ package main
 
 import (
 	"blog/lib"
-	"hash/fnv"
 
 	"bytes"
 	"encoding/xml"
@@ -185,7 +184,7 @@ func main() {
 	_ = postsData
 	_ = postsDataByCategory
 
-	slugTracker := make(map[string]bool)
+	slugTracker := make(map[string]string)
 
 	type PostFrontMatter struct {
 		Date      string      `yaml:"date"`
@@ -242,26 +241,13 @@ func main() {
 			// title
 			var title string = norm.NFC.String(path[strings.LastIndex(path, "/")+1 : strings.LastIndex(path, ".")])
 
-			// URL
-			var slug string = norm.NFC.String(lib.SlugifyPath(title))
-
-			// 슬러그가 중복되는 경우, 파일 경로를 기반으로 한 6자리 해시값을 뒤에 붙임
-			if slugTracker[slug] {
-				h := fnv.New32a()
-				h.Write([]byte(path))                         // 원본 파일 경로를 해시 재료로 사용
-				hashStr := fmt.Sprintf("%08x", h.Sum32())[:4] // 4자리 추출
-
-				oldSlug := slug
-				slug = fmt.Sprintf("%s-%s", slug, hashStr)
-				counter := 1
-				for slugTracker[slug] {
-					slug = fmt.Sprintf("%s-%s-%d", oldSlug, hashStr, counter)
-					counter++
-				}
-
-				fmt.Printf("info: 파일명 중복으로 인한 slug 변경: %s (old) -> %s (new) {new path: %s}\n", oldSlug, slug, path)
+			// URL (모든 포스트에 정규화 경로 기반 SHA-256 4자리 해시를 부여해 절대 불변 URL 보장)
+			slug := lib.GeneratePostSlug(title, path)
+			if existingPath, exists := slugTracker[slug]; exists {
+				fmt.Fprintf(os.Stderr, "error: 포스트 slug 해시 충돌 발생: %s (기존: %s, 신규: %s)\n", slug, existingPath, path)
+				os.Exit(1)
 			}
-			slugTracker[slug] = true // 현재 슬러그를 사용 처리
+			slugTracker[slug] = path // 현재 슬러그를 사용 처리
 
 			// description
 			var description string
